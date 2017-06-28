@@ -1,0 +1,113 @@
+.social-icons{
+  background: #306cab !important;
+  margin: 0 !important;
+  position: relative !important;
+  left: -84px !important;
+}
+
+
+.social-icons div{
+  margin-top: 10px !important;
+  margin-bottom: 8px !important;
+}
+
+.o-text{
+  margin-left: -5px !important;
+  margin-right: -5px !important;
+}
+
+.registrese-button{
+  margin-left: 6px !important;
+  visibility: hidden !important;
+}
+
+.search-bar-header{
+  background: #306cab !important;
+  margin-left: 15px !important;
+}
+
+.search-bar-header .form-control{
+  height: 22px !important;
+  border-radius: 0px !important;
+  margin-top: 2px !important;
+  font-size: 11px;
+}
+
+.input-buscar{
+  width: 210px !important;
+}
+
+.search-bar-header .navbar-form{
+  margin-top: 6px !important; 
+}
+
+
+.top_panel i{
+  font-size: 20px !important;
+}
+
+.home-nav li a:hover{
+  background-color: #4c4c4c !important;
+  border-color: white !important;
+  color: white !important;
+  padding-top: 32px !important;
+  padding-bottom: 10px !important;
+  /* margin-top: -38px !important; */
+  transition: all 0.2s ease-out 0s;
+  font-weight: 500 !important;
+  height: 82px !important;
+  position: relative !important;
+  top: -17px !important;
+}
+
+/*modal*/
+.modal-contant{
+  width: 800px !important;
+}
+
+.modal-logo{
+  width: 60% !important;
+}
+
+.img-contact{
+  width: 105% !important;
+}
+
+.input-style{
+  text-align: center !important;
+  background: #d4d4d6 !important;    
+  border-radius: 0 !important;
+  margin-bottom: 13px !important;
+}
+
+.input-style[placeholder]{
+  color: #707072 !important;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+}
+
+.modal-submit{
+  width: 50% !important;
+  float: right;
+  background: #d50d00;
+  color: white;
+  border-radius: 0;
+  border-color: #d50d00;
+  padding: 10px 0;
+  font-size: 18px;
+}
+
+@media (min-width: 768px){
+  .home-nav > li > a {
+    border-color: white !important;
+    padding-top: 32px !important;
+    padding-bottom: 10px !important;
+    /* margin-top: -38px !important; */
+    transition: all 0.2s ease-out 0s;
+    font-weight: 500;
+    height: 82px;
+    position: relative;
+    top: -17px;
+  }
+}
+

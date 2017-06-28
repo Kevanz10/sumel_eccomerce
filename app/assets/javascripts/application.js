@@ -62,6 +62,10 @@ $(document).on('turbolinks:load', function() {
   $(".sedes-bg .color3").mouseout(function(e){
     $(".third").css("visibility", "hidden"); 
   });
+
+  $('.contact-click').click(function(event) {
+    $('#busqueda-modal').modal()
+  });
 });
 
 (function ($) {
