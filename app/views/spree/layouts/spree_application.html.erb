@@ -1,0 +1,262 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="<%= I18n.locale %>"><!--<![endif]-->
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag  'spree/home/header-tablet'%>
+  <head data-hook="inside_head">
+    <%= render partial: 'spree/shared/head' %>
+    <script src="https://use.fontawesome.com/e4b26ed800.js"></script>
+    <style>
+      body{
+        line-height: 1.2;
+      }
+      /*NAVBAR STYLES FOR TABLETS*/
+      @media (max-width: 1000px) {
+        .navbar-header {
+            float: none;
+        }
+        .navbar-left,.navbar-right {
+            float: none !important;
+        }
+        .navbar-toggle {
+            display: block;
+        }
+        .navbar-collapse {
+            border-top: 1px solid transparent;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+        .navbar-fixed-top {
+            top: 0;
+            border-width: 0 0 1px;
+        }
+        .navbar-collapse.collapse {
+            display: none!important;
+        }
+        .navbar-nav {
+            float: none!important;
+            margin-top: 7.5px;
+        }
+        .navbar-nav>li {
+            float: none;
+        }
+        .mobile-toggle{
+          background: white !important;
+          margin-top: 23px !important;
+        }
+
+        .mobile-toggle span{
+          background: grey ;
+        }
+
+        .navbar-content{
+          background: black;
+        }
+
+        .navbar-content li a{
+          color: white;
+          text-align: center;
+        }
+        .navbar-nav>li>a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .collapse.in{
+            display:block !important;
+        }
+
+        .center{
+          text-align: center;
+        }
+
+        .single-footer-widget {
+          float: none;
+          margin-top: 40px;
+        }
+      }
+      @media (max-width: 764px) {
+        .infoText {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+      .flash-messages-all .alert{
+        background-color: #dff0d8;
+        border: 1px solid white;
+        color: #3c763d;
+        text-align: center;
+        margin-bottom: 0;
+        width: 100%;
+        margin: 0 auto;
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        background: black;
+        color: white;"
+      }
+
+      #navbar li a:hover{
+        background-color:  #4c4c4c !important;
+        border-color: white !important;
+        color: white !important;
+        padding-top: 53px !important;
+        padding-bottom: 10px !important;
+        margin-top: -38px !important;
+        transition: all 0.2s ease-out 0s;
+        font-weight: 500;
+        height: 103px;
+      }
+    </style>
+  </head>
+
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+
+    <%= render partial: 'spree/shared/google_analytics.js' %>
+    <%= render partial: 'spree/shared/header' %>
+    <div class="flash-messages-all">
+      <%= flash_messages%>
+    </div>
+  
+      <%= yield %>
+
+      <section class="subscribeSection ">
+        <div class="row">
+          <div class="col-md-9 yellowSection">
+            <div class="container">
+              <h1>Subscribe and receive information about our products.</h1>
+            </div>
+
+            <% @subscription = Subscription.new%>
+            <%= form_for(@subscription ) do |f| %>
+            <% if @subscription.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
+
+                <ul>
+                <% @subscription.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="row">
+              <div class="col-md-5">
+                <p> <span class="f21"> Email</span>
+                  <br>
+
+                </p>
+                <div class="row">
+                  <div class="col-md-8 pl-0">
+                    <%= f.text_field :email, class:"form-control input-sm" %>
+
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-md-5">
+                <p> <span class="f21">Phone</span>
+
+                </p>
+                <div class="row">
+                  <div class="col-md-8 pl-0">
+                      <%= f.text_field :phone, class:"form-control input-sm" %>
+
+                  </div>
+                  <div class="col-md-4">
+                    <button class="btn signUp">Subscribe</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <%end %>
+
+          </div>
+          <div class="col-md-3 topProducts">
+            <h2 class="topSellertitle mb-0"><span class="bolder">Top seller </span>Month</h2>
+            <h3 class="mt-0">(3 products)</h3>
+            <br>
+            <div class="row">
+              <div class="col-md-4">
+                <img class="topImage" src="/assets/images/top-img.png">
+              </div>
+              <div class="col-md-8 pr-0">
+                <p class="mb-0">
+                  Lorem ipsum dolor sit amet.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-4">
+                <img class="topImage" src="/assets/images/top-img.png">
+              </div>
+              <div class="col-md-8 pr-0">
+                <p class="mb-0">
+                  Lorem ipsum dolor sit amet.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-4">
+                <img class="topImage" src="/assets/images/top-img.png">
+              </div>
+              <div class="col-md-8 pr-0">
+                <p class="mb-0">
+                  Lorem ipsum dolor sit amet.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <footer class="blackFooter infoRow text-center">
+      <div class="row">
+        <div class="fixed-margin-left col-md-1 col-md-offset-2 col-sm-offset-0 col-sm-12 col-xs-12 col-xs-offset-0 fixed-width">
+          <h5>FAQ</h5>
+          <a href="/contact">Contact</a>
+        </div>
+        <div class="col-md-1 col-sm-12 col-xs-12 fixed-width">
+          <h5>Shipping & Returns</h5>
+          <a href="">Basic info</a>
+        </div>
+        <div class="col-md-1 col-sm-12 col-xs-12 fixed-width">
+          <h5>About us</h5>
+          <a href="">Company info</a>
+        </div>
+        <div class="col-md-1 col-sm-12 col-xs-12 fixed-width">
+          <h5>Phone Subscription</h5>
+          <a href="">Form</a>
+        </div>
+        <div class="col-md-2 col-sm-12 col-xs-12">
+          <h5>Sign-up for Our Newsletter</h5>
+          <a href="">Form</a>
+        </div>
+      </div>
+      <p class="text-center">All right reserved, Walloom S.A.S ® Copyright, 2017 </p>
+    </footer>
+    <script type="text/javascript">
+      $(document).on('turbolinks:load', function() {
+        setTimeout(function () {
+          $(".flash-messages-all").fadeOut('slow')
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

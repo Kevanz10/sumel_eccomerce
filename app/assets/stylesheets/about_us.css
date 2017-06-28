@@ -1,0 +1,80 @@
+.circle{
+	background-color: #060606;
+	height: 142px;
+	width: 142px;
+	border-radius: 75px;
+	margin: 0 auto;
+}
+
+
+.teamSection h2{
+	font-weight: 700;
+}
+
+.about-us-first h1{
+	padding-top: 50px !important;
+}
+
+.about-us-first{
+	height: 35vh !important;
+} 
+
+.teamSection h3{
+	font-weight: 100;
+  font-size: 23px;
+  line-height: 1.2;
+  color: #4d4d4d;
+}
+
+.teamSection h1{
+	padding-top: 50px;
+}
+
+.description{
+	width: 960px;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.see-more{
+  background: white;
+  border: 2px solid #d18c2e !important;
+  border-radius: 26px !important;
+  color: black !important;
+  font-family: 'rubik-light', sans-serif;
+  font-weight: 100 !important;
+  padding: 9px 32px !important;
+  font-size: 21px !important;
+  margin-bottom: 4% !important;
+}
+
+.see-more:hover{
+	color: white !important;
+}
+
+@media screen and  (min-width: 1000px){
+	.p-width {
+		width: 290px;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+}
+
+@media screen and  (max-width: 768px){
+	.about-us-first{
+		height: 50vh !important;
+	}
+
+	.about-us-first h1{
+		font-size: 40px !important;
+	}
+
+	.teamSection h3 {
+		padding: 30px;
+	}
+
+	.teamSection .description{
+		width: auto;
+	}
+}

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/home-page.css">
+	<!-- Optional theme -->
+  <link rel="stylesheet" type="text/css" href="index.css">
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <style>
+    .pl-0{padding-left: 0 !important; }
+    .mb-0{margin-bottom: 0 !important;}
+    .mt-0{margin-top: 0 !important;}
+    .pr-0{padding-right: 0 !important;}
+    .mb-20{margin-bottom: 20px !important;}
+
+    .top_panel {
+      min-height: 45px;
+      margin-top: 0;
+      position: relative;
+      z-index: 10000;
+      font-weight: 400;
+      background: rgba(216, 149, 0, 1);
+      color: white;
+    }
+
+    /*Top panel*/
+
+    .panel-container{
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    /*Navbar*/
+      
+      .row{
+        margin: 0 !important;
+      }
+      @media (min-width: 768px){
+        .navbar-nav>li {
+          margin-left: 25px;
+        }
+      }
+      .fixed-padding{
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+
+      body{
+       font-family: 'Rubik', sans-serif;
+      }
+
+      .add-car{
+        background-image: url(assets/images/shop-icon.png);
+        background-position: 12px;
+        background-repeat: no-repeat;
+        background-size: 23px;
+        text-indent: 30px;
+        border-radius: 69px !important;
+        width: 12%;
+        background-color: white;
+        display: block;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        margin-top: 5px;
+      }
+
+      .home-nav{
+        background-color: #0f0f0f;
+        border-radius: 0;
+        font-family: 'rubik-light', sans-serif;
+        font-size: 15px;
+        height: 103px;
+        margin-bottom: 0;
+      }li a{
+        color:#fffefe;
+      }ul{
+        padding-top: 26px;
+        padding-bottom: 29px;
+      }
+
+      .logoImage{
+        padding-top: 24px;
+        padding-bottom: 22px;
+        margin-left: 42px;
+      }
+
+      /*BgExercise section*/
+      .bgExercise{
+        height: 100vh;
+        background: url(assets/images/bg.png);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .bgExercise h1{
+        padding-top: 162px; 
+        font-size: 51px;
+        font-weight: 900;
+      }
+
+      .bgExercise h1, .bgExercise button, .bgExercise p{
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        color:white;
+      }
+
+      .bgExercise p{
+        font-size: 33px;
+        font-weight: 100;
+        padding-bottom: 50px;
+      }
+      
+      .yellow-color{
+        color: #d18c2e !important;
+      }
+      .see-more{
+        background: rgba(216, 149, 0, 0.2);
+        border: 1px solid #d89500 !important;
+        border-radius: 26px !important;
+        color: white !important;
+        font-family: 'rubik-light', sans-serif; 
+        font-weight: 100 !important;
+        padding: 11px 56px !important;
+        font-size: 18px !important;
+      }
+
+      .see-more:hover{
+        background: rgba(216, 149, 0, 0.6);
+      }
+      
+      
+      /*products section*/
+      .productSection{
+        font-family: 'Rubik', sans-serif !important;
+      }
+
+      .productSection h6{
+        color: rgba(216, 149, 0, 1);
+      }
+      .productSection h2{
+        font-size: 2.1em;
+      }
+
+      .productsDescription {
+        padding-top: 120px;
+      }
+
+      .productsDescription h6{
+        padding-top: 40px;
+      }
+
+      .productsDescription .col-md-6{
+        padding: 0;
+        height: 450px;
+      }
+
+      .greyBg{
+        background: #e9e9e9;
+      }
+
+      .productsDescription h2{
+        line-height: 1.4;
+        padding: 0 8%;
+      }
+
+
+      
+      .photo1{
+        background: url(assets/images/photo1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 450px;
+      }
+
+      .productSection p{
+        width: 1040px;
+        margin: 0 auto;
+        color: #acb4b6;
+        font-size: 17px;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 300;
+        padding-bottom: 30px;
+        padding-top: 30px;
+      }
+
+      .productSection .see-more{
+        background: rgba(216, 149, 0, 1);
+        color: white !important;
+        padding: 11px 40px !important;
+        border-radius: 0 !important;
+      }
+
+      .productSection .see-more:hover{
+        background: rgba(216, 149, 0, 0.3);
+        color: rgba(216, 149, 0, 1) !important;
+      }
+      
+      .productSection .viewAll{
+        background: white !important;
+        border: 3px solid #ff9600 !important;
+        color: #ff9600 !important; 
+      }
+
+      .productSection .viewAll:hover{
+        background: rgba(216, 149, 0, 0.3) !important;
+        color: white !important;
+      }
+
+      .logo{
+        width: 250px;
+        height: 150px;
+      }
+
+      .productSection .title{
+        font-weight: 400;
+        font-size: 16px;
+      }
+
+      .productSection .subtitle{
+        color: #b0b0b0;
+        font-size: 16px;
+      }
+
+      .protein-bg{
+        background: url(assets/images/protein-bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 750px;
+      }
+
+      .products{
+        margin-top: 50px;
+      }
+
+      .scrollable{
+        height: 700px;
+        overflow-y: auto;
+      }
+
+      .productSection .signUp{
+        color: #7f7f7f !important;
+        border: 2px solid #da9b0f !important;
+        background-color: white;
+        font-size: 25px !important;
+        padding: 5px 30px !important;
+        margin-top: 2px !important;
+      }
+      
+      .subscribeSection button:hover{
+        background:rgba(255,255,255, 0.9)!important;
+        color: rgba(216, 149, 0, 0.6)!important;
+       }
+      /*Subscription section*/
+
+      .yellowSection{
+        background: url(assets/images/yellow-bg.png);
+        height: 397px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: white;
+        width: 72%;
+      }
+
+      .yellowSection h1{
+        margin-top: 54px;
+        width: 573px;
+        font-family: 'rubik-medium', sans-serif;
+        width: 600px;
+        margin-bottom: 37px;
+      }
+
+      .topSellertitle{
+        font-size: 28px;
+      }
+
+      .bolder{
+        font-weight: 700;
+      }
+      
+      .yellowSection input{
+        margin-bottom: 104px;
+        border-radius: 0;
+      }
+
+      .subscribeSection p{
+        font-family: 'rubik-light', sans-serif;
+      }
+
+      .subscribeSection .f21{
+        font-size: 21px;
+      }
+
+      .subscribeSection button{
+        background: rgba(216, 149, 0, 0.2);
+        border: 1px solid white;
+        border-radius: 26px;
+        color: white;
+        font-family: 'rubik-light', sans-serif;
+        font-weight: 100;
+        padding: 6px 26px;
+        font-size: 16px;
+      }
+      
+      .topImage{
+      }
+     
+      /*footer*/
+      .blackFooter{
+        background-color: #060606;
+        height: 200px;
+        width: 100%;
+      }
+
+      .blackFooter .row{
+        padding-top: 40px;
+      }
+
+
+      .fixed-width{
+        width: 13.33333% !important;
+      }
+
+      .blackFooter, a{
+        color: white !important;
+      }
+
+      .blackFooter a{ 
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 100;
+      }
+
+      .blackFooter p{
+        padding-top: 57px;
+      }
+
+
+    @media screen and  (max-width: 767px){
+      .blackFooter {
+        height: 450px;
+      }
+
+      .infoRow{
+        text-align: center;
+      }
+
+      .fixed-width{
+        width: 100% !important;
+      }
+
+      .yellowSection, .yellowSection h1 {
+        width: 100%;
+        text-align: center
+      }
+
+      .blackFooter p{
+        padding-top: 85px;
+      }
+    }
+
+    @media (min-width: 1000px){
+      .mainNav, .topPanelnavRight{
+        margin-right: 7% !important;
+      }
+
+      .topPanelnavRight a{
+         margin-right: 2% !important;
+      }
+    }
+
+    .send-message{
+      color: #ff9600;
+      background-color: transparent !important;
+      border: 5px solid #ff9600 !important; 
+      padding: 1.358em 2.35em !important;
+      font-weight: 500 !important;
+      margin: 40px 0 !important;
+    }
+
+    .send-message span{
+      transition: all linear 0.15s;
+    }
+       
+    .send-message .overfl{ 
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+
+    .send-message span {
+      display: block;
+      transition: all linear 0.15s;
+      height: 1.215em;
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+    }
+
+    .send-message .second {
+      -webkit-transform: translateY(1em);
+      -moz-transform: translateY(1em);
+      -ms-transform: translateY(1em);
+      transform: translateY(1em);
+      height: 0;
+      opacity: 0;
+    }
+
+    .send-message:hover .first {
+      -webkit-transform: translateY(-1em);
+      -moz-transform: translateY(-1em);
+      -ms-transform: translateY(-1em);
+      transform: translateY(-1em);
+      overflow: hidden;
+      opacity: 0;
+    }
+
+    .send-message:hover .second {
+      -webkit-transform: translateY(-1.2em);
+      -moz-transform: translateY(-1.2em);
+      -ms-transform: translateY(-1.2em);
+      transform: translateY(-1.2em);
+       height: 1.215em; 
+       opacity: 0.7;
+    }
+
+
+  </style>
+</head>
+<body>
+  <nav class="top_panel">
+    <div class="panel-container">
+      <p class="navbar-text navbar-left">Open hours: 8.00-18.00 Mon-Sat</p>
+      <div class="topPanelnavRight">
+        <button type="text" class=" navbar-right add-car">Add car</button>
+        <a class="navbar-text navbar-right">Register</a>
+        <a class="navbar-text navbar-right">Login</a> 
+      </div>
+    </div>
+  </nav>
+  <section class="bgExercise">
+    <nav class="navbar home-nav menu navbar-fixed-top ">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img class="logoImage" src="assets/images/logoLegacy.png">
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right mainNav">
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">TERMS</a></li>
+            <li><a href="#">SECURITY</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="#">LOGIN</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div><!--/.container-fluid -->
+    </nav>
+    <div class="container text-center">
+      <h1>Vitamin supplement for training</h1>
+      <p>See our best products.</p>
+      <a class="btn see-more" >SEE MORE</a>
+    </div>
+  </section>
+  <section class="productSection">
+    <div class="text-center">
+      <img src="assets/images/legacylogo.png" class="logo"> 
+      <h6 class="text-uppercase">Best sellers</h6>
+      <h2>SPORTS NUTRITION TOP SELLERS</h2>
+      <p>
+        Phasellus maximus, purus ultricies tincidunt tincidunt, dolor lectus ullamcorper neque, id tincidunt nulla nisi sed eros. Aenean consectetur commodo sem quis viverra. Etiam pharetra varius enim. Sed et porttitor turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+      </p>
+      <div class="row text-uppercase">
+        <div class="col-md-6 text-right">
+          <a class="btn see-more">shop best sellers</a>
+        </div>
+        <div class="col-md-6 text-left">
+          <a class="btn see-more viewAll">view all products</a>
+        </div>
+      </div>
+
+      <div class="container productsDescription">
+        <div class="col-md-6 text-center greyBg">
+          <h6 class="text-uppercase">Best sellers</h6>
+          <h2>OPTIMUM NUTRITION ESSENTIAL AMINO ENERGY</h2>
+          <img src="assets/images/protein-img.png">
+        </div>
+        <div class="col-md-6 photo1"></div>
+        <div class="col-md-6 photo1"></div>
+        <div class="col-md-6 text-center greyBg">
+          <h6 class="text-uppercase">Best sellers</h6>
+          <h2>OPTIMUM NUTRITION ESSENTIAL AMINO ENERGY</h2>
+          <img src="assets/images/protein-img.png">
+        </div>
+        <div class="col-md-6 text-center greyBg">
+          <h6 class="text-uppercase">Best sellers</h6>
+          <h2>OPTIMUM NUTRITION ESSENTIAL AMINO ENERGY</h2>
+          <img src="assets/images/protein-img.png">
+        </div>
+        <div class="col-md-6 photo1"></div> 
+      </div>
+    </div>
+    <div class="text-center">
+    <button type="submit" class="btn send-message">
+      <span>
+        <span class="first">I WANT MORE</span>
+        <span class="second">I WANT MORE</span>
+      </span>
+    </button>
+    </div>
+  </section>
+  <section class="subscribeSection">
+    <div class="row">
+      <div class="col-md-9 yellowSection">
+        <div class="container">
+          <h1>Subscribe and receive information about our products.</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <p> <span class="f21">Lorem ipsum dolor sit amet</span>
+              <br>
+              Lorem ipsum
+              <br>
+              Lorem ipsum
+            </p>
+            <div class="row">
+              <div class="col-md-8 pl-0">
+                <input type="text" class="form-control input-sm">
+              </div>
+              <div class="col-md-4">
+                <button class="btn signUp">Sign Up</button>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-5">
+            <p> <span class="f21">Lorem ipsum dolor sit amet</span>
+              <br>
+              Lorem ipsum
+              <br>
+              Lorem ipsum
+            </p>
+            <div class="row">
+              <div class="col-md-8 pl-0">
+                <input type="text" class="form-control input-sm">
+              </div>
+              <div class="col-md-4">
+                <button class="btn signUp">Sign Up</button>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-20">
+        <h2 class="topSellertitle mb-0"><span class="bolder">Top seller </span>Month</h2>
+        <h3 class="mt-0">(3 products)</h3>
+        <br>
+        <div class="row">
+          <div class="col-md-4">
+            <img class="topImage" src="assets/images/top-img.png">
+          </div>
+          <div class="col-md-8 pr-0">
+            <p class="mb-0">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4">
+            <img class="topImage" src="assets/images/top-img.png">
+          </div>
+          <div class="col-md-8 pr-0">
+            <p class="mb-0">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4">
+            <img class="topImage" src="assets/images/top-img.png">
+          </div>
+          <div class="col-md-8 pr-0">
+            <p class="mb-0">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <footer class="blackFooter infoRow">
+    <div class="row">
+      <div class="col-md-1 col-md-offset-2 col-sm-offset-0 col-sm-12 col-xs-12 col-xs-offset-0 fixed-width">
+        <h5>FAQ</h5>
+        <a href="">Search Bar</a>
+      </div>
+      <div class="col-md-1 col-sm-12 col-xs-12 fixed-width">
+        <h5>Shipping & Returns</h5>
+        <a href="">Basic info</a>
+      </div>
+      <div class="col-md-1 col-sm-12 col-xs-12 fixed-width">
+        <h5>About us</h5>
+        <a href="">Company info</a>
+      </div>
+      <div class="col-md-1 col-sm-12 col-xs-12 fixed-width">
+        <h5>Phone Subscription</h5>
+        <a href="">Form</a>
+      </div>
+      <div class="col-md-2 col-sm-12 col-xs-12">
+        <h5>Sign-up for Our Newsletter</h5>
+        <a href="">Form</a>
+      </div>
+    </div>
+    <p class="text-center">All right reserved, Walloom S.A.S ® Copyright, 2017 </p>
+  </footer>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    (function ($) {
+  $(document).ready(function(){
+    
+  // hide .navbar first
+  $(".menu").hide();
+  
+  // fade in .navbar
+  $(function () {
+    $(window).scroll(function () {
+            // set distance user needs to scroll before we fadeIn navbar
+      if ($(this).scrollTop() > 100) {
+        $('.menu').fadeIn();
+      } else {
+        $('.menu').fadeOut();
+      }
+    });  
+  });
+
+});
+  }(jQuery));
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<section class="findUs text-center">
+  <h1>CONTACT US</h1>
+  <p>
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco
+    laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-1 text-left contanctCompanyInf">
+      <div class="mb-32">
+        <span class="title">Address</span>
+        <br>
+        <span class="subtitle">Chicago, IL 60606, 123, New Lenox</span>
+      </div>
+      <div class="mb-32">
+        <span class="title">We are open</span>
+        <br>
+        <span class="subtitle">Open hours: 8.00-18.00 Mon-Sat</span>
+      </div>
+      <div class="mb-32">
+        <span class="title">Phone</span>
+        <br>
+        <span class="subtitle">123-456-7890, 123-456-7890</span>
+      </div>
+      <div class="mb-32">
+        <span class="title">E-mail</span>
+        <br>
+        <span class="subtitle">info@yoursite.com</span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <%= form_for(@message, :html => {:class => "findUseform"}) do |f| %>
+        <% if @message.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+            <ul>
+            <% @message.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="field">
+
+          <%= f.text_field :name, class: "form-control input-lg", placeholder:"Name *" %>
+        </div>
+
+        <div class="field">
+
+          <%= f.text_field :email, class: "form-control input-lg", placeholder:"Email *"  %>
+        </div>
+
+        <div class="field">
+
+          <%= f.text_field :subject, class: "form-control input-lg", placeholder:"Subject *"   %>
+        </div>
+
+        <div class="field">
+          <%= f.text_area :content, class: "form-control input-lg", placeholder:"Message *" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit 'Send Message',  class:"btn send-message" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+<section class="findUs text-center"> 
+    <h1>HOW TO FIND US</h1>
+</section>
+<section id="map">
+      <iframe
+      width="100%"
+      height="450"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDlbJ_XRVze2LtvaIBXH8Libsn6c6PWU1Q
+        &q=Space+Needle,Seattle+WA" allowfullscreen>
+    </iframe>
+</section>

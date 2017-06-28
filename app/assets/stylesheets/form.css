@@ -1,0 +1,56 @@
+/*Find us section*/
+
+.findUs{
+	font-family: 'Rubik', sans-serif !important;
+  margin-top: 50px;
+}
+
+.findUs p{
+	width: 530px;
+	margin: 0 auto;
+	color: #acb4b6;
+	font-weight: 300;
+	font-size: 19px;
+	margin-bottom: 54px;
+}
+
+.findUs .title{
+	font-size: 16px;
+	font-weight: 500; 
+}
+
+.findUs .subtitle{
+	font-size: 15px;
+	font-weight: 200; 
+	color: #acb4b6;
+}
+
+.mb-32{
+	margin-bottom: 32px;
+}
+
+.findUseform input{
+	border: 3px solid #e0e0e0;
+	border-radius: 0;
+	font-weight: lighter;
+  font-size: 14px;
+}
+
+.findUseform textarea{
+	border: 3px solid #e0e0e0;
+	border-radius: 0;
+	font-weight: lighter;
+  font-size: 14px;
+}
+
+@media (max-width: 1000px){
+
+	.findUs p{
+		width: auto;
+		padding: 0 5%;
+	}
+
+	.findUs .contanctCompanyInf{
+		text-align: center !important;
+	}
+}

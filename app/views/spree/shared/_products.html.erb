@@ -1,0 +1,211 @@
+<div class="">
+  <% content_for :head do %>
+    <% if products.respond_to?(:total_pages) %>
+      <%= rel_next_prev_link_tags products %>
+    <% end %>
+  <% end %>
+
+  <div data-hook="products_search_results_heading">
+    <% if products.empty? %>
+      <div data-hook="products_search_results_heading_no_results_found">
+        <%= Spree.t(:no_products_found) %>
+      </div>
+    <% elsif params.key?(:keywords) %>
+      <div data-hook="products_search_results_heading_results_found">
+        <h6 class="search-results-title"><%= Spree.t(:search_results, keywords: h(params[:keywords])) %></h6>
+      </div>
+    <% end %>
+  </div>
+
+  <% if products.any? %>
+    <div id="products" class="row" data-hook>
+      <div class="row row-products">
+
+      <% products.each do |product| %>
+        <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
+        <div  data-hook="products_list_item" >
+
+          <div class="col-md-3 text-center" style=" margin-top: 20px; background: #dbdddc;
+            padding-top: 35px; padding-bottom: 35px;">
+            <p class="name-product">
+              <label for="">
+                  <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
+              </label>
+            </p>
+            <%= link_to url, itemprop: "url" do %>
+              <%= small_image(product, itemprop: "image") %><br/>
+            <% end %>
+
+            
+            <p class="subtitle">
+              <label for="">
+                <%= number_to_currency(product.price.to_f, precision: 1) %>
+              </label>
+            <br>
+              <!-- Add little product description -->
+            </p>
+            <%= link_to url, itemprop: "url" do %>
+              <button class="btn contacto-btn">CONTACTO</button>
+            <% end %>
+            <%= link_to url, itemprop: "url" do %>
+              <button class="btn contacto-btn">LEER MAS</button>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <% reset_cycle("classes") %>
+    </div>
+    </div>
+  <% end %>
+  <div class="paginations text-center">
+    <% if products.respond_to?(:total_pages) %>
+      <%= paginate products, theme: 'twitter-bootstrap-3' %>
+    <% end %>
+  </div>
+  <section class="saber-mas">
+  <div class="row">
+    <div class="col-md-8 bg-home3"></div>
+    <div class="col-md-4 bluebg-home">
+      <h1>TODO</h1>
+      <h1>DEPENDE</h1>
+      <h1>DE TI</h1>
+      <a href="" class="saber-mas-bg text-center">¿QUIERES SABER MÁS?</a>
+    </div>
+  </div>
+</section>
+
+<section class="chevere">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-11">
+          <h1>QUÉ CHÉVERE <br> que estés acá</h1> 
+        </div>
+         <div class="col-md-1">
+           <img src="/assets/images/exclamacion.png" class="exclamacion">
+         </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="row content">
+        <div class="col-md-3">
+          <h5>INFORMACIÓN</h5>
+          <a href="">Nosotros</a>
+          <br>
+          <a href="">Devoluciones</a>
+          <br>
+          <a href="">Notas de privacidad</a>
+          <br>
+          <a href="">Condiciones de uso</a>
+          <br>
+        </div>
+        <div class="col-md-3">
+          <h5>PRODUCTOS</h5>
+          <a href="">Categoría uno</a>
+          <br>
+          <a href="">Categoría dos</a>
+          <br>
+          <a href="">Categoría tres</a>
+          <br>
+          <a href="">Categoría cuatro</a>
+        </div>
+        <div class="col-md-3">
+          <h5>SERVICIOS</h5>
+          <a href="">Servicio uno</a>
+          <br>
+          <a href="">Servicio dos</a>
+        </div>
+        <div class="col-md-3">
+          <h5>EMPRESA DETALLES</h5>
+          <i class="fa fa-suitcase" aria-hidden="true"></i>
+          <a href="">cll4 #4-4</a>
+          <br>
+          <i class="fa fa-mobile" aria-hidden="true"></i>
+          <a href="">321321321</a>
+          <br>
+          <i class="fa fa-inbox" aria-hidden="true"></i>
+          <a href="">test@test.com</a>
+          <br>
+          <i class="fa fa-skype" aria-hidden="true"></i>
+          <a href="">Shop.test</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+
+<style >
+  .name-product{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .row-products{
+    margin-left: 35px !important;
+    margin-right: auto !important;
+    margin-top: 70px !important;
+    margin-bottom: 150px  !important;
+  }
+
+  .row-products img{
+    width: 150px;
+  }
+
+  .contacto-btn{
+    border-radius: 0;
+    background: #d92e27;
+    color: white;
+    padding: 6px 17px;
+    margin-left: 6px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .saber-mas-bg{
+    color: white;
+    background: #e0514b;
+    padding: 14px 96px;
+    font-size: 12px;
+    font-weight: 
+  }
+
+  .saber-mas-bg:hover{
+    color: white;
+    background: rgba(224, 81, 75, 0.7);
+  }
+
+  /*CHEVERE SECTION*/
+  .chevere{
+    background: #dbd9da;
+    height: 200px;
+  }
+
+  .chevere h1{
+    color: #1252a9;
+    font-weight: 900;
+    padding: 38px 32px;
+  }
+
+  .exclamacion{
+    position: relative;
+    left: -70px;
+    top: 15px;
+  }
+
+  .chevere .content{
+    padding: 38px 32px;
+  }
+
+  .chevere .content h5{
+    color: #535353;
+    font-weight: 900;
+  }
+
+  .chevere .content a{
+    color: #8c8c8c;
+    font-weight: 200;
+  }
+</style>
