@@ -23,7 +23,7 @@ Rails.application.configure do
   config.action_dispatch.rack_cache = true
 
   # Action mailer con host production
-  config.action_mailer.default_url_options = { :host => "https://sumel.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "https://sumelcommerce.herokuapp.com/" }
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
@@ -79,7 +79,7 @@ Rails.application.configure do
   end
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.action_controller.asset_host = config.action_mailer.asset_host = 'https://sumel.herokuapp.com'
+  config.action_controller.asset_host = config.action_mailer.asset_host = 'https://sumelcommerce.herokuapp.com/'
   routes.default_url_options[:host] = config.action_controller.asset_host
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
@@ -115,7 +115,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # sendgrid mail
-  config.action_mailer.default_url_options = { :host => "https://sumel.herokuapp.com/" }
+  config.action_mailer.default_url_options = { :host => "https://sumelcommerce.herokuapp.com/" }
 
   config.action_mailer.raise_delivery_errors = true
 
