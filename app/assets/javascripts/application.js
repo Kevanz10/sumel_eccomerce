@@ -66,6 +66,14 @@ $(document).on('turbolinks:load', function() {
   $('.contact-click').click(function(event) {
     $('#busqueda-modal').modal()
   });
+
+  $('.blue').click(function(event) {
+    $('#busqueda-modal').modal()
+  });
+
+  $('.cotizar-click').click(function(event) {
+    $('#busqueda-modal').modal()
+  });
 });
 
 (function ($) {

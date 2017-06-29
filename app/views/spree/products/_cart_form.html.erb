@@ -28,49 +28,91 @@
     <% else %>
       <%= hidden_field_tag "variant_id", @product.master.id %>
     <% end %>
+    <%if spree_current_user%>
+      <% if @product.price_in(current_currency) && !@product.price.nil? %>
+        <div data-hook="product_price" class="col-md-12">
+          <div id="product-price">
+            <h3 class="product-section-title"><%= Spree.t('Precio') %></h3>
+            <div>
+              <span class="lead price selling" itemprop="price">
+                <%= display_price(@product) %>
+              </span>
+              <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
+            </div>
 
-    <% if @product.price_in(current_currency) && !@product.price.nil? %>
-      <div data-hook="product_price" class="col-md-12">
-        <div id="product-price">
-          <h3 class="product-section-title"><%= Spree.t(:price) %></h3>
-          <div>
-            <span class="lead price selling" itemprop="price">
-              <%= display_price(@product) %>
-            </span>
-            <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
+            <% if @product.master.can_supply? %>
+              <link itemprop="availability" href="https://schema.org/InStock" />
+            <% elsif @product.variants.empty? %>
+              <br />
+              <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
+            <% end %>
           </div>
 
-          <% if @product.master.can_supply? %>
-            <link itemprop="availability" href="https://schema.org/InStock" />
-          <% elsif @product.variants.empty? %>
-            <br />
-            <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
+          <% if @product.can_supply? %>
+            <div class="add-to-cart">
+              <br />
+              <div class="input-group">
+                <%= number_field_tag :quantity, 1, class: 'title form-control', min: 1 %>
+                <br>
+                <span class="input-group-btn cart-add">
+                  <%= button_tag class: 'btn btn-success', id: 'add-to-cart-button', type: :submit do %>
+                    <%= Spree.t(:add_to_cart) %>
+                  <% end %>
+                </span>
+              </div>
+            </div>
           <% end %>
         </div>
-
-        <% if @product.can_supply? %>
-          <div class="add-to-cart">
-            <br />
-            <div class="input-group">
-              <%= number_field_tag :quantity, 1, class: 'title form-control', min: 1 %>
-              <span class="input-group-btn">
-                <%= button_tag class: 'btn btn-success', id: 'add-to-cart-button', type: :submit do %>
-                  <%= Spree.t(:add_to_cart) %>
-                <% end %>
-              </span>
-            </div>
+      <% else %>
+        <div id="product-price">
+          <br />
+          <div>
+            <span class="price selling" itemprop="price">
+              <%= Spree.t('product_not_available_in_this_currency') %>
+            </span>
           </div>
-        <% end %>
-      </div>
-    <% else %>
-      <div id="product-price">
-        <br />
-        <div>
-          <span class="price selling" itemprop="price">
-            <%= Spree.t('product_not_available_in_this_currency') %>
-          </span>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    <%else%>
+      <h3 class="cotizar-click text-center"><a href="" data-toggle="modal" data-target="busqueda-modal">COTIZAR</a></h3>
+    <%end%>
   </div>
 <% end %>
+
+<div class="modal fade" id="busqueda-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-contant" role="document" style="margin-top: 161px;">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <img class="modal-logo" src="/assets/images/full_logo_blue.png">
+            <br>
+            <br>
+            <img class="img-contact" src="/assets/images/contact-photo.png">
+            <br>
+            <br>
+            <p style="color: #5d5d5d; text-align: center;">Aseguramos la felicidad de nuestros clientes</p>
+            <br>
+          </div>
+          <div class="col-md-6" style="padding-left: 73px;">  
+            <h1 style="color: #1254A8; text-align: right;">¿Quieres conocer alguno de nuestros productos?</h1>
+            <p class="text-right" style="color: #5d5d5d; font-size: 16px;">Escríbenos</p>
+            <div class="form-container">
+              <%= form_tag("/contact-message", method: "post") do %>
+                <%= text_field_tag "message[name]", "", placeholder: 'TU NOMBRE', class: 'input-style form-control', required: true%>
+                <%= text_field_tag "message[email]", "", placeholder: 'EMAIL', class: 'input-style form-control', type: 'email', required: true%>
+                <%= text_field_tag "message[product]", "", placeholder: 'PHONE', class: 'input-style form-control', type: 'number', required: true%>
+                <%= submit_tag("COTIZAR", class: "modal-submit")%>
+              <% end %>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>

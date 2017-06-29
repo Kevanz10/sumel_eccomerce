@@ -225,8 +225,6 @@
           </div>
         </div>
       </div>
-
-      
     </div>
     <div class="col-md-4">
       <div class="rounded-blue" >
@@ -262,23 +260,33 @@
     </div>
   </div>  
 </div>
-
-
 <nav class="subscription-bar">
-  <h3 class="nav navbar-nav navbar-left text-left left">Inscríbete</h3>
-  <div class="panel-container">
-    <!--  <p class="navbar-text navbar-left">Open hours: 8.00-18.00 Mon-Sat</p> -->
-    <div class="nav navbar-nav navbar-right right">
-      <div class="navbar-text navbar-left mr-1">
-        <i class="fa fa-facebook" aria-hidden="true"></i>
+  <div class="row">
+    <div class="col-md-6 text-left">
+      <div class="">
+        <h3 class="nav navbar-nav navbar-left left">Inscríbete</h3>
+        <%= form_tag("/subs", method: "post", class: 'sub-form') do %>
+          <%= text_field_tag "subscription[email]", "", placeholder: 'Email', class: 'input-sub form-control', type: 'email', required: true%>
+          <%= submit_tag("ENVIAR", class: "enviar-sub")%>
+        <% end %>
       </div>
-      <div class="navbar-text navbar-left mr-1">
-        <i class="fa fa-twitter" aria-hidden="true"></i>
+    </div>
+    <div class="col-md-6 text-right">
+       <div>
+        <!--  <p class="navbar-text navbar-left">Open hours: 8.00-18.00 Mon-Sat</p> -->
+        <div class="nav navbar-nav navbar-right right">
+          <div class="navbar-text navbar-left mr-1">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          </div>
+          <div class="navbar-text navbar-left mr-1">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </div>
+          <div class="navbar-text navbar-left">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </div>
+        </div> 
       </div>
-      <div class="navbar-text navbar-left">
-        <i class="fa fa-instagram" aria-hidden="true"></i>
-      </div>
-    </div> 
+    </div>
   </div>
 </nav>
 <style>
@@ -437,26 +445,6 @@
     color: #555555;
   }
 
-  .subscription-bar{
-    height: 70px;
-    background: #7f7f7f;
-    margin-top: 70px;
-  }
-
-  .subscription-bar h3{
-    color: white;
-  }
-
-  .left{
-    padding-top: 25px;
-    padding-left: 50px;
-  }
-
-  .right{
-    padding-top: 15px;
-    font-size: 22px;
-  }
-
   .mr-1{
     margin-right: 1px;
   }
@@ -468,29 +456,6 @@
   .fa-user-plus{
     margin:0 auto;
   }
-
-  /*HOVER UNDERLINE NAVBAR*/
-
-  .acerca-nav li a{
-    text-decoration: none !important;
-    position: relative !important;
-  }
-
-  .acerca-nav li a:after{
-    content: '';
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    width: 0%;
-    border-bottom: 2px solid #3366FF;
-    transition: 0.4s;
-  }
-
-  .acerca-nav li a:hover:after{
-    width: 75% !important;
-  }
-
-  /*-----------------*/
 
   .numero-uno{
     position: relative;

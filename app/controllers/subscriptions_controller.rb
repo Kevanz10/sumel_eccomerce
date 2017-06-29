@@ -24,12 +24,11 @@ class SubscriptionsController < ApplicationController
   # POST /subscriptions
   # POST /subscriptions.json
   def create
-    raise
     @subscription = Subscription.new(subscription_params)
 
     respond_to do |format|
       if @subscription.save
-        format.html { redirect_to :back, notice: 'Subscription was successfully created.' }
+        format.html { redirect_to :back, notice: 'Gracias por suscribirse a nuestras noticias, estaremos en contacto.' }
         format.json { render :show, status: :created, location: @subscription }
       else
         format.html { render :new }
@@ -70,6 +69,6 @@ class SubscriptionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subscription_params
-      params.require(:subscription).permit(:email, :phone)
+      params.require(:subscription).permit(:email)
     end
 end

@@ -22,7 +22,7 @@
 					o
 			    <br>
 			    <br>
-			    <a href="" class="btn buscar blue">CONTACTAR AGENTE</a>
+          <a href="" data-toggle="modal" data-target="busqueda-modal" class="btn buscar blue">Contáctenos</a>
 			</div>
 		</div>
 		<div class="col-md-6 text-center">
@@ -35,8 +35,8 @@
 <div class="login-bar">
   <nav class="navbar navbar-default" style="background: #dbd9da">
     <div class="container">
-      <div id="navbar" class="navbar-collapse collapse informative-bar-login">
-        <ul class="nav navbar-nav">
+      <div id="navbar" class="navbar-collapse collapse informative-bar-login acerca-nav">
+        <ul class="nav navbar-nav acerca-nav">
           <li><a href="#">Acerca</a></li>
           <li><a href="">Cotización</a></li>
           <li><a href="">Órdenes</a></li>
@@ -58,10 +58,47 @@
 </div>
 <div class="row">
   <div class="col-md-12 products " style="padding: 0">
-      <%= render partial: 'spree/shared/products', locals: { products: @products } %>
+    <%= render partial: 'spree/shared/products', locals: { products: @products } %>
   </div>
 </div>
 
+<div class="modal fade" id="busqueda-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-contant" role="document" style="margin-top: 161px;">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <img class="modal-logo" src="/assets/images/full_logo_blue.png">
+            <br>
+            <br>
+            <img class="img-contact" src="/assets/images/contact-photo.png">
+            <br>
+            <br>
+            <p style="color: #5d5d5d; text-align: center;">Aseguramos la felicidad de nuestros clientes</p>
+            <br>
+          </div>
+          <div class="col-md-6" style="padding-left: 73px;">  
+            <h1 style="color: #1254A8; text-align: right;">¿Quieres conocer alguno de nuestros productos?</h1>
+            <p class="text-right" style="color: #5d5d5d; font-size: 16px;">Escríbenos</p>
+            <div class="form-container">
+              <%= form_tag("/contact-message", method: "post") do %>
+                <%= text_field_tag "message[name]", "", placeholder: 'TU NOMBRE', class: 'input-style form-control', required: true%>
+                <%= text_field_tag "message[email]", "", placeholder: 'EMAIL', class: 'input-style form-control', type: 'email', required: true%>
+                <%= text_field_tag "message[product]", "", placeholder: 'PHONE', class: 'input-style form-control', type: 'number', required: true%>
+                <%= submit_tag("COTIZAR", class: "modal-submit")%>
+              <% end %>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
 
 <style>
 	.searcher{
@@ -184,7 +221,7 @@
 
   .blue{
   	background: #1252a9 !important;
-  	padding: 5px 84px !important;
+  	padding: 5px 109px !important;
   	color: white;
   	border: 1px solid #1252a9 !important;
   }

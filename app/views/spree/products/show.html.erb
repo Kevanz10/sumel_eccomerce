@@ -1,23 +1,28 @@
 <% @body_id = 'product-details' %>
-
-<div class="container productContainer">
-
+<div class="container productContainer products-view ">
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="product-title" itemprop="name">
+        <%= @product.name.capitalize %> 
+      </h1>
+    </div>
+    <div class="col-md-6 text-right">
+      <h3 class="share">Comparte</h3>
+      <%= social_share_button_tag( :allow_sites => %w(facebook twitter)) %>
+    </div>
+  </div>
   <% cache cache_key_for_product do %>
     <div data-hook="product_show" class="row" itemscope itemtype="https://schema.org/Product">
-      <div class="col-md-4 col-sm-5" data-hook="product_left_part">
+      <div class="col-md-6 col-sm-5" data-hook="product_left_part">
         <div data-hook="product_left_part_wrap">
           <div id="product-images" data-hook="product_images">
             <div id="main-image" class="panel panel-default" data-hook>
               <div class="panel-body text-center">
-                <%= product_image(@product, itemprop: "image") %>
+                <%= product_image(@product, itemprop: "image", class: 'product-image-view') %>
               </div>
             </div>
             <div id="thumbnails" data-hook>
               <%= render partial: 'thumbnails' %>
-            </div>
-
-            <div id="cart-form" data-hook="cart_form">
-              <%= render partial: 'cart_form' %>
             </div>
 
           </div>
@@ -32,19 +37,36 @@
         </div>
       </div>
 
-      <div class="col-md-8 col-sm-7" data-hook="product_right_part">
+      <div class="col-md-5 col-sm-7" data-hook="product_right_part">
         <div data-hook="product_right_part_wrap">
           <div id="product-description" data-hook="product_description">
             <h1 class="product-title" itemprop="name">
-            <%= social_share_button_tag() %>
-
-            <%= @product.name %></h1>
-
-            <div class="" itemprop="description" data-hook="description">
+              <%= @product.name.capitalize %> 
+            </h1>
+            <p class="ficha-descripcion">
+              Descripción Ficha
+            </p>
+            <br>
+            <div class="des-producto" itemprop="description" data-hook="description">
               <%= product_description(@product) %>
             </div>
-
-
+            <br>
+            <br>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="chair text-center">
+                  <h5>CAPACIDAD</h5>
+                  <i class="fa fa-wheelchair" aria-hidden="true"></i>
+                  <h4>1</h4>
+                </div>
+                
+              </div>
+              <div class="col-md-6" style="padding-left: 0;">
+                <div id="cart-form" data-hook="cart_form">
+                  <%= render partial: 'cart_form' %>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div id="taxon-crumbs" class=" five " data-hook="product_taxons">
@@ -54,5 +76,148 @@
       </div>
     </div>
   <% end %>
-
 </div>
+<section class="chevere">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-11">
+          <h1>Servimos con<br> sentido humano</h1> 
+        </div>
+         <div class="col-md-1">
+           <img src="/assets/images/exclamacion.png" class="exclamacion">
+         </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="row content">
+        <div class="col-md-2">
+          <h5>INFORMACIÓN</h5>
+          <a href="">Nosotros</a>
+          <br>
+          <a href="">Términos</a>
+          <br>
+          <a href="">Búsqueda</a>
+          <br>
+          <a href="">Órdenes</a>
+          <br>
+        </div>
+        <div class="col-md-3">
+          <h5 class="text-center">PRODUCTOS</h5>
+          <div class="col-md-6" style="padding: 0;">
+            <a href="">Oxigenoterapia</a>
+            <a href="">Movilidad</a>
+            <a href="">Fisioterapia y rehabilitacion</a>
+            <a href=""> Ayudas para el diario vivir</a>
+            <a href=""> Cuidado Respiratorio</a>
+          </div>
+          <div class="col-md-6">
+            <a href=""> Diagnostico</a>
+            <a href=""> Mobiliario medico</a>
+            <a href="">Ozonoterapia</a>
+            <a href="">Colonterapia</a>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <h5>SERVICIOS</h5>
+          <a href="">Alquiler</a>
+          <br>
+          <a href="">Mantenimiento</a>
+        </div>
+        <div class="col-md-5">
+          <h5>EMPRESA DETALLES</h5>
+          <div class="col-md-6" style="padding: 0">
+            <i class="fa fa-suitcase" aria-hidden="true"></i>
+            <a href="">Sede Itagüí: <br> Calle 30 N° 41-09</a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href="">(4) 444 01 88 </a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href=""> 311 635 4073 </a>
+            <br>
+            <br>
+            <i class="fa fa-suitcase" aria-hidden="true"></i>
+            <a href="">Sede Medellín: <br> Carrera 48 N°7-380 <br>
+            Mall Comercial Vegas 10</a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href="">(4) 444 01 88 </a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href=""> 316 523 4269</a>
+            <br>
+          </div>
+          <div class="col-md-6" style="padding: 0">
+        
+            <i class="fa fa-suitcase" aria-hidden="true"></i>
+            <a href="">Sede Pereira: <br> Calle 24 N° 6-14</a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href="">(6) 3255690 </a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href=""> 314 888 0021 </a>
+            <br>
+            <br>
+            <i class="fa fa-suitcase" aria-hidden="true"></i>
+            <a href="">Sede Armenia: <br> Carrera 12 N° 1A Norte 20 Edificio Centro Medico Empresarial Uninorte Local   105
+           </a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href="">(6) 746 3334 </a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href=""> 321 701 0685</a>
+            <br>
+          </div>
+      
+
+        
+         <!--  <i class="fa fa-inbox" aria-hidden="true"></i>
+          <a href="">test@test.com</a>
+          <br>
+          <i class="fa fa-skype" aria-hidden="true"></i>
+          <a href="">Shop.test</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  /*CHEVERE SECTION*/
+  .chevere{
+    background: #dbd9da;
+    height: 270px;
+  }
+
+  .chevere h1{
+    color: #1252a9;
+    font-weight: 900;
+    padding: 15px 32px;
+  }
+
+  .exclamacion{
+    position: relative;
+    left: -70px;
+    top: 15px;
+  }
+
+  /*.chevere .content{
+    padding: 18px 32px;
+  }*/
+
+  .row .content{
+    padding-top: 20px;
+  }
+
+  .chevere .content h5{
+    color: #535353;
+    font-weight: 900;
+  }
+
+  .chevere .content a{
+    color: #8c8c8c;
+    font-weight: 200;
+  }
+ </style>

@@ -16,3 +16,47 @@
  *= require_tree .
  */
  @import "social-share-button";
+
+   /*HOVER UNDERLINE NAVBAR*/
+
+  .acerca-nav li a{
+    text-decoration: none !important;
+    position: relative !important;
+  }
+
+  .acerca-nav li a:after{
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: 0%;
+    border-bottom: 2px solid #3366FF;
+    transition: 0.4s;
+  }
+
+  .acerca-nav li a:hover:after{
+    width: 75% !important;
+  }
+
+  /*-----------------*/
+
+  // Subscription bar
+   .subscription-bar{
+    height: 70px;
+    background: #7f7f7f;
+  }
+
+  .subscription-bar h3{
+    color: white;
+  }
+
+  .left{
+    padding-top: 25px !important;
+    padding-left: 50px !important;
+  }
+
+  .right{
+    padding-top: 15px;
+    padding-right: 70px;
+    font-size: 22px;
+  }
