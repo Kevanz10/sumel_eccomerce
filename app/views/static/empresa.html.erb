@@ -213,6 +213,7 @@
           <p class="recive" style="color: #5d5d5d; font-size: 16px;">Recibe el mejor contenido de nuestra empresa en tu bandeja de entrada</p>
           <div class="form-container">
             <br>
+            <br>
             <%= form_tag("/subs", method: "post") do %>
               <%= text_field_tag "subscription[email]", "", placeholder: 'Correo electrónico', class: 'mas-input form-control', type: 'email', required: true%>
               <br>
@@ -222,7 +223,6 @@
           </div>
         </div> 
       </div>
-      <div class="red-section"></div>
     </div>
   </div>
 </div>
@@ -537,13 +537,14 @@
   $(document).on('turbolinks:load', function() {
     $('.history').click(function(event) {
       $('.first').hide();
-      $('.history-div').show();
+      $('.history-div').show('fast');
       $('.negocio-div').hide();
     });
 
     $('.negocio').click(function(event) {
       $('.first').hide();
-      $('.negocio-div').show();
+      $('.history-div').hide();
+      $('.negocio-div').show('fast');
     });
 
     $('.bar-menu').click(function(event) {
@@ -551,12 +552,12 @@
     });
 
     $('.close-menu').click(function(event) {
-      $('.click-menu').hide('slow');
+      $('.click-menu').hide('fast');
     });
 
     $('.fa-window-close-o').click(function(event) {
-      $('.history-div').hide();
-      $('.first').show();
+      $('.history-div').hide('fast');
+      $('.first').show('fast');
     });
   });
 </script>

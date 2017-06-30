@@ -78,7 +78,6 @@ $(document).on('turbolinks:load', function() {
   $('.mas-button').click(function(event) {
     $('#mas-button').modal()
   });
-  
 });
 
 (function ($) {

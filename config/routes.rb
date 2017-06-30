@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/about', to: 'static#about', as: 'about'
   get '/terms', to: 'static#terms', as: 'terms'
   get '/empresa', to: 'static#empresa', as: 'empresa'
-  get '/security', to: 'static#security', as: 'security'
+  get '/servicios', to: 'static#services', as: 'services'
   get '/contact', to: 'messages#new', as: 'contact'
 
   post '/subs', to: 'subscriptions#create', as: 'newsubscription'

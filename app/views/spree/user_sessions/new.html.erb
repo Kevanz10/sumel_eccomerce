@@ -126,10 +126,18 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
+              <img src="/assets/images/logo_blue.png" class="logo-login">
               <h4 class="modal-title" id="myModalLabel">Medellín</h4>
-              <h4 class="modal-title" id="myModalLabel" style="padding-top: 0"> 
-                 Teléfono: (4) 444 01 88
-                <br>Celular: 316 523 4269 </h4>
+              <div class="row">
+                <div class="col-md-6 text-right">
+                  <i class="fa fa-whatsapp" aria-hidden="true" style="font-size: 25px; padding-top: 16px;"></i>
+                </div>
+                <div class="col-md-6 text-left">
+                  <h4 id="myModalLabel"> (4) 444 01 88</h4>
+                </div>
+                <br>
+                Celular: 316 523 4269
+              </div>
             </div>
             <div class="modal-body">
               <div id="map">
@@ -297,6 +305,11 @@
     border-top: 3px solid #0038a7;
   }
 
+  .logo-login{
+    width: 252px;
+    margin-top: 50px;
+  }
+
   .forget-a{
     color: #c3736c;
     text-decoration: underline;
@@ -351,7 +364,7 @@
     color: #0038a7;
     font-weight: 700;
     font-size: 22px;
-    padding-top: 70px;
+    padding-top: 5px;
   }
 
   .log-section h4, .log-section h1 {
