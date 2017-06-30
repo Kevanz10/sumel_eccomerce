@@ -74,6 +74,11 @@ $(document).on('turbolinks:load', function() {
   $('.cotizar-click').click(function(event) {
     $('#busqueda-modal').modal()
   });
+
+  $('.mas-button').click(function(event) {
+    $('#mas-button').modal()
+  });
+  
 });
 
 (function ($) {

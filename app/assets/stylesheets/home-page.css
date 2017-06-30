@@ -876,6 +876,10 @@
   margin-left: 25px !important;
 }
 
+.main-products{
+  height: 250px;
+  width: 200px;
+}
 /*Responsive*/
 
 @media (max-width: 768px){

@@ -28,7 +28,7 @@ class SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.save
-        format.html { redirect_to :back, notice: 'Gracias por suscribirse a nuestras noticias, estaremos en contacto.' }
+        format.html { redirect_to '/', notice: 'Gracias por suscribirse a nuestras noticias, estaremos en contacto.' }
         format.json { render :show, status: :created, location: @subscription }
       else
         format.html { render :new }
