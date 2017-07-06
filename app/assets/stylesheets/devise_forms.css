@@ -197,3 +197,89 @@
   left:0!important;
   top: 1px!important;
 }
+
+/*Styles page*/
+   .c-p{
+    height: 295px;
+  }
+
+  .name-product{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .row-products{
+    margin-left: 35px !important;
+    margin-right: auto !important;
+    margin-top: 70px !important;
+    margin-bottom: 150px  !important;
+  }
+
+  .row-products img{
+    width: 150px;
+  }
+
+  .contacto-btn{
+    border-radius: 0;
+    background: #d92e27;
+    color: white;
+    padding: 6px 17px;
+    margin-left: 6px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .saber-mas-bg{
+    color: white;
+    background: #e0514b;
+    padding: 14px 96px;
+    font-size: 12px;
+    font-weight: 
+  }
+
+  .saber-mas-bg:hover{
+    color: white;
+    background: rgba(224, 81, 75, 0.7);
+  }
+/*end*/
+/*responsive*/
+/*Responsive*/
+
+@media (max-width: 768px){
+  .login-first-section{
+    display: none;
+  }
+
+  .search-box{
+    width: auto !important;
+    height: 390px !important;
+  }
+
+  .products{
+    width: auto;
+  }
+
+  .search-input{
+    width: auto !important;
+  }
+
+
+  /*chevere-section*/
+    .c-p{
+      height: 920px !important;
+    }
+    .chevere h1 {
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    .exclamacion{
+      display: none;
+    }
+
+    .content{
+      text-align: center;
+    }
+  /*end*/
+}

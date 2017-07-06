@@ -78,7 +78,7 @@ body{
   }
 
   .row{
-    margin: 0 !important;
+    margin: 0;
   }
 	@media (min-width: 768px){
 		.navbar-nav>li {

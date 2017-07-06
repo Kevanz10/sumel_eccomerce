@@ -1,6 +1,6 @@
 <div class="empresa-section">
   <div class="row">
-    <div class="col-md-6 empresa-left-section">
+    <div class="col-md-6 col-xs-12 empresa-left-section">
       <div class="click-menu">
         <div class="text-right">
           <i class="fa fa-window-close-o close-menu" aria-hidden="true"></i>
@@ -34,7 +34,9 @@
           <a href="">TERMINOS</a>  
         </div>
       </div>
-      <img src="/assets/images/full_logo_white.png" class="sumel-logo-blue">
+      <a href="/">
+        <img src="/assets/images/full_logo_white.png" class="sumel-logo-blue">
+      </a>
       <i class="fa fa-bars bar-menu" aria-hidden="true"></i>
       <div class="empresa-left-text">
         <h5>Nos reconocen por ser:</h5>
@@ -49,8 +51,8 @@
           <img src="/assets/images/spacex.png" class="space-logo">
         </div>
         <div class="col-md-9 space-text">
-          <p class="history" style="width: 35%;">- Nuestra historia</p>
-          <p  class="negocio" style="width: 35%;">- Lineas de negocio</p>
+          <p class="history">- Nuestra historia</p>
+          <p  class="negocio">- Lineas de negocio</p>
         </div>
       </div>
       <div class="learn-more">
@@ -77,8 +79,8 @@
         </div>   
       </div>
     </div>
-    <div class="col-md-6 empresa-right-section first"></div>
-    <div class="col-md-6 empresa-right-section history-div">
+    <div class="col-md-6 col-xs-12 empresa-right-section first"></div>
+    <div class="col-md-6 col-xs-12 empresa-right-section history-div">
       <nav class="subscription-bar close-navbar">
         <div>
           <div class="nav navbar-nav navbar-left">
@@ -123,7 +125,7 @@
         <div>
           <div class="nav navbar-nav navbar-left">
             <div class="navbar-left navbar-left">
-              <i class="fa fa-window-close-o" aria-hidden="true"></i>
+              <i class="fa fa-window-close-o left-close-se" aria-hidden="true"></i>
             </div>
           </div> 
           <div>
@@ -383,6 +385,7 @@
     margin-top: 50px;
     padding-bottom: 30px;
     border-bottom: 1px solid #ececec;
+    background: white;
   }
 
   .close-navbar .fa{
@@ -433,6 +436,9 @@
     width: 33px;
   }
 
+  .row{
+    margin: 0 !important;
+  }
   .click-menu{
     height: 110vh;
     background: #09316c;
@@ -530,6 +536,101 @@
 
   .sumel-logo{
     width: 450px;
+  }
+
+  .history{
+    width: 35%;
+  }
+  .negocio{
+    width: 35%;
+  }
+
+  /*responsive*/
+  @media (max-width: 768px){
+    .sumel-logo-blue {
+      width: 200px;
+      padding-top: 42px;
+      margin-left: 29px;
+    }
+
+    .click-menu {
+      width: 44%;
+    }
+
+    .empresa-left-text h1{
+      font-size: 38px;
+      margin-top: 30px;
+    }
+
+    .empresa-left-text p{
+      font-size: 17px;
+    }
+
+    .space-logo{
+      display: none;
+    }
+
+    .history{
+      width: 100%;
+      text-align: center;
+    }
+    .negocio{
+      width: 100%;
+      text-align: center;
+    }
+
+    .learn-more {
+      margin-left: 0; 
+      text-align: center;
+    }
+
+    .conectate{
+      display: none;
+    }
+
+    .empresa-left-section {
+      height: 100vh;
+    }
+
+    .history-img {
+      width: 300px;
+    }
+
+    .navbar-nav {
+      text-align: center;
+    }
+
+    .right-nav-history{
+      display: none;
+    }
+
+    .close-navbar {
+      height: 50px !important;
+    }
+
+    .history-div .content{
+      padding-left: 0;
+    }
+
+    .ver-catalogo{
+      top: 0;
+      left: 0;
+      margin-bottom: 20px;
+    }
+
+    .sumel-logo {
+      width: 250px;
+      margin-top: 80px;
+    }
+
+    .left-close-se{
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .content.content-2 .row .col-md-7{
+      margin-bottom: 40px !important;
+    }
   }
 </style>
 
