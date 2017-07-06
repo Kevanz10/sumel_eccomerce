@@ -24,8 +24,8 @@
       <% products.each do |product| %>
         <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
         <div  data-hook="products_list_item" >
-          <div class="col-md-3 text-center box-product">
-            <div>
+          <div class="col-md-3 text-center">
+            <div class="box-product">
               <p class="name-product">
                 <label for="">
                     <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
