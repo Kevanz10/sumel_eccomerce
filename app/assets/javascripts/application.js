@@ -78,6 +78,31 @@ $(document).on('turbolinks:load', function() {
   $('.mas-button').click(function(event) {
     $('#mas-button').modal()
   });
+
+  $('.contact-sumel').click(function(event) {
+    $('#contacto-sumel-modal').modal()
+  });
+
+  $('.requerir-btn').click(function(event) {
+    $('#requerir-acceso-modal').modal()
+  });
+
+  // Toogle session view
+  $('.dos').click(function(event) {
+    $('.dos-text').toggle('600')
+  });
+
+  $('.uno').click(function(event) {
+    $('.uno-display').toggle('600')
+  })
+
+  $('.cuatro').click(function(event) {
+    $('.cuatro-text').toggle('600')
+  })
+
+  $('.tres').click(function(event) {
+    $('.tres-text').toggle('600')
+  })  
 });
 
 (function ($) {

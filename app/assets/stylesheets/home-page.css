@@ -136,7 +136,7 @@ body{
   }
 
   .logoImage{
-    width: 40%;
+    width: 180px;
     padding-top: 15px;
     margin-left: 42px;
   }
@@ -888,118 +888,107 @@ body{
 /*Responsive*/
 
 @media (max-width: 768px){
-  /*Navbar*/
-  .logoImage {
-    margin-left: 10px;
-  }
 
-  /*First section*/
-  .bgExercise h1 {
-    padding-top: 100px;
-    font-size: 51px;
-    font-weight: 900;
-  }
-  
-  /*Products section*/
+  /*first section*/
+    .bgExercise div{
+      width: auto;
+    }
 
-  .productSection .text-right{
-    text-align: center !important;
-  }
+    .todo {
+      font-size: 120px;
+    }
 
-  .productSection .text-left{
-    text-align: center !important;
-  }
+    .login-bar{
+      display: none;
+    }
+  /*end*/
 
-  .productSection p {
-    margin: 0 auto;
-    color: #acb4b6;
-    font-size: 17px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 300;
-    padding: 30px 20px;
-    width: auto;
-  }
+  /*sumel logo section*/
+    .logo {
+      width: 210px;
+    }
 
-  .productSection .send-message {
-    margin: 10px 0 !important;
-  }
+    .productSection p{
+      width: auto;
+      padding-bottom: 0;
+    }
 
-  .subscribeSection {
-    margin-top: 40px;
-  }
+    .productsDescription{
+      padding-top: 65px;
+    }
+
+    .productSection h1{
+      font-size: 30px;
+    }
+
+    .cotizar-button{
+      margin-top: 10px;
+    }
+
+    .block-text, .block-text2, .block-text3 {
+      padding-top: 50%;
+    }
+
+    .block-text p, .block-text2 p, .block-text3 p {
+      margin-bottom: 20px !important ;
+    }
+
+    .block-text h3, .block-text2 h3, .block-text3 h3 {
+      width: 80%;
+    }
+
+    .photo1, .photo2, .photo3{
+      background-size: 100% 100%;
+    }
+
+  /*end*/
+
+  /*sedes*/
+    .sedes {
+      height: 1600px;
+    }
+  /*end*/
+
+  /*saber-mas*/
+    .saber-mas .bg-home3{
+      display: none;
+    }
+
+    .saber-mas .bluebg-home h1:nth-child(1){
+      margin-top: 0;
+      padding-top: 60px;
+    }
+
+    .bluebg-home{
+      padding-left: 40px !important;
+    }
+  /*end*/
+
+  /*chevere-section*/
+    .chevere{
+      height: 920px;
+    }
+    .chevere h1 {
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    .exclamacion{
+      display: none;
+    }
+
+    .content{
+      text-align: center;
+    }
+  /*end*/
+
+  /*subscription*/
+    .subscription-bar {
+      height: 136px !important;
+    }
+    .subscription-bar .col-md-6.text-right{
+      display: none;
+    }
+  /*end*/
 }
-
-@media (min-width: 768px) and (max-width: 1000px) {
-
-  .productSection p {
-    width: 100%;
-    padding: 0 50px;  
-  }
-}
-
-@media (max-width:1000px){
-
-  .productSection .text-right{
-    text-align: center !important;
-  }
-
-  .productSection .text-left{
-    text-align: center !important;
-  }
-
-  .productsDescription {
-    padding-top: 70px;
-    padding-bottom: 40px;
-  }
-}
-
-
-@media (max-width:991px){
-  .yellowSection, .yellowSection h1 {
-    width: 100%;
-    text-align: center;
-    height: auto;
-  }
-
-  .yellowSection input {
-    margin-bottom: 10px;
-    border-radius: 0;
-  }
-
-  .subscribeSection button {
-    margin-bottom: 30px;
-    margin-top: 30px;
-  }
-
-  .topProducts{
-    text-align: center;
-    margin-bottom: 30px;
-  }
-}
-
-
-@media (min-width:1001px){
- .navbar-content{
-  margin-right: -15px !important;
-  margin-left: -30px !important;
-  }
-}
-
-
-@media (min-width:768px) and (max-width:992px){
-  .fixed-width{
-    width: 100% !important;
-  }
-
-  .blackFooter {
-    height: 390px;
-  }
-}
-
-
-@media (min-width:992px){
-  .fixed-width{
-    width: 12.333333% !important;
-  }
-}
-
+/*end*/

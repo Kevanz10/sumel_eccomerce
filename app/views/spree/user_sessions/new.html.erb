@@ -1,56 +1,79 @@
 <div class="login-first-section">
   <div class="felicidad-box">
-    <div class="numero-dos">
-      <div class="dos">
-        <p>2</p>
-      </div>
-      <div class="dos-text">
-        <p>
-          Calidad de vida
-        </p>
-      </div> 
-    </div>
 
-    <div class="numero-uno">
-      <div class="uno">
-        <p>1</p>
+    <div class="row">
+      <div class="col-md-6" style="height: 260px;">
+        <div class="row numero-dos">
+          <div class="col-md-6">
+            <div class="dos-text">
+              <p>
+                Calidad de vida
+              </p>
+            </div> 
+          </div>
+          <div class="col-md-6">
+            <div class="dos">
+              <p>2</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="uno-text felicidad">
-        <p>
-          Felicidad
-        </p>
-      </div> 
-      <br>
-      <div class="uno-text top-40">
-        <p style="color: #2e497e; font-weight: 400;"> 
-          No hay medicina que cure lo que cura la felicidad
-        </p>
-        <br>
-        <br>
-        <a href="/catalog" class="btn-conocer">CONOCER MÁS</a>
-      </div> 
-    </div>
-
-    <div class="numero-tres">
-      <div class="tres">
-        <p>3</p>
+      <div class="col-md-6" style="height: 260px; padding-top: 20px;">
+        <div class="row numero-uno">
+          <div class="col-md-2">
+            <div class="uno">
+              <p>1</p>
+            </div>
+          </div>
+          <div class="col-md-6 uno-display">
+            <div class="uno-text felicidad">
+              <p>
+                Felicidad
+              </p>
+            </div> 
+            <br>
+            <div class="uno-text top-40">
+              <p style="color: #2e497e; font-weight: 400;"> 
+                No hay medicina que cure lo que cura la felicidad
+              </p>
+              <br>
+              <br>
+              <a href="/catalog" class="btn-conocer">CONOCER MÁS</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="tres-text">
-        <p>
-          Sonrisas sin fin
-        </p>
-      </div> 
     </div>
     
-    <div class="numero-cuatro">
-      <div class="cuatro">
-        <p>4</p>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row numero-cuatro">
+          <div class="col-md-6">
+            <div class="cuatro-text">
+              <p>
+                ¿Limites?
+              </p>
+            </div> 
+          </div> 
+          <div class="col-md-6">
+            <div class="cuatro">
+              <p>4</p>
+            </div>
+          </div>       
+        </div>
       </div>
-      <div class="cuatro-text">
-        <p>
-          ¿Limites?
-        </p>
-      </div> 
+      <div class="col-md-5">
+        <div class="numero-tres">
+          <div class="tres">
+            <p>3</p>
+          </div>
+          <div class="tres-text">
+            <p>
+              Sonrisas sin fin
+            </p>
+          </div> 
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -109,7 +132,7 @@
         </button>
         <br>
         <br>
-        <%= link_to 'CONTACTO SUMEL', {}, class: 'contact-sumel' %>
+        <a href="" class='contact-sumel' data-toggle="modal" data-target="contacto-sumel-modal">CONTACTO SUMEL</a>
         <br>
         <br>
         <br>
@@ -244,6 +267,7 @@
           <fieldset>
             <h5 class="text-center">Ingrese a continuación su información personal</h5>
             <br>
+            <br>
             <!-- Text input-->
             <div class="form-group">
               <%= f.email_field :email, class: 'form-control input-md login-input', tabindex: 1, placeholder: 'Usuario' %>
@@ -255,7 +279,7 @@
                 <%= f.password_field :password, class: 'form-control input-md login-input', tabindex: 2, placeholder: 'Contraseña' %>
               </div>
             </div>
-            <br>
+            <br> 
             <div class="form-group" style="margin-right: 58px;">
               <%= f.submit 'INGRESAR', class: 'btn btn-lg btn-success btn-block button-fixed', tabindex: 3 %>
             </div>
@@ -264,6 +288,7 @@
             </div>
           </fieldset>
         <% end %>
+        <a href="" class="requerir-btn" data-toggle="modal" data-target="requerir-acceso-modal">REQUERIR ACCESO</a>
       </div>
     </div>
   </div>  
@@ -299,6 +324,89 @@
     </div>
   </div>
 </nav>
+
+<!-- modal -->
+<div class="modal fade" id="contacto-sumel-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-contant" role="document" style="margin-top: 161px;">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <img class="modal-logo" src="/assets/images/full_logo_blue.png">
+            <br>
+            <br>
+            <img class="img-contact" src="/assets/images/contact-photo.png">
+            <br>
+            <br>
+            <p style="color: #5d5d5d; text-align: center;">Aseguramos la felicidad de nuestros clientes</p>
+            <br>
+          </div>
+          <div class="col-md-6" style="padding-left: 50px;">  
+            <h1 style="color: #1254A8; text-align: center;">¿Contacto Sumel?</h1>
+            <p class="text-right" style="color: #5d5d5d; font-size: 16px;">Escríbenos</p>
+            <br>
+            <div class="form-container">
+              <%= form_tag("/contact-message", method: "post") do %>
+                <%= text_field_tag "message[name]", "", placeholder: 'TU NOMBRE', class: 'input-style form-control', required: true%>
+                <%= text_field_tag "message[email]", "", placeholder: 'EMAIL', class: 'input-style form-control', type: 'email', required: true%>
+                <%= text_field_tag "message[product]", "", placeholder: 'PHONE', class: 'input-style form-control', type: 'number', required: true%>
+                <br>
+                <%= submit_tag("Enviar", class: "modal-submit")%>
+              <% end %>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal -->
+<div class="modal fade" id="requerir-acceso-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-contant" role="document" style="margin-top: 161px;">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <img class="modal-logo" src="/assets/images/full_logo_blue.png">
+            <br>
+            <br>
+            <img class="img-contact" src="/assets/images/contact-photo.png">
+            <br>
+            <br>
+            <p style="color: #5d5d5d; text-align: center;">Aseguramos la felicidad de nuestros clientes</p>
+            <br>
+          </div>
+          <div class="col-md-6" style="padding-left: 50px;">  
+            <h1 style="color: #1254A8; text-align: center;">¿Requerir acceso?</h1>
+            <p class="text-right" style="color: #5d5d5d; font-size: 16px;">Escríbenos</p>
+            <br>
+            <div class="form-container">
+              <%= form_tag("/contact-message", method: "post") do %>
+                <%= text_field_tag "message[name]", "", placeholder: 'TU NOMBRE', class: 'input-style form-control', required: true%>
+                <%= text_field_tag "message[email]", "", placeholder: 'EMAIL', class: 'input-style form-control', type: 'email', required: true%>
+                <%= text_field_tag "message[product]", "", placeholder: 'ASUNTO (Requerir acceso)', class: 'input-style form-control', required: true%>
+                <br>
+                <%= submit_tag("Enviar", class: "modal-submit")%>
+              <% end %>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
 <style>
   .login-bar nav{
     margin-bottom: 0;
@@ -406,7 +514,7 @@
   }
 
   .forgot-password-div{
-    padding-bottom: 75px;
+    padding-bottom: 40px;
     margin-right: 57px;
   }
 
@@ -480,19 +588,23 @@
   .numero-dos{
     position: relative;
     top: 126px;
-    left: 250px;
+    /*left: 250px;*/
   }
 
   .numero-tres{
     position: relative;
     top: 156px;
-    left: 200px;
+    /*left: 200px;*/
   }
 
   .numero-cuatro{
     position: relative;
     top: 156px;
-    left: 300px;
+    /*left: 300px;*/
+  }
+
+  .uno-display{
+    display: none;
   }
 
 
@@ -531,25 +643,26 @@
     margin: 0 auto;
     text-align: center;
     background: white;
-    width: 31%;
+    width: 392px;
     height: 116px;
     border-radius: 10px;
     position: relative;
     bottom: 18px;
     font-size: 16px;
-    left: 315px;
+    /*left: 315px;*/
   } 
 
   .felicidad{
     height: 35px;
-    width: 15%;
+    width: 54%;
     background: #e0514b;
     color: white;
     font-size: 16px;
     margin-right: 367px;
     position: relative;
     bottom: 42px;
-    left: -30px;
+    /*left: -30px;*/
+    margin-top: 62px;
   }
 
   .calidad{
@@ -575,11 +688,13 @@
   }
 
   .dos-text{
+    display: none;
     position: relative;
-    left: -149px;
-    bottom: 44px;
+    left: 20px;
+    /* bottom: 44px; */
+    top: 15px;
     background: white;
-    width: 10%;
+    width: 90%;
     border-radius: 8px;
     padding-top: 8px;
     height: 35px;
@@ -589,25 +704,29 @@
   }
 
   .cuatro-text{
+    display: none;
     position: relative;
-    left: -140px;
+    /*left: -140px;*/
     bottom: 40px;
     background: white;
-    width: 9%;
+    width: 90%;
     border-radius: 8px;
     padding-top: 8px;
     height: 35px;
     text-align: center;
     color: #e0514b;
     font-weight: 700;
+    top: 15px;
+    left: 20px;
   }
 
   .tres-text{
+    display: none;
     position: relative;
-    left: 116px;
+    left: 156px;
     bottom: 43px;
     background: white;
-    width: 11%;
+    width: 40%;
     border-radius: 8px;
     padding-top: 8px;
     height: 35px;
@@ -633,6 +752,19 @@
 
   .top-40 p{
     top: 40%;
+  }
+
+  .requerir-btn{
+    margin-top: 20px;
+    padding: 12px 74px;
+    background: #e0514b;
+    color: white;
+    font-size: 12px;
+  }
+
+  .requerir-btn:hover{
+    background: red;
+    color: white;
   }
 
   @media (min-width: 768px){
