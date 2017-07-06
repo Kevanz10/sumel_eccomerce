@@ -531,17 +531,17 @@ body{
   }
 
   .sedes-bg .col-md-4.color1 {
-    background: url(/assets/images/ARMENIA.jpg);
+    background: url(/assets/images/armenia_bg.jpg);
     background-size: 100% 100%;
     height: 510px;
   }
   .sedes-bg .col-md-4.color2 {
-    background: url(/assets/images/MEDELLIN.jpg);
+    background: url(/assets/images/medellin_bg.jpg);
     background-size: 100% 100%;
     height: 510px;
   }
   .sedes-bg .col-md-4.color3 {
-    background: url(/assets/images/PEREIRA.jpg);
+    background: url(/assets/images/pereira_bg.jpg);
     background-size: 100% 100%;
     height: 510px;
   }
