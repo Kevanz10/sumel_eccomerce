@@ -14,6 +14,6 @@ class StaticController < Spree::StoreController
   end
 
   def compute_layout
-    action_name == "empresa" ? "test" : "spree/spree_application" 
+    action_name == "empresa" ? "spree/test" : "spree/spree_application" 
   end
 end

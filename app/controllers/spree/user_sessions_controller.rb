@@ -1,5 +1,4 @@
 class Spree::UserSessionsController < Devise::SessionsController
-  layout 'test'
   helper 'spree/base'
 
   include Spree::Core::ControllerHelpers::Auth
@@ -40,7 +39,7 @@ class Spree::UserSessionsController < Devise::SessionsController
   def resolve_layout
     case action_name
     when "new"
-      "layouts/test"
+      "layouts/spree/test"
     end
   end
 end
