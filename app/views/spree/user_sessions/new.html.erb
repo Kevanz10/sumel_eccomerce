@@ -102,6 +102,8 @@
   </nav>
 </div>
 <div class="login-form text-center">
+  <br>
+  <br>
   <h4>¿Qué tipo de usuario eres?</h4>
 
   <div class="row log-section">
@@ -115,7 +117,7 @@
         <!-- Button trigger modal -->
         <br>
         <br>
-        <button type="button" class="btn btn-primary btn-lg cities-button" data-toggle="modal" data-target="#myModal">
+        <button type="button" class="btn btn-primary btn-lg cities-button medellin">
           Medellín
         </button>
         <br>
@@ -136,13 +138,13 @@
         <br>
         <br>
         <br>
-        <%= link_to 'VER TODOS LOS PRODUCTOS', root_path, class: 'products-sumel' %>
+        <a href="/catalog" class='products-sumel'>VER TODOS LOS PRODUCTOS</a>
         <br>
         <br>
         <br>
       </div>
       <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal fade" id="medellin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -152,10 +154,10 @@
               <img src="/assets/images/logo_blue.png" class="logo-login">
               <h4 class="modal-title" id="myModalLabel">Medellín</h4>
               <div class="row">
-                <div class="col-md-6 text-right">
+                <div class="col-md-5 text-right">
                   <i class="fa fa-whatsapp" aria-hidden="true" style="font-size: 25px; padding-top: 16px;"></i>
                 </div>
-                <div class="col-md-6 text-left">
+                <div class="col-md-7 text-left">
                   <h4 id="myModalLabel"> (4) 444 01 88</h4>
                 </div>
                 <br>

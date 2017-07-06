@@ -87,6 +87,10 @@ $(document).on('turbolinks:load', function() {
     $('#requerir-acceso-modal').modal()
   });
 
+  $('.medellin').click(function(event) {
+      $('#medellin').modal()
+    });
+
   // Toogle session view
   $('.dos').click(function(event) {
     $('.dos-text').toggle('600')
