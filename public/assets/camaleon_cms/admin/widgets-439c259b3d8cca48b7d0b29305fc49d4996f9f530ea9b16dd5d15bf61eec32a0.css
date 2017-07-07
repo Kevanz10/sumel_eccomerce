@@ -1,0 +1,31 @@
+/* line 2, /Users/voodoonoise/.rvm/gems/ruby-2.3.1/bundler/gems/camaleon-cms-fa2224810211/app/assets/stylesheets/camaleon_cms/admin/widgets.css.scss */
+#content-widget .panel-widget {
+  cursor: move;
+}
+/* line 4, /Users/voodoonoise/.rvm/gems/ruby-2.3.1/bundler/gems/camaleon-cms-fa2224810211/app/assets/stylesheets/camaleon_cms/admin/widgets.css.scss */
+#content-widget .panel-widget, #content-widget .panel-widget * {
+  color: #fff;
+}
+/* line 6, /Users/voodoonoise/.rvm/gems/ruby-2.3.1/bundler/gems/camaleon-cms-fa2224810211/app/assets/stylesheets/camaleon_cms/admin/widgets.css.scss */
+#content-widget .panel-widget .shortcode {
+  cursor: default;
+  width: 100%;
+}
+
+/* line 13, /Users/voodoonoise/.rvm/gems/ruby-2.3.1/bundler/gems/camaleon-cms-fa2224810211/app/assets/stylesheets/camaleon_cms/admin/widgets.css.scss */
+#content-sidebar .sidebar-body {
+  min-height: 150px;
+}
+/* line 15, /Users/voodoonoise/.rvm/gems/ruby-2.3.1/bundler/gems/camaleon-cms-fa2224810211/app/assets/stylesheets/camaleon_cms/admin/widgets.css.scss */
+#content-sidebar .sidebar-body .panel-default:hover {
+  cursor: move;
+}
+/* line 19, /Users/voodoonoise/.rvm/gems/ruby-2.3.1/bundler/gems/camaleon-cms-fa2224810211/app/assets/stylesheets/camaleon_cms/admin/widgets.css.scss */
+#content-sidebar form {
+  overflow: hidden;
+}
+
+/* line 24, /Users/voodoonoise/.rvm/gems/ruby-2.3.1/bundler/gems/camaleon-cms-fa2224810211/app/assets/stylesheets/camaleon_cms/admin/widgets.css.scss */
+.ui-draggable-dragging {
+  z-index: 999999999;
+}
