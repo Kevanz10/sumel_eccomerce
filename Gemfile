@@ -93,3 +93,14 @@ gem 'spree_braintree_vzero', github: 'spree-contrib/spree_braintree_vzero'
 gem 'active_shipping'
 
 gem 'spree_active_shipping', github: 'spree-contrib/spree_active_shipping'
+
+gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
+
+gem 'draper', github: 'audionerd/draper', branch: 'rails5'
+
+gem "camaleon_cms",'2.4.3.8', git: 'https://github.com/mauricioSuaza/camaleon-cms'
+
+
+#################### Camaleon CMS include all gems for plugins and themes ####################
+require './lib/plugin_routes'
+instance_eval(PluginRoutes.draw_gems)

@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/audionerd/draper.git
+  revision: e816e0e5876b76c648c0928f1c3f2aa2c7a3d1f2
+  branch: rails5
+  specs:
+    draper (2.1.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
+
+GIT
   remote: git://github.com/masterexploder/font_assets.git
   revision: ae8057117df86204b9ad5894e47bcbbe1e1fb4e6
   specs:
@@ -96,6 +107,15 @@ GIT
     spree_gateway (3.2.0.beta)
       spree_core (>= 3.1.0, < 4.0)
 
+GIT
+  remote: https://github.com/rails/activemodel-serializers-xml
+  revision: dd9c0acf26aab111ebc647cd8deb99ebc6946531
+  specs:
+    activemodel-serializers-xml (1.0.1)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -176,8 +196,30 @@ GEM
       sass (>= 3.3.4)
     braintree (2.74.0)
       builder (>= 2.0.0)
+    breadcrumbs_on_rails (3.0.1)
     builder (3.2.3)
     byebug (9.0.6)
+    cama_contact_form (0.0.24)
+      rails
+    cama_meta_tag (1.4)
+      rails (>= 4.1.0)
+    camaleon_cms (2.4.3.8)
+      aws-sdk (~> 2)
+      bcrypt
+      breadcrumbs_on_rails
+      cama_contact_form (~> 0.0.16)
+      cama_meta_tag
+      cancancan (~> 1.10)
+      coffee-rails
+      draper (>= 1.3)
+      font-awesome-rails
+      jquery-rails
+      meta-tags (~> 2.0)
+      mini_magick
+      sass-rails (<= 5.0.6)
+      tinymce-rails (~> 4.3)
+      will_paginate
+      will_paginate-bootstrap
     camertron-eprun (1.1.1)
     cancancan (1.10.1)
     canonical-rails (0.2.0)
@@ -234,6 +276,8 @@ GEM
     fog-xml (0.1.3)
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     formatador (0.2.5)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
@@ -275,11 +319,14 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.5)
       mime-types (>= 1.16, < 4)
+    meta-tags (2.4.1)
+      actionpack (>= 3.2.0, < 5.2)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mimemagic (0.3.2)
+    mini_magick (4.7.2)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     monetize (1.6.0)
@@ -364,6 +411,7 @@ GEM
       polyamorous (~> 1.3)
     rdoc (4.3.0)
     redis (3.3.3)
+    request_store (1.3.2)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -413,6 +461,8 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
+    tinymce-rails (4.6.4)
+      railties (>= 3.1.1)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
@@ -441,16 +491,22 @@ GEM
     websocket-extensions (0.1.2)
     whenever (0.9.7)
       chronic (>= 0.6.3)
+    will_paginate (3.1.6)
+    will_paginate-bootstrap (1.0.1)
+      will_paginate (>= 3.0.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   active_shipping
+  activemodel-serializers-xml!
   aws-sdk (>= 2.0)
   byebug
+  camaleon_cms (>= 2.4.3)
   coffee-rails (~> 4.1.0)
   dalli
+  draper!
   fog-aws
   font_assets!
   jbuilder (~> 2.0)

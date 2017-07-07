@@ -1,9 +1,4 @@
 <div class="">
-  <% content_for :head do %>
-    <% if products.respond_to?(:total_pages) %>
-      <%= rel_next_prev_link_tags products %>
-    <% end %>
-  <% end %>
 
   <div data-hook="products_search_results_heading">
     <% if products.empty? %>
@@ -36,7 +31,7 @@
               <%= small_image(product, itemprop: "image") %><br/>
             <% end %>
 
-            
+
             <p class="subtitle">
               <label for="">
                 <%= number_to_currency(product.price.to_f, precision: 1) %>
@@ -79,7 +74,7 @@
     <div class="col-md-4">
       <div class="row">
         <div class="col-md-11">
-          <h1>Servimos con<br> sentido humano</h1> 
+          <h1>Servimos con<br> sentido humano</h1>
         </div>
          <div class="col-md-1">
            <img src="/assets/images/exclamacion.png" class="exclamacion">
@@ -151,7 +146,7 @@
             <br>
           </div>
           <div class="col-md-6" style="padding: 0">
-        
+
             <i class="fa fa-suitcase" aria-hidden="true"></i>
             <a href="">Sede Pereira: <br> Calle 24 N° 6-14</a>
             <br>
@@ -172,7 +167,7 @@
             <i class="fa fa-mobile" aria-hidden="true"></i>
             <a href=""> 321 701 0685</a>
             <br>
-          </div>        
+          </div>
          <!--  <i class="fa fa-inbox" aria-hidden="true"></i>
           <a href="">test@test.com</a>
           <br>
@@ -228,11 +223,11 @@
     background: #e0514b;
     padding: 14px 96px;
     font-size: 12px;
-    font-weight: 
+    font-weight:
   }
 
   .saber-mas-bg:hover{
     color: white;
     background: rgba(224, 81, 75, 0.7);
-  } 
+  }
 </style>
