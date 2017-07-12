@@ -68,6 +68,7 @@
         <% url = spree.product_path(Spree::Product.first, taxon_id: @taxon.try(:id)) %>
         <div class="row">
           <% if !spree_current_user%>
+            <br>
             <div class="col-md-4 col-md-offset-2">
               <%= link_to 'COTIZAR', url, class: "btn cotizar-button"%>
             </div>
