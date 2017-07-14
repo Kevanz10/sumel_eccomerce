@@ -5,10 +5,10 @@
     <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
       <% if taxonomy.root.children.any? %>
         <div class="row">
-          <div class="col-md-5 text-right">
+          <div class="col-md-2 text-right">
             <h4 class='taxonomy-root'>Buscar Por Categorías</h4>
           </div>  
-          <div class="col-md-5 inline">
+          <div class="col-md-10 inline">
             <%= taxons_tree(taxonomy.root, @taxon, max_level) %>
           </div>
         </div>
