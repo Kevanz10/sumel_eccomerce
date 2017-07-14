@@ -16,6 +16,7 @@
     <br>
     <div id="products" class="row" data-hook>
       <div class="row row-products">
+       <%= render :partial => 'spree/shared/taxonomies' %>
 
       <% products.each do |product| %>
         <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
@@ -214,7 +215,7 @@
     margin-left: 35px !important;
     margin-right: auto !important;
     margin-top: 20px !important;
-    margin-bottom: 150px  !important;
+    margin-bottom: 90px  !important;
   }
 
   .row-products img{
