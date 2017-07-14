@@ -75,14 +75,14 @@
             <br>
           </div>
           <div class="col-md-6" style="padding-left: 73px;">  
-            <h1 style="color: #1254A8; text-align: right;">¿Quieres conocer alguno de nuestros productos?</h1>
+            <h1 style="color: #1254A8; text-align: right;">Contactanos!</h1>
             <p class="text-right" style="color: #5d5d5d; font-size: 16px;">Escríbenos</p>
             <div class="form-container">
               <%= form_tag("/contact-message", method: "post") do %>
                 <%= text_field_tag "message[name]", "", placeholder: 'TU NOMBRE', class: 'input-style form-control', required: true%>
                 <%= text_field_tag "message[email]", "", placeholder: 'EMAIL', class: 'input-style form-control', type: 'email', required: true%>
-                <%= text_field_tag "message[product]", "", placeholder: 'PHONE', class: 'input-style form-control', type: 'number', required: true%>
-                <%= submit_tag("COTIZAR", class: "modal-submit")%>
+                <%= text_area_tag "message[details]", "", placeholder: 'MESSAGE', class: 'input-style form-control', required: true%>
+                <%= submit_tag("Enviar Mensaje", class: "modal-submit")%>
               <% end %>
             </div>
           </div>

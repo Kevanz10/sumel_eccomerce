@@ -87,25 +87,34 @@ $(document).on('turbolinks:load', function() {
     $('#requerir-acceso-modal').modal()
   });
 
-  $('.medellin').click(function(event) {
-      $('#medellin').modal()
-    });
-
+  
   // Toogle session view
   $('.dos').click(function(event) {
-    $('.dos-text').toggle('600')
+    $('.dos-text').toggle('600');
+    $('.uno-display').hide('600');
+    $('.cuatro-text').hide('600');
+    $('.tres-text').hide('600');
   });
 
   $('.uno').click(function(event) {
-    $('.uno-display').toggle('600')
+    $('.uno-display').toggle('600');
+    $('.dos-text').hide('600');
+    $('.cuatro-text').hide('600');
+    $('.tres-text').hide('600');
   })
 
   $('.cuatro').click(function(event) {
-    $('.cuatro-text').toggle('600')
+    $('.cuatro-text').toggle('600');
+    $('.uno-display').hide('600');
+    $('.dos-text').hide('600');
+    $('.tres-text').hide('600');
   })
 
   $('.tres').click(function(event) {
-    $('.tres-text').toggle('600')
+    $('.tres-text').toggle('600');
+    $('.dos-text').hide('600');
+    $('.uno-display').hide('600');
+    $('.cuatro-text').hide('600');
   })  
 });
 

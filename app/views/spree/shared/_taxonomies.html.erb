@@ -4,9 +4,26 @@
   <% @taxonomies.each do |taxonomy| %>
     <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
       <% if taxonomy.root.children.any? %>
-        <h4 class='taxonomy-root'><%= Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name) %></h4>
-        <%= taxons_tree(taxonomy.root, @taxon, max_level) %>
+        <div class="row">
+          <div class="col-md-5 text-right">
+            <h4 class='taxonomy-root'>Buscar Por Categorías</h4>
+          </div>  
+          <div class="col-md-5 inline">
+            <%= taxons_tree(taxonomy.root, @taxon, max_level) %>
+          </div>
+        </div>
       <% end %>
     <% end %>
   <% end %>
 </nav>
+
+<style>
+
+  .inline{
+    padding-top: 15px;
+  }
+
+  .inline .list-group .list-group-item{
+    display: inline;
+  }
+</style>

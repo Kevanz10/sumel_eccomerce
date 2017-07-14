@@ -10,8 +10,11 @@
       </div>
     <% end %>
   </div>
-  <%= render :partial => 'spree/shared/filters' %>
+  
   <% if products.any? %>
+    <br>
+    <br>
+    <%= render :partial => 'spree/shared/taxonomies' %>
     <div id="products" class="row" data-hook>
       <div class="row row-products">
 
@@ -211,7 +214,7 @@
   .row-products{
     margin-left: 35px !important;
     margin-right: auto !important;
-    margin-top: 70px !important;
+    margin-top: 20px !important;
     margin-bottom: 150px  !important;
   }
 

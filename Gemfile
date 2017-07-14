@@ -98,7 +98,7 @@ gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-se
 
 gem 'draper', github: 'audionerd/draper', branch: 'rails5'
 
-gem "camaleon_cms",'2.4.3.8', git: 'https://github.com/mauricioSuaza/camaleon-cms'
+# gem "camaleon_cms",'2.4.3.8', git: 'https://github.com/mauricioSuaza/camaleon-cms'
 
 
 #################### Camaleon CMS include all gems for plugins and themes ####################
