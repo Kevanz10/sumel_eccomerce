@@ -15,7 +15,7 @@
 }
 
 /*What do you need*/
-  .what-need h4{
+  .what-need .text-center{
     color: #494949;
     margin-top: 120px;
     font-weight: 300;
@@ -30,5 +30,23 @@
 .service-photo{
   width: 488px;
   height: 416px;
+  background: url(/assets/images/mantenimiento_sumel.jpg);
+  background-size: 100% 100%;
+}
+
+.mantenimiento-grey{
   background: #d4d4d6;
+  color: #0038a7;
+  font-size: 400;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.mantenimiento-blue{
+  background: #0038a7;
+  color: white;
+  font-size: 400;
+  width: 30.333333% !important;
+  padding: 10px 0;
+  text-align: center;
 }
