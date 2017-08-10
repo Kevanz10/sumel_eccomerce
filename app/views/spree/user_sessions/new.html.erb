@@ -1,5 +1,5 @@
 <div class="login-first-section">
-  <div class="felicidad-box">
+  <!-- <div class="felicidad-box">
     <div class="row">
       <div class="col-md-6" style="height: 260px;">
         <div class="row numero-dos">
@@ -86,12 +86,12 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="elipse-login">
+  </div> -->
+  <!-- <div class="elipse-login">
     <a href="/">
       <img src="/assets/images/full_logo_blue.png" class="logo-elipse">
     </a>
-  </div>
+  </div> -->
 </div>
 <div class="login-bar">
   <nav class="navbar navbar-default" style="background: #dbd9da">
@@ -362,36 +362,6 @@
 </div>
 <br>
 <br>
-<nav class="subscription-bar">
-  <div class="row">
-    <div class="col-md-6 text-left">
-      <div class="">
-        <h3 class="nav navbar-nav navbar-left left">Inscríbete</h3>
-        <%= form_tag("/subs", method: "post", class: 'sub-form') do %>
-          <%= text_field_tag "subscription[email]", "", placeholder: 'Email', class: 'input-sub form-control', type: 'email', required: true%>
-          <%= submit_tag("ENVIAR", class: "enviar-sub")%>
-        <% end %>
-      </div>
-    </div>
-    <div class="col-md-6 text-right">
-       <div>
-        <!--  <p class="navbar-text navbar-left">Open hours: 8.00-18.00 Mon-Sat</p> -->
-        <div class="nav navbar-nav navbar-right right">
-          <div class="navbar-text navbar-left mr-1">
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-          </div>
-          <div class="navbar-text navbar-left mr-1">
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-          </div>
-          <div class="navbar-text navbar-left">
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-          </div>
-        </div> 
-      </div>
-    </div>
-  </div>
-</nav>
-
 <!-- modal -->
 <div class="modal fade" id="contacto-sumel-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-contant" role="document" style="margin-top: 161px;">

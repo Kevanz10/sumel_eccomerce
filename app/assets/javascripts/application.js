@@ -14,7 +14,24 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require social-share-button
-//= require_tree .
+
+//= require plugins
+//= require main
+
+//= require jquery.themepunch.tools.min
+//= require jquery.themepunch.revolution.min
+
+//= require extensions/revolution.extension.actions.min
+//= require extensions/revolution.extension.carousel.min
+//= require extensions/revolution.extension.kenburn.min
+//= require extensions/revolution.extension.layeranimation.min
+//= require extensions/revolution.extension.migration.min
+//= require extensions/revolution.extension.navigation.min
+//= require extensions/revolution.extension.parallax.min
+//= require extensions/revolution.extension.slideanims.min
+//= require extensions/revolution.extension.video.min
+
+//= require_tree.
 
 
 $(document).on('turbolinks:load', function() {
@@ -120,18 +137,18 @@ $(document).on('turbolinks:load', function() {
 
 (function ($) {
   $(document).on('turbolinks:load', function() {
-    $(function () {
-      $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-          $(".top_panel").hide();
-          $('.home-nav').addClass("navbar home-nav menu navbar-fixed-top fixed-margin");
-        } else {
-          $(".top_panel").show();
-          $('.home-nav').removeClass('navbar-fixed-top');
-          $('.home-nav').addClass("navbar home-nav menu navbar-static-top fixed-margin border-line");
-        }
-      });
-    });
+    // $(function () {
+    //   $(window).scroll(function () {
+    //     if ($(this).scrollTop() > 100) {
+    //       $(".top_panel").hide();
+    //       $('.home-nav').addClass("navbar home-nav menu navbar-fixed-top fixed-margin");
+    //     } else {
+    //       $(".top_panel").show();
+    //       $('.home-nav').removeClass('navbar-fixed-top');
+    //       $('.home-nav').addClass("navbar home-nav menu navbar-static-top fixed-margin border-line");
+    //     }
+    //   });
+    // });
 
     $(".photo1").mouseover(function(e){    
       $(".block-text").css("visibility", "visible");
@@ -155,3 +172,58 @@ $(document).on('turbolinks:load', function() {
     });
   });
 }(jQuery));
+
+jQuery(document).ready(function() {
+  "use strict";
+  var revapi;
+  if ( $("#rev_slider").revolution == undefined ) {
+    revslider_showDoubleJqueryError("#rev_slider");
+  } else {
+    revapi = $("#rev_slider").show().revolution({
+      sliderType: "standard",
+      jsFileLocation: "/assets/js/",
+      sliderLayout: "auto",
+      dottedOverlay:"none",
+      delay: 15000,
+      navigation: {
+        mouseScrollNavigation: "off",
+        onHoverStop: "off",
+        touch: {
+          touchenabled: "on"
+        },
+        arrows: {
+          style: "custom",
+          enable: true,
+          hide_onmobile: false,
+          hide_under: 768,
+          hide_onleave: false,
+          tmp: '',
+          left: {
+            h_align: "left",
+            v_align: "bottom",
+            h_offset: 63,
+            v_offset: 48
+          },
+          right: {
+            h_align: "left",
+            v_align: "bottom",
+            h_offset: 85,
+            v_offset: 48
+          }
+        },
+        bullets: {
+          enable: false
+        }
+      },
+      responsiveLevels: [1200,992,768,480],
+      gridwidth: [870,679,640,480],
+      gridheight: [468,400,360,300],
+      lazyType: "smart",
+      spinner: "spinner2",
+      parallax: {
+        type: "off"
+      },
+      debugMode: false
+    });
+  }
+});

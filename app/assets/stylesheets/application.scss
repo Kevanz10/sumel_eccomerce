@@ -13,7 +13,21 @@
  *= require_self
  *= require social-share-button
  *= require header
- *= require_tree .
+ *= require plugins.min
+ *= require style
+ *= require catalog
+ *= require devise_forms
+ *= require form
+ *= require_tree
+
+ *= require terms
+ 
+ 
+
+
+ 
+
+
  */
  @import "social-share-button";
 

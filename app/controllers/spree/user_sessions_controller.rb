@@ -6,8 +6,6 @@ class Spree::UserSessionsController < Devise::SessionsController
   include Spree::Core::ControllerHelpers::Order
   include Spree::Core::ControllerHelpers::Store
 
-  layout :resolve_layout
-
   def create
     authenticate_spree_user!
 
@@ -36,10 +34,5 @@ class Spree::UserSessionsController < Devise::SessionsController
     end
   end
 
-  def resolve_layout
-    case action_name
-    when "new"
-      "layouts/spree/test"
-    end
-  end
+ 
 end

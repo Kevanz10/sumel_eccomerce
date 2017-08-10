@@ -7,8 +7,6 @@
 <html lang="<%= I18n.locale %>"><!--<![endif]-->
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag  'spree/home/header-tablet'%>
   <head data-hook="inside_head">
     <%= render partial: 'spree/shared/head' %>
     <script src="https://use.fontawesome.com/e4b26ed800.js"></script>
@@ -97,7 +95,7 @@
         left: 50%;
         background: #1253a7;
         color: white;
-        top: 20%;
+        top: 3%;
       }
     </style>
   </head>
@@ -109,35 +107,100 @@
       <%= flash_messages%>
     </div>
     <%= yield %>
-    <nav class="subscription-bar">
-      <div class="row">
-        <div class="col-md-6 text-left">
-          <div class="">
-            <h3 class="nav navbar-nav navbar-left left">Inscríbete</h3>
-            <%= form_tag("/subs", method: "post", class: 'sub-form') do %>
-              <%= text_field_tag "subscription[email]", "", placeholder: 'Email', class: 'input-sub form-control', type: 'email', required: true%>
-              <%= submit_tag("ENVIAR", class: "enviar-sub")%>
-            <% end %>
-          </div>
-        </div>
-        <div class="col-md-6 text-right">
-           <div>
-            <!--  <p class="navbar-text navbar-left">Open hours: 8.00-18.00 Mon-Sat</p> -->
-            <div class="nav navbar-nav navbar-right right">
-              <div class="navbar-text navbar-left mr-1">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
+     <footer class="footer">
+    <div class="container">
+      <div class="info-bar">
+        <div class="info-bar-col">
+          <h5 class="info-bar-title">CALIDAD EN NUESTROs PRODUCTOS</h5>
+          <p>Siempre queremos lo mejor para ti</p>
+        </div><!-- End .info-bar-col -->
+        <div class="info-bar-col">
+          <h5 class="info-bar-title">SATISFACCIÓN GARANTIZADA</h5>
+          <p>Te ofrecemos lo mejor</p>
+        </div><!-- End .info-bar-col -->
+        <div class="info-bar-col">
+          <h5 class="info-bar-title">SOPORTE EN LINEA</h5>
+          <p>Clientes totalmente satisfechos</p>
+        </div><!-- End .info-bar-col -->
+      </div><!-- End .info-bar -->
+    </div><!-- End .container -->
+    <div class="footer-inner">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-3">
+            <div class="widget widget-about">
+              <h4 class="widget-title">INFORMACIÓN DE CONTACTO</h4>
+              <address>
+                <span>Sede Administrativa:</span>
+                <span>Calle 30 N° 41-09</span>
+                <span>(4) 444 01 88</span>
+                <span>311 635 4073</span>
+                
+                <a href="mailto:info@sumel.net">info@sumel.net</a>
+              </address>
+            </div><!-- End .widget -->
+          </div><!-- End .col-md-3 -->
+
+          <div class="col-sm-6 col-md-3">
+            <div class="widget">
+              <h4 class="widget-title">CENTRO AYUDA</h4>
+
+              <ul class="links">
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Preguntas frecuentes</a></li>
+                <li><a href="#">Políticas de Cambios y Devoluciones</a></li>
+                <li><a href="#">Preguntas, Quejas y Reclamos</a></li>
+                <li><a href="#">Tiendas</a></li>
+              </ul>
+            </div><!-- End .widget -->
+          </div><!-- End .col-md-3 -->
+
+          <div class="clearfix visible-sm"></div><!-- clearfix -->
+
+          <div class="col-sm-6 col-md-3">
+            <div class="widget">
+              <h4 class="widget-title">CLIENTES ACTIVOS</h4>
+
+              <ul class="links">
+                <li><a href="#">Cuenta</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Mi carro</a></li>
+                <li><a href="#">Wishlist</a></li>
+                <li><a href="#">Checkout</a></li>
+              </ul>
+            </div><!-- End .widget -->
+          </div><!-- End .col-md-3 -->
+
+          <div class="col-sm-6 col-md-3">
+            <div class="widget widget-newsletter">
+              <h4 class="widget-title">Noticias</h4>
+              <p>Suscríbete para recibir las ultimas noticias</p>
+              <br>
+              <%= form_tag("/subs", method: "post", class: 'sub-form') do %>
+                <%= text_field_tag "subscription[email]", "", placeholder: 'Email', class: 'form-control', type: 'email', required: true do %>
+                  <img src="/assets/images/icon-newsletter-email.png" alt="Email">
+                <% end %>
+                <br>
+              <% end %>
+
+              <div class="social-icons">
+                <a href="#" class="social-icon" title="Facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="social-icon" title="Twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="social-icon" title="Linkedin"><i class="fa fa-linkedin"></i></a>
               </div>
-              <div class="navbar-text navbar-left mr-1">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </div>
-              <div class="navbar-text navbar-left">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </div>
-            </div> 
-          </div>
-        </div>
-      </div>
-    </nav>
+            </div><!-- End .widget -->
+          </div><!-- End .col-md-3 -->
+        </div><!-- End .row -->
+      </div><!-- End .container -->
+    </div><!-- End .footer-inner -->
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">Online &copy; 2017. All Rights Reserved</p>
+      <img src="/assets/images/cards.png" alt="Payment Methods" class="img-cards">
+      </div><!-- End .container -->
+    </div><!-- End .footer-bottom -->
+  </footer><!-- End .footer -->
     <script type="text/javascript">
       $(document).on('turbolinks:load', function() {
         setTimeout(function () {

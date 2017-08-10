@@ -1,7 +1,7 @@
-<div id="spree-header fixed-margin">
+<!-- <div id="spree-header fixed-margin">
   <nav class="top_panel  hidden-sm hidden-xs">
     <div class="panel-container">
-      <div class="navbar-text navbar-left social-icons">
+      <div class="navbar-text navbar-left hsocial-icons">
         <div class="navbar-text navbar-left">
           <i class="fa fa-facebook" aria-hidden="true"></i>
         </div>
@@ -13,20 +13,6 @@
         </div>
     </div> 
       <div class="topPanelnavRight">
-        <% if spree_current_user %>
-          <a href="/cart" data-hook class="navbar-right add-car" id="link-to-cart"> Add to cart</a>
-          <script>Spree.fetch_cart()</script>
-          <a href="#"></a>
-          <%= link_to Spree.t(:my_account), spree.account_path,  :class => "navbar-text navbar-right" %>
-          <%= link_to Spree.t(:logout), spree.logout_path, :class => "navbar-text navbar-right" %>
-        <% else %>
-          <div id="search-bar" class="navbar-right search-bar-header" data-hook>
-            <%= render partial: 'spree/shared/search' %>
-          </div>
-          <%= link_to 'Ingrese', spree.login_path, :class => "navbar-text navbar-right TEST" %>
-          <%= link_to "Regístrese", spree.signup_path, :class => "navbar-text navbar-right registrese-button" %>
-          <!-- <p class="navbar-text navbar-right o-text"> o </p> -->
-        <% end %>
       </div>
     </div>
   </nav>
@@ -45,15 +31,251 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar-content">
         <ul class="nav navbar-nav navbar-right mainNav">
-          <li><a href="/catalog">Nuestros Productos <em>></em></a></li>
-          <!-- <li><a href="/servicios">Nuestros Servicios <em>></em></a></li> -->
+          <li><a href="/catalog">Nuestros Productos <em>></em></a></li> -->
+          <!-- <li><a href="/servicios">Nuestros Servicios <em>></em></a></li>
           <li><a href="/servicios">Nuestros Servicios <em>></em></a></li>
           <li><a href="/empresa">La Empresa</a></li>
           <li class="contact-click"><a href="" data-toggle="modal" data-target="busqueda-modal">Contáctenos</a></li>
         </ul>
     </div>
   </nav>
-</div>
+</div> -->
+<header class="header sticky-header">
+  <% if spree_current_user %>
+    <div class="container">
+      <a href="/" class="site-logo" title="Shopo - eCommerce Template">
+        <img src="/assets/images/lg_blue.png" alt="Logo" class="custom-logo">
+      </a>
+      <div class="search-form-container">
+        <a href="#" class="search-form-toggle" title="Toggle Search"><i class="fa fa-search"></i></a>
+      
+        <%= form_tag(spree.products_path, method: :get, class: 'fixed-size-total') do %>
+          <div class="dropdown search-dropdown">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
+              Categorias
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Oxigenoterapia</a></li>
+              <li><a href="#">Movilidad</a></li>
+              <li><a href="#">Fisioterapia y Rehabilitacíon</a></li>
+              <li><a href="#">Ayudas para el diario vivir</a></li>
+              <li><a href="#">Cuidado Respiratorio</a></li>
+              <li><a href="#">Diagnostico</a></li>
+              <li><a href="#">Mobiliario Medico</a></li>
+              <li><a href="#">Ozonoterapia</a></li>
+              <li><a href="#">Colonterapia</a></li>
+            </ul>
+          </div><!-- End .dropddown -->
+          <%= search_field_tag :keywords, params[:keywords], placeholder: "Buscar producto", class: "form-control search-tag-input search-input", required: true %>
+          <button type="submit" title="Search" class="btn"><i class="fa fa-search"></i></button>
+        <% end %>
+      </div><!-- End .search-form-container -->
+      <ul class="top-links">
+        <!-- <li>
+          <a href="/cart" data-hook class="add-car" id="link-to-cart"> Add to cart</a>
+            <script>Spree.fetch_cart()</script>
+          <a href="#"></a>
+        </li> -->
+        <li>
+          <%= link_to 'Mi cuenta', spree.account_path, {:style=>'padding-top: 5px', class: "navbar-text"} %>
+        </li> 
+        <li>
+          <%= link_to Spree.t(:logout), spree.logout_path, {:style=>'padding-top: 5px', class: "navbar-text"}%>
+        </li>
+        <!-- Dropdown cart -->
+        <li>
+          <div class="dropdown cart-dropdown">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
+                <span class="cart-icon">
+                    <img src="assets/images/bag.png" alt="Cart">
+                    <span class="cart-count"><%= simple_current_order.item_count%></span>
+                </span>
+                <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <p class="dropdown-cart-info">Tienes <%= simple_current_order.item_count%> productos listos para comprar.</p>
+                <div class="dropdown-menu-wrapper">
+                    <div class="product">
+                        <figure class="product-image-container">
+                            <a href="product.html" title="Product Name">
+                                <img src="assets/images/products/small/product2.jpg" alt="Product Image">
+                            </a>
+                        </figure>
+
+                        <div>
+                            <a href="#" class="btn-delete" title="Delete product" role="button"></a>
+                            <h4 class="product-title"><a href="product.html">Sunglasses</a></h4>
+                            <div class="product-price-container">
+                                <span class="product-price">$110.00</span>
+                            </div><!-- End .product-price-container -->
+                            <div class="product-qty">x1</div><!-- End .product-qty -->
+                        </div><!-- End .product-image-container -->
+                    </div><!-- End .product- -->
+
+                    <div class="product">
+                        <figure class="product-image-container">
+                            <a href="product.html" title="Product Name">
+                                <img src="assets/images/products/small/product1.jpg" alt="Product Image">
+                            </a>
+                        </figure>
+
+                        <div>
+                            <a href="#" class="btn-delete" title="Delete product" role="button"></a>
+                            <h4 class="product-title"><a href="product.html">Leather Belt</a></h4>
+                            <div class="product-price-container">
+                                <span class="product-price">$99.00</span>
+                            </div><!-- End .product-price-container -->
+                            <div class="product-qty">x1</div><!-- End .product-qty -->
+                        </div><!-- End .product-image-container -->
+                    </div><!-- End .product- -->
+                </div><!-- End .droopdowm-menu-wrapper -->
+
+                <div class="cart-dropdowm-action">
+                    <div class="dropdowm-cart-total"><span>TOTAL:</span> <%= simple_current_order.total%></div>
+                    <a href="checkout.html" class="btn btn-primary">Checkout</a>
+                </div><!-- End .cart-dropdown-action -->
+            </div><!-- End .dropdown-menu -->
+          </div><!-- End .cart-dropddown -->
+        </li>
+      </ul>
+      <a href="#" class="sidemenu-btn" title="Menu Toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div><!-- End .container-fluid -->
+  <%else%>
+    <div class="container">
+      <a href="/" class="site-logo" title="Shopo - eCommerce Template">
+        <img src="/assets/images/lg_blue.png" alt="Logo" class="custom-logo">
+      </a>
+      <div class="search-form-container">
+        <a href="#" class="search-form-toggle" title="Toggle Search"><i class="fa fa-search"></i></a>
+      
+        <%= form_tag(spree.products_path, method: :get, class: 'fixed-size') do %>
+          <div class="dropdown search-dropdown">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
+              Categorias
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Oxigenoterapia</a></li>
+              <li><a href="#">Movilidad</a></li>
+              <li><a href="#">Fisioterapia y Rehabilitacíon</a></li>
+              <li><a href="#">Ayudas para el diario vivir</a></li>
+              <li><a href="#">Cuidado Respiratorio</a></li>
+              <li><a href="#">Diagnostico</a></li>
+              <li><a href="#">Mobiliario Medico</a></li>
+              <li><a href="#">Ozonoterapia</a></li>
+              <li><a href="#">Colonterapia</a></li>
+            </ul>
+          </div><!-- End .dropddown -->
+          <%= search_field_tag :keywords, params[:keywords], placeholder: "Buscar producto", class: "form-control search-tag-input search-input", required: true %>
+          <button type="submit" title="Search" class="btn"><i class="fa fa-search"></i></button>
+        <% end %>
+      </div><!-- End .search-form-container -->
+      <ul class="top-links">
+        <li>
+          <a href="/cart" data-hook class="add-car" id="link-to-cart"> Add to cart</a>
+            <script>Spree.fetch_cart()</script>
+          <a href="#"></a>
+        </li>
+        <li>
+          <%= link_to Spree.t(:my_account), spree.account_path, {:style=>'padding-top: 5px', class: "navbar-text"} %>
+        </li> 
+        <li>
+          <%= link_to Spree.t(:logout), spree.logout_path, {:style=>'padding-top: 5px', class: "navbar-text"}%>
+        </li>
+        <!-- Dropdown cart -->
+        <li>
+          <div class="dropdown cart-dropdown">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
+                <span class="cart-icon">
+                    <img src="assets/images/bag.png" alt="Cart">
+                    <span class="cart-count"><%= simple_current_order.item_count%></span>
+                </span>
+                <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <p class="dropdown-cart-info">Tienes <%= simple_current_order.item_count%> productos listos para comprar.</p>
+                <div class="dropdown-menu-wrapper">
+                    <div class="product">
+                        <figure class="product-image-container">
+                            <a href="product.html" title="Product Name">
+                                <img src="assets/images/products/small/product2.jpg" alt="Product Image">
+                            </a>
+                        </figure>
+
+                        <div>
+                            <a href="#" class="btn-delete" title="Delete product" role="button"></a>
+                            <h4 class="product-title"><a href="product.html">Sunglasses</a></h4>
+                            <div class="product-price-container">
+                                <span class="product-price">$110.00</span>
+                            </div><!-- End .product-price-container -->
+                            <div class="product-qty">x1</div><!-- End .product-qty -->
+                        </div><!-- End .product-image-container -->
+                    </div><!-- End .product- -->
+
+                    <div class="product">
+                        <figure class="product-image-container">
+                            <a href="product.html" title="Product Name">
+                                <img src="assets/images/products/small/product1.jpg" alt="Product Image">
+                            </a>
+                        </figure>
+
+                        <div>
+                            <a href="#" class="btn-delete" title="Delete product" role="button"></a>
+                            <h4 class="product-title"><a href="product.html">Leather Belt</a></h4>
+                            <div class="product-price-container">
+                                <span class="product-price">$99.00</span>
+                            </div><!-- End .product-price-container -->
+                            <div class="product-qty">x1</div><!-- End .product-qty -->
+                        </div><!-- End .product-image-container -->
+                    </div><!-- End .product- -->
+                </div><!-- End .droopdowm-menu-wrapper -->
+
+                <div class="cart-dropdowm-action">
+                    <div class="dropdowm-cart-total"><span>TOTAL:</span> $209.00</div>
+                    <a href="checkout.html" class="btn btn-primary">Checkout</a>
+                </div><!-- End .cart-dropdown-action -->
+            </div><!-- End .dropdown-menu -->
+          </div><!-- End .cart-dropddown -->
+        </li>
+        <li><a href="/">Ingresar</a></li>
+      </ul>
+      <a href="#" class="sidemenu-btn" title="Menu Toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div><!-- End .container-fluid -->
+  <%end%>
+  
+</header><!-- End .header -->
+
+<aside class="sidemenu">
+  <div class="sidemenu-wrapper">
+    <div class="sidemenu-header">
+      <a href="index.html" class="sidemenu-logo">
+        <img src="/assets/images/lg_blue.png" alt="logo">
+      </a>
+    </div><!-- End .sidemenu-header -->
+
+    <ul class="metismenu">
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/servicios" aria-expanded="false">Nuestros servicios</a>
+      </li>
+      <li>
+        <a href="/empresa" aria-expanded="false">La empresa</a>
+      </li>
+      <li class="contact-click"><a href="" data-toggle="modal" data-target="busqueda-modal">Contáctenos</a></li>
+    </ul>
+  </div><!-- End .sidemenu-wrapper -->
+</aside><!-- End .sidemenu -->
+
+
 <div class="modal fade" id="busqueda-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-contant" role="document" style="margin-top: 161px;">
     <div class="modal-content">

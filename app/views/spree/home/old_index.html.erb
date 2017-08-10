@@ -1,0 +1,589 @@
+<section class="bgExercise">
+  <div class="container text-center">
+    <h1 class='header__animation-chunk todo'>TODO</h1>
+    <h1 class='header__animation-chunk depende'>DEPENDE DE TI</h1>
+    <p class='header__animation-chunk' style="text-align:center;">Asume este reto con nosotros.</p>
+    <a class="btn see-more header__animation-chunk"  href="/catalog" >CONOCER MÁS</a>
+  </div>
+</section>
+<div class="login-bar">
+  <nav class="navbar navbar-default" style="background: #dbd9da">
+    <div class="container">
+      <div id="navbar" class="navbar-collapse collapse informative-bar-login acerca-nav">
+        <ul class="nav navbar-nav acerca-nav">
+          <li><a href="#">Acerca</a></li>
+          <li><a href="">Cotización</a></li>
+          <li><a href="">Órdenes</a></li>
+          <li><a href="/catalog">Busqueda</a></li>
+          <li><a href="">Términos y Condiciones</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../navbar/">Mapa del sitio</a></li>
+          <li><a href="../navbar-static-top/">Atención al cliente</a></li>
+        </ul>
+      </div>
+      <div class="rounded-blue-arrow"> 
+      </div>
+      <div class="text-center arrow">
+        <i class="fa fa-arrow-up arrow" aria-hidden="true"></i>
+      </div>
+    </div>
+  </nav>
+</div>
+<section class="productSection">
+  <div class="text-center">
+    <img src="/assets/images/logo_blue.png" class="logo">
+    <h5>Son muchos años de</h5>
+    <h1>EXPERIENCIA</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <!-- <div class="row text-uppercase">
+      <div class="col-md-6 text-right">
+        <%= link_to "", class: "btn send-message" do%>
+          <span>
+            <span class="first text-uppercase">shop best sellers</span>
+            <span class="second text-uppercase">shop best sellers</span>
+          </span>
+        <%end%>
+      </div>
+      <div class="col-md-6 text-left">
+        <%= link_to "", class: "btn send-message" do%>
+          <span>
+            <span class="first text-uppercase">view all products</span>
+            <span class="second text-uppercase">view all products</span>
+          </span>
+        <%end%>
+      </div>
+    </div> -->
+      <div class="container productsDescription">
+      <div class="col-md-6 text-center grey-bg">
+        <h3></h3>
+        <h1 class="title-product">
+          <%@product = Spree::Product.first%>
+          <%=  Spree::Product.first.name%>
+        </h1>
+        <%= large_image(Spree::Product.first, itemprop: "image", class: 'main-products') %><br/>
+        <% url = spree.product_path(Spree::Product.first, taxon_id: @taxon.try(:id)) %>
+        <div class="row">
+          <% if !spree_current_user%>
+            <br>
+            <br>
+            <div class="col-md-4 col-md-offset-2">
+              <%= link_to 'COTIZAR', url, class: "btn cotizar-button"%>
+            </div>
+            <div class="col-md-3 col-xs-12">
+              <%= link_to 'VER MÁS', url, class: "btn cotizar-button"%>
+            </div>
+            <%else%>
+              <div class="col-md-12 text-center">
+                <br>
+                <h4 style="font-size: 23px; font-weight: bold; margin-bottom: 0px;">
+                  <%= display_price(@product) %>
+                </h4>
+                <br>
+                <br>
+              </div>
+              <div class="text-center col-md-12">
+                <%= link_to 'VER MÁS', url, class: "btn cotizar-button"%>
+              </div>
+          <%end%> 
+        </div>
+      </div>
+      <div class="col-md-6 photo1">
+        <div class="block-text">
+          <p>Puedes ser lo que tu quieras ser</p>
+          <a href="/blog">
+            <h3 class="text-uppercase">Movilidad</h3>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 photo2">
+        <div class="block-text2">
+          <p>Más allá de los límites</p>
+          <a href="/blog">
+            <h3 class="text-uppercase">Ozonoterapia</h3>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 text-center grey-bg">
+        <h3></h3>
+        <h1 class="title-product">
+          <%=  Spree::Product.first.name%>
+        </h1>
+        <%= large_image(Spree::Product.first, itemprop: "image", class: 'main-products') %><br/>
+        <% url = spree.product_path(Spree::Product.first, taxon_id: @taxon.try(:id)) %>
+        <div class="row">
+          <% if !spree_current_user%>
+            <br>
+            <br>
+            <div class="col-md-4 col-md-offset-2">
+              <%= link_to 'COTIZAR', url, class: "btn cotizar-button"%>
+            </div>
+            <div class="col-md-3 col-xs-12">
+              <%= link_to 'VER MÁS', url, class: "btn cotizar-button"%>
+            </div>
+            <%else%>
+              <div class="col-md-12 text-center">
+                <br>
+                <h4 style="font-size: 23px; font-weight: bold; margin-bottom: 0px;">
+                  <%= display_price(@product) %>
+                </h4>
+                <br>
+                <br>
+              </div>
+              <div class="text-center col-md-12">
+                <%= link_to 'VER MÁS', url, class: "btn cotizar-button"%>
+              </div>
+          <%end%> 
+        </div>
+      </div>
+      <div class="col-md-6 text-center grey-bg">
+        <h3></h3>
+        <h1 class="title-product">
+          <%=  Spree::Product.first.name%>
+        </h1>
+        <%= large_image(Spree::Product.first, itemprop: "image", class: 'main-products') %><br/>
+        <% url = spree.product_path(Spree::Product.first, taxon_id: @taxon.try(:id)) %>
+        <div class="row">
+          <% if !spree_current_user%>
+            <br>
+            <br>
+            <div class="col-md-4 col-md-offset-2">
+              <%= link_to 'COTIZAR', url, class: "btn cotizar-button"%>
+            </div>
+            <div class="col-md-3 col-xs-12">
+              <%= link_to 'VER MÁS', url, class: "btn cotizar-button"%>
+            </div>
+            <%else%>
+              <div class="col-md-12 text-center">
+                <br>
+                <h4 style="font-size: 23px; font-weight: bold; margin-bottom: 0px;">
+                  <%= display_price(@product) %>
+                </h4>
+                <br>
+                <br>
+              </div>
+              <div class="text-center col-md-12">
+                <%= link_to 'VER MÁS', url, class: "btn cotizar-button"%>
+              </div>
+          <%end%> 
+        </div>
+      </div>
+      <div class="col-md-6 photo3">
+        <div class="block-text3">
+          <p>Una vida sin límites</p>
+          <h3 class="text-uppercase">Oxígeno</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section> 
+  <div class="row">
+    <div class="col-md-7 home-noticias hidden-sm hidden-xs">
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="text-center">
+        <img src="/assets/images/full_logo_white.png" class="logo-white-noticias">
+      </div>
+      <h1 class="text-center">
+        NOTICIAS
+      </h1>
+      <h1 class="text-center inf-h1">Infórmate con nuestras últimas noticias</h1>
+      <div class="text-center">
+        <a href="/empresa" class="noticias-mas">Conócenos más</a>
+      </div>
+    </div>
+    <div class="col-md-5 col-xs-12">
+      <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSumel-Biotech-405873106108023&tabs=timeline&width=650&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=245049279252163" width="520" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+    </div>
+  </div>
+</section>
+<section class="sedes text-center">
+  <h1>NUESTRAS SEDES</h1>
+  <div class="row sedes-bg">
+    <div class="col-md-4 color1">
+      <div class="one">
+        <p>
+          ARMENIA
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4 color2">
+      <div class="second">
+        <p>
+          Medellín
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4 color3">
+      <div class="third">
+        <p>
+          PEREIRA
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="saber-mas">
+  <div class="row">
+    <div class="col-md-8 bg-home3"></div>
+    <div class="col-md-4 bluebg-home">
+      <h1>TODO</h1>
+      <h1>DEPENDE</h1>
+      <h1>DE TI</h1>
+      <a href="" class="saber-mas-bg text-center">¿QUIERES SABER MÁS?</a>
+    </div>
+  </div>
+</section>
+<section class="chevere">
+  <div class="row">
+    <div class="col-md-4 col-xs-12">
+      <div class="row">
+        <div class="col-md-11 ">
+          <h1>Servimos con<br> sentido humano</h1> 
+        </div>
+         <div class="col-md-1">
+           <img src="/assets/images/exclamacion.png" class="exclamacion">
+         </div>
+      </div>
+    </div>
+    <div class="col-md-8 col-xs-12">
+      <div class="row content">
+        <div class="col-md-2">
+          <h5>INFORMACIÓN</h5>
+          <a href="">Nosotros</a>
+          <br>
+          <a href="">Términos</a>
+          <br>
+          <a href="">Búsqueda</a>
+          <br>
+          <a href="">Órdenes</a>
+          <br>
+        </div>
+        <div class="col-md-3">
+          <h5 class="text-center">PRODUCTOS</h5>
+          <div class="col-md-6" style="padding: 0;">
+            <a href="">Oxigenoterapia</a>
+            <br>
+            <a href="">Movilidad</a>
+            <br>
+            <a href="">Fisioterapia y rehabilitacion</a>
+            <br>
+            <a href=""> Ayudas para el diario vivir</a>
+            <br>
+            <a href=""> Cuidado Respiratorio</a>
+            <br>
+          </div>
+          <div class="col-md-6">
+            <a href=""> Diagnostico</a>
+            <br>
+            <a href=""> Mobiliario medico</a>
+            <br>
+            <a href="">Ozonoterapia</a>
+            <br>
+            <a href="">Colonterapia</a>
+            <br>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <h5>SERVICIOS</h5>
+          <a href="">Alquiler</a>
+          <br>
+          <a href="">Mantenimiento</a>
+        </div>
+        <div class="col-md-5">
+          <h5>EMPRESA DETALLES</h5>
+          <div class="col-md-6" style="padding: 0">
+            <i class="fa fa-suitcase" aria-hidden="true"></i>
+            <a href="">Sede Itagüí: <br> Calle 30 N° 41-09</a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href="">(4) 444 01 88 </a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href=""> 311 635 4073 </a>
+            <br>
+            <br>
+            <i class="fa fa-suitcase" aria-hidden="true"></i>
+            <a href="">Sede Medellín: <br> Carrera 48 N°7-380 <br>
+            Mall Comercial Vegas 10</a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href="">(4) 444 01 88 </a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href=""> 316 523 4269</a>
+            <br>
+          </div>
+          <div class="col-md-6" style="padding: 0">
+        
+            <i class="fa fa-suitcase" aria-hidden="true"></i>
+            <a href="">Sede Pereira: <br> Calle 24 N° 6-14</a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href="">(6) 3255690 </a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href=""> 314 888 0021 </a>
+            <br>
+            <br>
+            <i class="fa fa-suitcase" aria-hidden="true"></i>
+            <a href="">Sede Armenia: <br> Carrera 12 N° 1A Norte 20 Edificio Centro Medico Empresarial Uninorte Local   105
+           </a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href="">(6) 746 3334 </a>
+            <br>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+            <a href=""> 321 701 0685</a>
+            <br>
+          </div>
+         <!--  <i class="fa fa-inbox" aria-hidden="true"></i>
+          <a href="">test@test.com</a>
+          <br>
+          <i class="fa fa-skype" aria-hidden="true"></i>
+          <a href="">Shop.test</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<nav class="subscription-bar">
+      <div class="row">
+        <div class="col-md-6 text-left">
+          <div class="">
+            <h3 class="nav navbar-nav navbar-left left">Inscríbete</h3>
+            <%= form_tag("/subs", method: "post", class: 'sub-form') do %>
+              <%= text_field_tag "subscription[email]", "", placeholder: 'Email', class: 'input-sub form-control', type: 'email', required: true%>
+              <%= submit_tag("ENVIAR", class: "enviar-sub")%>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+           <div>
+            <!--  <p class="navbar-text navbar-left">Open hours: 8.00-18.00 Mon-Sat</p> -->
+            <div class="nav navbar-nav navbar-right right">
+              <div class="navbar-text navbar-left mr-1">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </div>
+              <div class="navbar-text navbar-left mr-1">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </div>
+              <div class="navbar-text navbar-left">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </nav>
+<style>
+  /*end asdasda*/
+  .login-bar nav{
+    margin-bottom: 0;
+    border-top: 3px solid red;
+  }
+
+  .forget-a{
+    color: #c3736c;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  .login-bar nav ul{
+    position: relative;
+    left: -40px;
+  }
+
+  .rounded-blue{
+     background: #0038a7;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin: 0 auto;
+  }
+
+  .rounded-blue .fa{
+    font-size: 35px;
+    color: white;
+    padding-top: 30px;
+  }
+
+  .rounded-blue-arrow{
+    background: red;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 29%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .arrow{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 68%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+    color: white;
+  }
+
+  .login-form h4{
+    color: #0038a7;
+    font-weight: 700;
+    font-size: 22px;
+    padding-top: 70px;
+  }
+
+  .log-section h4, .log-section h1 {
+    color: #0038a7;
+    font-weight: 900;
+  }
+
+  .log-section h1 {
+    font-size: 46px;
+  }
+
+  .log-section{
+    padding-top: 50px;
+  }
+
+  .log-section h5{
+    color: #494a4c;
+    font-weight: 200;
+    padding-top: 15px;
+  }
+  
+  .login-input{
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 0px;
+    background: #d8d8d8;
+    padding: 23px;
+  }
+
+  .button-fixed{
+    margin-left: auto;
+    margin-right: 0;
+    width: 37% !important;
+    font-size: 12px;
+    border-radius: 12px;
+    padding: 8px;
+    padding-left: 42px;
+    background: #0038a7 !important;
+  }
+
+  .forgot-password-div{
+    padding-bottom: 75px;
+    margin-right: 57px;
+  }
+
+  .contact-sumel{
+    background: #0038a7;
+    width: 70%;
+    margin: 0 auto; 
+    color: white;  
+    padding: 12px 85px;
+    font-size: 12px;
+  }
+
+  #map{
+    height: 350px;
+  }
+  
+  .cities-button{
+    background: #d8d8d8;
+    border: 1px solid #d8d8d8;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 0px;
+    background: #d8d8d8;
+    padding: 10px;
+    color: #9c9e9e;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .products-sumel{
+    background: #585a59;
+    width: 70%;
+    margin: 0 auto; 
+    color: white;  
+    padding: 12px 54px;
+    font-size: 12px;
+  }
+
+  .cities-button:hover{
+    background: #d8d8d8 !important;
+    padding: 10px;
+    color: #555555;
+  }
+
+  /*sub*/
+  .subscription-bar{
+    height: 70px;
+    background: #7f7f7f;
+  }
+
+  .subscription-bar h3{
+    color: white;
+  }
+
+  .left{
+    padding-top: 25px;
+    padding-left: 50px;
+  }
+
+  .right{
+    padding-top: 15px;
+    padding-right: 70px;
+    font-size: 22px;
+  }
+
+  .mr-1{
+    margin-right: 1px;
+  }
+  
+  .productSection{
+    color: #1d439c;
+  }
+
+  .productSection h5{
+    margin-top: 5px !important;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .productSection h1{
+    margin-top: 0;
+    font-weight: 900;
+    font-size: 42px;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: 768px){
+    .informative-bar-login .navbar-nav>li {
+      margin-left: -7px !important;
+    }
+
+    .informative-bar-login .navbar-nav > li > a{
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
+    }
+  }
+
+  .row{
+    margin: 0;
+  }
+</style>

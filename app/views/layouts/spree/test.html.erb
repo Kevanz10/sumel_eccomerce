@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LegacySupplements</title>
-  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true%>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Sumel</title>
+  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => false%>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="https://use.fontawesome.com/e4b26ed800.js"></script>
 </head>
 <body style="margin: 0">	
+	
 	<%= yield %>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMQineWtGbFPOqb26hvKTzQQZ8z0MPQo4&callback=initMap"
-    async defer></script>
+    async defer></script> 
 </body>
 </html>
 

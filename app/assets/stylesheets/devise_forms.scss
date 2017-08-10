@@ -80,7 +80,7 @@
   background: url(/assets/images/login-photo.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 90vh;
+  height: 50vh;
   position: relative;
 }
 
@@ -269,10 +269,7 @@
 }
 
 .auth form .btn-success{
-
-
-    border-color: rgba(240, 173, 78);
-
+  border-color: rgba(240, 173, 78, 0.3);
 }
 .auth form .btn-success:hover{
     background:rgba(240, 173, 78, 0.3);
@@ -339,7 +336,6 @@
     background: #e0514b;
     padding: 14px 96px;
     font-size: 12px;
-    font-weight: 
   }
 
   .saber-mas-bg:hover{

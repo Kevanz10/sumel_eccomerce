@@ -16,7 +16,6 @@
     <br>
     <div id="products" class="row" data-hook>
       <div class="row row-products">
-       <%= render :partial => 'spree/shared/taxonomies' %>
 
       <% products.each do |product| %>
         <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
@@ -58,126 +57,6 @@
     <% if products.respond_to?(:total_pages) %>
       <%= paginate products, theme: 'twitter-bootstrap-3' %>
     <% end %>
-  </div>
-  <section class="saber-mas">
-  <div class="row">
-    <div class="col-md-8 bg-home3"></div>
-    <div class="col-md-4 bluebg-home">
-      <h1>TODO</h1>
-      <h1>DEPENDE</h1>
-      <h1>DE TI</h1>
-      <a href="" class="saber-mas-bg text-center">¿QUIERES SABER MÁS?</a>
-    </div>
-  </div>
-</section>
-
-<section class="chevere c-p">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="row">
-        <div class="col-md-11">
-          <h1>Servimos con<br> sentido humano</h1>
-        </div>
-         <div class="col-md-1">
-           <img src="/assets/images/exclamacion.png" class="exclamacion">
-         </div>
-      </div>
-    </div>
-    <div class="col-md-8">
-      <div class="row content">
-        <div class="col-md-2">
-          <h5>INFORMACIÓN</h5>
-          <a href="">Nosotros</a>
-          <br>
-          <a href="">Términos</a>
-          <br>
-          <a href="">Búsqueda</a>
-          <br>
-          <a href="">Órdenes</a>
-          <br>
-        </div>
-        <div class="col-md-3">
-          <h5 class="text-center">PRODUCTOS</h5>
-          <div class="col-md-6" style="padding: 0;">
-            <a href="">Oxigenoterapia</a>
-            <br>
-            <a href="">Movilidad</a>
-            <br>
-            <a href="">Fisioterapia y rehabilitacion</a>
-            <br>
-            <a href=""> Ayudas para el diario vivir</a>
-            <br>
-            <a href=""> Cuidado Respiratorio</a>
-            <br>
-          </div>
-          <div class="col-md-6">
-            <a href=""> Diagnostico</a>
-            <a href=""> Mobiliario medico</a>
-            <a href="">Ozonoterapia</a>
-            <a href="">Colonterapia</a>
-          </div>
-        </div>
-        <div class="col-md-2">
-          <h5>SERVICIOS</h5>
-          <a href="">Alquiler</a>
-          <br>
-          <a href="">Mantenimiento</a>
-        </div>
-        <div class="col-md-5">
-          <h5>EMPRESA DETALLES</h5>
-          <div class="col-md-6" style="padding: 0">
-            <i class="fa fa-suitcase" aria-hidden="true"></i>
-            <a href="">Sede Itagüí: <br> Calle 30 N° 41-09</a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href="">(4) 444 01 88 </a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href=""> 311 635 4073 </a>
-            <br>
-            <br>
-            <i class="fa fa-suitcase" aria-hidden="true"></i>
-            <a href="">Sede Medellín: <br> Carrera 48 N°7-380 <br>
-            Mall Comercial Vegas 10</a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href="">(4) 444 01 88 </a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href=""> 316 523 4269</a>
-            <br>
-          </div>
-          <div class="col-md-6" style="padding: 0">
-
-            <i class="fa fa-suitcase" aria-hidden="true"></i>
-            <a href="">Sede Pereira: <br> Calle 24 N° 6-14</a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href="">(6) 3255690 </a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href=""> 314 888 0021 </a>
-            <br>
-            <br>
-            <i class="fa fa-suitcase" aria-hidden="true"></i>
-            <a href="">Sede Armenia: <br> Carrera 12 N° 1A Norte 20 Edificio Centro Medico Empresarial Uninorte Local   105
-           </a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href="">(6) 746 3334 </a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href=""> 321 701 0685</a>
-            <br>
-          </div>
-         <!--  <i class="fa fa-inbox" aria-hidden="true"></i>
-          <a href="">test@test.com</a>
-          <br>
-          <i class="fa fa-skype" aria-hidden="true"></i>
-          <a href="">Shop.test</a> -->
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 </div>

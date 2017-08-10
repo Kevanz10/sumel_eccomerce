@@ -2,7 +2,7 @@
 <div class="container productContainer products-view ">
   <div class="row">
     <div class="col-md-6">
-      <h1 class="product-title" itemprop="name">
+      <h1 class="product-title-dg" itemprop="name">
         <%= @product.name.capitalize %> 
       </h1>
     </div>
@@ -24,19 +24,15 @@
             <div id="thumbnails" data-hook>
               <%= render partial: 'thumbnails' %>
             </div>
-
           </div>
-
           <div class="col-md-12" data-hook="product_properties">
             <%= render partial: 'properties' %>
           </div>
-
           <div data-hook="promotions">
             <%= render partial: 'promotions' %>
           </div>
         </div>
       </div>
-
       <div class="col-md-5 col-sm-7" data-hook="product_right_part">
         <div data-hook="product_right_part_wrap">
           <div id="product-description" data-hook="product_description">
@@ -59,7 +55,6 @@
                   <i class="fa fa-wheelchair" aria-hidden="true"></i>
                   <h4>1</h4>
                 </div>
-                
               </div>
               <div class="col-md-6" style="padding-left: 0;">
                 <div id="cart-form" data-hook="cart_form">
@@ -68,7 +63,6 @@
               </div>
             </div>
           </div>
-
           <div id="taxon-crumbs" class=" five " data-hook="product_taxons">
             <%= render partial: 'taxons' %>
           </div>
@@ -77,206 +71,222 @@
     </div>
   <% end %>
 </div>
-<section class="chevere">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="row">
-        <div class="col-md-11">
-          <h1>Servimos con<br> sentido humano</h1> 
-        </div>
-         <div class="col-md-1">
-           <img src="/assets/images/exclamacion.png" class="exclamacion">
-         </div>
-      </div>
-    </div>
-    <div class="col-md-8">
-      <div class="row content">
-        <div class="col-md-2">
-          <h5>INFORMACIÓN</h5>
-          <a href="">Nosotros</a>
-          <br>
-          <a href="">Términos</a>
-          <br>
-          <a href="">Búsqueda</a>
-          <br>
-          <a href="">Órdenes</a>
-          <br>
-        </div>
-        <div class="col-md-3">
-          <h5 class="text-center">PRODUCTOS</h5>
-          <div class="col-md-6" style="padding: 0;">
-            <a href="">Oxigenoterapia</a>
-            <br>
-            <a href="">Movilidad</a>
-            <br>
-            <a href="">Fisioterapia y rehabilitacion</a>
-            <br>
-            <a href=""> Ayudas para el diario vivir</a>
-            <br>
-            <a href=""> Cuidado Respiratorio</a>
-            <br>
-          </div>
-          <div class="col-md-6">
-            <a href=""> Diagnostico</a>
-            <br>
-            <a href=""> Mobiliario medico</a>
-            <br>
-            <a href="">Ozonoterapia</a>
-            <br>
-            <a href="">Colonterapia</a>
-            <br>
-          </div>
-        </div>
-        <div class="col-md-2">
-          <h5>SERVICIOS</h5>
-          <a href="">Alquiler</a>
-          <br>
-          <a href="">Mantenimiento</a>
-        </div>
-        <div class="col-md-5">
-          <h5>EMPRESA DETALLES</h5>
-          <div class="col-md-6" style="padding: 0">
-            <i class="fa fa-suitcase" aria-hidden="true"></i>
-            <a href="">Sede Itagüí: <br> Calle 30 N° 41-09</a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href="">(4) 444 01 88 </a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href=""> 311 635 4073 </a>
-            <br>
-            <br>
-            <i class="fa fa-suitcase" aria-hidden="true"></i>
-            <a href="">Sede Medellín: <br> Carrera 48 N°7-380 <br>
-            Mall Comercial Vegas 10</a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href="">(4) 444 01 88 </a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href=""> 316 523 4269</a>
-            <br>
-          </div>
-          <div class="col-md-6" style="padding: 0">
-        
-            <i class="fa fa-suitcase" aria-hidden="true"></i>
-            <a href="">Sede Pereira: <br> Calle 24 N° 6-14</a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href="">(6) 3255690 </a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href=""> 314 888 0021 </a>
-            <br>
-            <br>
-            <i class="fa fa-suitcase" aria-hidden="true"></i>
-            <a href="">Sede Armenia: <br> Carrera 12 N° 1A Norte 20 Edificio Centro Medico Empresarial Uninorte Local   105
-           </a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href="">(6) 746 3334 </a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href=""> 321 701 0685</a>
-            <br>
-          </div>
-      
 
-        
-         <!--  <i class="fa fa-inbox" aria-hidden="true"></i>
-          <a href="">test@test.com</a>
-          <br>
-          <i class="fa fa-skype" aria-hidden="true"></i>
-          <a href="">Shop.test</a> -->
+<div class="row">
+  <div class="col-md-9 col-md-push-3">
+    <div class="row">
+        <div class="product-gallery-container">
+            <div class="product-zoom-wrapper">
+                <div class="product-zoom-container">
+                <img class="xzoom" id="product-zoom" src="assets/images/products/single/product1.jpg" data-xoriginal="/assets/images/product1.jpg" alt="Zoom image" style="width: 100%;">
+                </div><!-- End .product-zoom-container -->
+            </div><!-- End .product-zoom-wrapper -->
+
+            <div class="product-gallery-wrapper">
+                <div class="owl-data-carousel owl-carousel product-gallery owl-loaded owl-drag" data-owl-settings="{ &quot;items&quot;:4, &quot;margin&quot;:14, &quot;nav&quot;: true, &quot;dots&quot;:false }" data-owl-responsive="{&quot;240&quot;: {&quot;items&quot;: 2}, &quot;360&quot;: {&quot;items&quot;: 3}, &quot;768&quot;: {&quot;items&quot;: 4}, &quot;992&quot;: {&quot;items&quot;: 3}, &quot;1200&quot;: {&quot;items&quot;: 4} }">
+
+              
+                <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0.25s; width: 650px;"><div class="owl-item active" style="width: 94.262px; margin-right: 14px;"><a href="#" data-image="assets/images/products/single/product1.jpg" data-zoom-image="assets/images/products/single/big/product1.jpg" class="product-gallery-item">
+                        <img src="assets/images/products/single/thumbs/product1.jpg" alt="product-small-1">
+                    </a></div><div class="owl-item active" style="width: 94.262px; margin-right: 14px;"><a href="#" data-image="assets/images/products/single/product2.jpg" data-zoom-image="assets/images/products/single/big/product2.jpg" class="product-gallery-item">
+                        <img src="assets/images/products/single/thumbs/product2.jpg" alt="product-small-2">
+                    </a></div><div class="owl-item active" style="width: 94.262px; margin-right: 14px;"><a href="#" data-image="assets/images/products/single/product3.jpg" data-zoom-image="assets/images/products/single/big/product3.jpg" class="product-gallery-item">
+                        <img src="assets/images/products/single/thumbs/product3.jpg" alt="product-small-3">
+                    </a></div><div class="owl-item active" style="width: 94.262px; margin-right: 14px;"><a href="#" data-image="assets/images/products/single/product4.jpg" data-zoom-image="assets/images/products/single/big/product4.jpg" class="product-gallery-item">
+                        <img src="assets/images/products/single/thumbs/product4.jpg" alt="product-small-4">
+                    </a></div><div class="owl-item" style="width: 94.262px; margin-right: 14px;"><a href="#" data-image="assets/images/products/single/product5.jpg" data-zoom-image="assets/images/products/single/big/product5.jpg" class="product-gallery-item">
+                        <img src="assets/images/products/single/thumbs/product5.jpg" alt="product-small-5">
+                    </a></div><div class="owl-item" style="width: 94.262px; margin-right: 14px;"><a href="#" data-image="assets/images/products/single/product6.jpg" data-zoom-image="assets/images/products/single/big/product6.jpg" class="product-gallery-item">
+                        <img src="assets/images/products/single/thumbs/product6.jpg" alt="product-small-6">
+                    </a></div></div></div><div class="owl-nav"><div class="owl-prev disabled"></div><div class="owl-next"></div></div><div class="owl-dots disabled"></div></div><!-- End .product-gallery -->
+            </div><!-- End .product-gallery-wrapper -->
+        </div><!-- End .product-gallery-container -->
+
+        <div class="product-details">
+            <h2 class="product-title">Comfort Couch Classic Single Seater Sofa</h2>
+            
+            <div class="product-meta-row">
+                <div class="product-price-container">
+                    <span class="product-price">$250.00</span>
+                </div><!-- Endd .product-price-container -->
+
+                <div class="product-ratings-wrapper">
+                    <div class="ratings-container">
+                        <div class="product-ratings">
+                            <span class="ratings" style="width:80%"></span><!-- End .ratings -->
+                        </div><!-- End .product-ratings -->
+                    </div><!-- End .ratings-container -->
+                    <a class="ratings-link" href="#reviews" title="Reviews">30 Reviews</a>
+                </div><!-- End .product-ratings-wrapper -->
+            </div><!-- End .product-meta-row -->
+            <div class="product-content">
+                <p>Comfort Couch Classic sigle Seater Soft is Relax in supreme comfort and add style to your living room with this fabulously designed single.</p>
+            </div><!-- End .product-content -->
+
+            <ul class="product-meta-list">
+                <li><label>Availability:</label> <span class="product-stock">In Stock</span></li>
+            </ul>
+            
+            <label>Color:</label>
+            <ul class="filter-color-list">
+                <li class="active">
+                    <span class="filter-color" style="background-color: #575057;"></span>
+                </li>
+                <li>
+                    <span class="filter-color" style="background-color: #d3b396;"></span>
+                </li>
+                <li>
+                    <span class="filter-color" style="background-color: #080808;"></span>
+                </li>
+                <li>
+                    <span class="filter-color" style="background-color: #e6e4e6;"></span>
+                </li>
+            </ul>
+
+            <label>Size:</label>
+            <ul class="filter-size-list">
+                <li class="active">
+                    <span class="filter-size">S</span>
+                </li>
+                <li>
+                    <span class="filter-size">M</span>
+                </li>
+                <li>
+                    <span class="filter-size">L</span>
+                </li>
+                <li>
+                    <span class="filter-size">XL</span>
+                </li>
+            </ul>
+            <div class="product-action">
+                <div class="product-quantity">
+                    <label>QTD:</label>
+                    <div class="input-group bootstrap-touchspin"><span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span><input class="single-product-quantity form-control" type="text" style="display: block;"><span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span><span class="input-group-btn-vertical"><button class="btn btn-default bootstrap-touchspin-up" type="button"><i class="glyphicon glyphicon-plus"></i></button><button class="btn btn-default bootstrap-touchspin-down" type="button"><i class="glyphicon glyphicon-minus"></i></button></span></div>
+                </div><!-- end .product-quantity -->
+                
+                <a href="#" class="btn btn-accent btn-addtobag">Add to Bag</a>
+            </div><!-- End .product-action -->
+        </div><!-- End .product-details -->
+    </div><!-- End .row -->
+    <div class="product-details-tab">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
+            <li role="presentation"><a href="#information" aria-controls="information" role="tab" data-toggle="tab">Information</a></li>
+            <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+            </div><!-- End .tab-pane -->
+            <div role="tabpanel" class="tab-pane" id="information">
+                <div class="table-responsive">
+                    <table class="table product-info-table">
+                        <tbody>
+                            <tr>
+                                <td>Weight:</td>
+                                <td>50 KG</td>
+                            </tr>
+                            <tr>
+                                <td>Dimensions:</td>
+                                <td>120 x 120 x 120 cm</td>
+                            </tr>
+                            <tr>
+                                <td>Material:</td>
+                                <td>Wood, Leather</td>
+                            </tr>
+                            <tr>
+                                <td>Colors:</td>
+                                <td>Beige, Black</td>
+                            </tr>
+                            <tr>
+                                <td>Size:</td>
+                                <td>SM, MD, LG</td>
+                            </tr>
+                            <tr>
+                                <td>Other Info:</td>
+                                <td>Comfort Couch Classic sigle Seater Soft is Relax in supreme comfort.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!-- End .table-responsive -->
+            </div><!-- End .tab-pane -->
+            <div role="tabpanel" class="tab-pane" id="reviews">
+                <div class="product-reviews comments">
+                    <ul class="comments-list media-list">
+                        <li class="media">
+                            <div class="comment">
+                                <div class="media-left">
+                                    <img class="media-object" src="assets/images/blog/user.png" alt="User">
+                                </div><!-- End .media-left -->
+                                <div class="media-body">
+                                    <h4 class="media-heading">Mathew joseph</h4>
+                                    <div class="ratings-container">
+                                        <div class="product-ratings">
+                                            <span class="ratings" style="width:80%"></span><!-- End .ratings -->
+                                        </div><!-- End .product-ratings -->
+                                    </div><!-- End .ratings-container -->
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mollis laoreet cursus. Cras nec condimentum dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mollis laoreet cursus. Cras nec condimentum dolor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mollis laoreet cursus. Cras nec condimentum dolor.</p>
+                                </div><!-- End .media-body -->
+                            </div><!-- End .comment -->
+                        </li>
+                    </ul>
+                </div><!-- End .comments -->
+                <div class="review-form-container">
+                    <h3>LEAVE A REVIEW</h3>
+                    <form action="#" method="post">
+                        <label>Your Rating*</label>
+                        <div class="form-group clearfix">
+                            <fieldset class="rate-field">
+                                <input type="radio" id="star5" name="rating" value="5">
+                                <label for="star5" title="5 stars"></label>
+
+                                <input type="radio" id="star4" name="rating" value="4" checked="">
+                                <label for="star4" title="4 stars"></label>
+
+                                <input type="radio" id="star3" name="rating" value="3">
+                                <label for="star3" title="3 stars"></label>
+
+                                <input type="radio" id="star2" name="rating" value="2">
+                                <label for="star2" title="2 stars"></label>
+
+                                <input type="radio" id="star1" name="rating" value="1">
+                                <label for="star1" title="1 star"></label>
+                            </fieldset>
+                        </div><!-- End .form-group -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Name*</label>
+                                    <input type="text" class="form-control" required="">
+                                </div><!-- End .form-group -->
+                            </div><!-- End .col-sm-6 -->
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>E-mail adddress</label>
+                                    <input type="email" class="form-control" required="">
+                                </div><!-- End .form-group -->
+                            </div><!-- End .col-sm-6 -->
+                        </div><!-- End .row -->
+
+                        <div class="form-group mb20">
+                            <label>Your Review*</label>
+                            <textarea cols="30" rows="5" class="form-control"></textarea>
+                        </div>
+
+                        <div class="text-right">
+                            <input type="submit" class="btn btn-accent min-width" value="Submit">
+                        </div><!-- End .text-right -->
+                    </form>
+                </div><!-- End #respond -->
+            </div><!-- End .tab-pane -->
         </div>
-      </div>
-    </div>
+    </div><!-- End .product-details-tab -->
+    <!-- End .owl-data-carousel -->
+
+    <div class="mb50"></div><!-- margin -->
   </div>
-</section>
-<nav class="subscription-bar">
-  <div class="row">
-    <div class="col-md-6 text-left">
-      <div class="">
-        <h3 class="nav navbar-nav navbar-left left">Inscríbete</h3>
-        <%= form_tag("/subs", method: "post", class: 'sub-form') do %>
-          <%= text_field_tag "subscription[email]", "", placeholder: 'Email', class: 'input-sub form-control', type: 'email', required: true%>
-          <%= submit_tag("ENVIAR", class: "enviar-sub")%>
-        <% end %>
-      </div>
-    </div>
-    <div class="col-md-6 text-right">
-       <div>
-        <!--  <p class="navbar-text navbar-left">Open hours: 8.00-18.00 Mon-Sat</p> -->
-        <div class="nav navbar-nav navbar-right right">
-          <div class="navbar-text navbar-left mr-1">
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-          </div>
-          <div class="navbar-text navbar-left mr-1">
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-          </div>
-          <div class="navbar-text navbar-left">
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-          </div>
-        </div> 
-      </div>
-    </div>
-  </div>
-</nav>
-<style>
-  /*CHEVERE SECTION*/
-  .chevere{
-    background: #dbd9da;
-    height: 270px;
-  }
-
-  .chevere h1{
-    color: #1252a9;
-    font-weight: 900;
-    padding: 15px 32px;
-  }
-
-  .exclamacion{
-    position: relative;
-    left: -70px;
-    top: 15px;
-  }
-
-  /*.chevere .content{
-    padding: 18px 32px;
-  }*/
-
-  .row .content{
-    padding-top: 20px;
-  }
-
-  .chevere .content h5{
-    color: #535353;
-    font-weight: 900;
-  }
-
-  .chevere .content a{
-    color: #8c8c8c;
-    font-weight: 200;
-  }
-
-  @media (max-width: 768px){
-
-   /*chevere-section*/
-      .chevere{
-        height: 920px;
-      }
-      .chevere h1 {
-        text-align: center;
-        margin-bottom: 0;
-      }
-
-      .exclamacion{
-        display: none;
-      }
-
-      .content{
-        text-align: center;
-      }
-    /*end*/
-  }
- </style>
+</div>

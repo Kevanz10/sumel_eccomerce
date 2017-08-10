@@ -1,20 +1,47 @@
-<section class="bgExercise">
-  <div class="container text-center">
-    <h1 class='header__animation-chunk todo'>TODO</h1>
-    <h1 class='header__animation-chunk depende'>DEPENDE DE TI</h1>
-    <p class='header__animation-chunk' style="text-align:center;">Asume este reto con nosotros.</p>
-    <a class="btn see-more header__animation-chunk"  href="/catalog" >CONOCER MÁS</a>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators 
+  -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="/assets/images/armenia_bg.jpg" alt="Los Angeles">
+    </div>
+
+    <div class="item">
+      <img src="/assets/images/medellin_bg.jpg" alt="Chicago">
+    </div>
+
+    <div class="item">
+      <img src="/assets/images/pereira_bg.jpg" alt="New York">
+    </div>
   </div>
-</section>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
 <div class="login-bar">
   <nav class="navbar navbar-default" style="background: #dbd9da">
     <div class="container">
-      <div id="navbar" class="navbar-collapse collapse informative-bar-login acerca-nav">
+      <div id="navbar" class="navbar-collapse collapse informative-bar-login acerca-nav ">
         <ul class="nav navbar-nav acerca-nav">
           <li><a href="#">Acerca</a></li>
           <li><a href="">Cotización</a></li>
           <li><a href="">Órdenes</a></li>
-          <li><a href="/catalog">Busqueda</a></li>
+          <li><a href="">Busqueda</a></li>
           <li><a href="">Términos y Condiciones</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -25,369 +52,350 @@
       <div class="rounded-blue-arrow"> 
       </div>
       <div class="text-center arrow">
-        <i class="fa fa-arrow-up arrow" aria-hidden="true"></i>
+        <i class="fa fa-arrow-down arrow" aria-hidden="true"></i>
       </div>
     </div>
   </nav>
 </div>
-<section class="productSection">
-  <div class="text-center">
-    <img src="/assets/images/logo_blue.png" class="logo">
-    <h5>Son muchos años de</h5>
-    <h1>EXPERIENCIA</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <!-- <div class="row text-uppercase">
-      <div class="col-md-6 text-right">
-        <%= link_to "", class: "btn send-message" do%>
-          <span>
-            <span class="first text-uppercase">shop best sellers</span>
-            <span class="second text-uppercase">shop best sellers</span>
-          </span>
-        <%end%>
-      </div>
-      <div class="col-md-6 text-left">
-        <%= link_to "", class: "btn send-message" do%>
-          <span>
-            <span class="first text-uppercase">view all products</span>
-            <span class="second text-uppercase">view all products</span>
-          </span>
-        <%end%>
-      </div>
-    </div> -->
-      <div class="container productsDescription">
-      <div class="col-md-6 text-center grey-bg">
-        <h3></h3>
-        <h1 class="title-product">
-          <%@product = Spree::Product.first%>
-          <%=  Spree::Product.first.name%>
-        </h1>
-        <%= large_image(Spree::Product.first, itemprop: "image", class: 'main-products') %><br/>
-        <% url = spree.product_path(Spree::Product.first, taxon_id: @taxon.try(:id)) %>
-        <div class="row">
-          <% if !spree_current_user%>
-            <br>
-            <br>
-            <div class="col-md-4 col-md-offset-2">
-              <%= link_to 'COTIZAR', url, class: "btn cotizar-button"%>
-            </div>
-            <div class="col-md-3 col-xs-12">
-              <%= link_to 'VER MÁS', url, class: "btn cotizar-button"%>
-            </div>
-            <%else%>
-              <div class="col-md-12 text-center">
-                <br>
-                <h4 style="font-size: 23px; font-weight: bold; margin-bottom: 0px;">
-                  <%= display_price(@product) %>
-                </h4>
-                <br>
-                <br>
-              </div>
-              <div class="text-center col-md-12">
-                <%= link_to 'VER MÁS', url, class: "btn cotizar-button"%>
-              </div>
-          <%end%> 
-        </div>
-      </div>
-      <div class="col-md-6 photo1">
-        <div class="block-text">
-          <p>Puedes ser lo que tu quieras ser</p>
-          <a href="/blog">
-            <h3 class="text-uppercase">Movilidad</h3>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-6 photo2">
-        <div class="block-text2">
-          <p>Más allá de los límites</p>
-          <a href="/blog">
-            <h3 class="text-uppercase">Ozonoterapia</h3>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-6 text-center grey-bg">
-        <h3></h3>
-        <h1 class="title-product">
-          <%=  Spree::Product.first.name%>
-        </h1>
-        <%= large_image(Spree::Product.first, itemprop: "image", class: 'main-products') %><br/>
-        <% url = spree.product_path(Spree::Product.first, taxon_id: @taxon.try(:id)) %>
-        <div class="row">
-          <% if !spree_current_user%>
-            <br>
-            <br>
-            <div class="col-md-4 col-md-offset-2">
-              <%= link_to 'COTIZAR', url, class: "btn cotizar-button"%>
-            </div>
-            <div class="col-md-3 col-xs-12">
-              <%= link_to 'VER MÁS', url, class: "btn cotizar-button"%>
-            </div>
-            <%else%>
-              <div class="col-md-12 text-center">
-                <br>
-                <h4 style="font-size: 23px; font-weight: bold; margin-bottom: 0px;">
-                  <%= display_price(@product) %>
-                </h4>
-                <br>
-                <br>
-              </div>
-              <div class="text-center col-md-12">
-                <%= link_to 'VER MÁS', url, class: "btn cotizar-button"%>
-              </div>
-          <%end%> 
-        </div>
-      </div>
-      <div class="col-md-6 text-center grey-bg">
-        <h3></h3>
-        <h1 class="title-product">
-          <%=  Spree::Product.first.name%>
-        </h1>
-        <%= large_image(Spree::Product.first, itemprop: "image", class: 'main-products') %><br/>
-        <% url = spree.product_path(Spree::Product.first, taxon_id: @taxon.try(:id)) %>
-        <div class="row">
-          <% if !spree_current_user%>
-            <br>
-            <br>
-            <div class="col-md-4 col-md-offset-2">
-              <%= link_to 'COTIZAR', url, class: "btn cotizar-button"%>
-            </div>
-            <div class="col-md-3 col-xs-12">
-              <%= link_to 'VER MÁS', url, class: "btn cotizar-button"%>
-            </div>
-            <%else%>
-              <div class="col-md-12 text-center">
-                <br>
-                <h4 style="font-size: 23px; font-weight: bold; margin-bottom: 0px;">
-                  <%= display_price(@product) %>
-                </h4>
-                <br>
-                <br>
-              </div>
-              <div class="text-center col-md-12">
-                <%= link_to 'VER MÁS', url, class: "btn cotizar-button"%>
-              </div>
-          <%end%> 
-        </div>
-      </div>
-      <div class="col-md-6 photo3">
-        <div class="block-text3">
-          <p>Una vida sin límites</p>
-          <h3 class="text-uppercase">Oxígeno</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="login-form text-center">
+  <br>
+  <br>
+  <h4>¿Qué tipo de usuario eres?</h4>
 
-<section> 
-  <div class="row">
-    <div class="col-md-7 home-noticias hidden-sm hidden-xs">
-      <br>
-      <br>
-      <br>
-      <br>
-      <div class="text-center">
-        <img src="/assets/images/full_logo_white.png" class="logo-white-noticias">
+  <div class="row log-section">
+    <div class="col-md-4 col-md-offset-2">
+      <div class="rounded-blue">
+        <i class="fa fa-user-plus" aria-hidden="true"></i>
       </div>
-      <h1 class="text-center">
-        NOTICIAS
-      </h1>
-      <h1 class="text-center inf-h1">Infórmate con nuestras últimas noticias</h1>
-      <div class="text-center">
-        <a href="/empresa" class="noticias-mas">Conócenos más</a>
-      </div>
-    </div>
-    <div class="col-md-5 col-xs-12">
-      <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSumel-Biotech-405873106108023&tabs=timeline&width=650&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=245049279252163" width="520" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-    </div>
-  </div>
-</section>
-<section class="sedes text-center">
-  <h1>NUESTRAS SEDES</h1>
-  <div class="row sedes-bg">
-    <div class="col-md-4 color1">
-      <div class="one">
-        <p>
-          ARMENIA
-        </p>
-      </div>
-    </div>
-    <div class="col-md-4 color2">
-      <div class="second">
-        <p>
+      <h1>CONSUMIDOR</h1>
+      <div id="big-form" class="auth-box">
+        <br>
+        <br>
+        <br>
+        <a href="/catalog" class='products-sumel'>VER TODOS LOS PRODUCTOS</a>
+        <br>
+        <h5 class="text-center">Encuentra tu tienda más cercana</h5>
+        <!-- Button trigger modal -->
+        <br>
+        <button type="button" class="btn btn-primary btn-lg cities-button" data-toggle="modal" data-target="#myModal1">
           Medellín
-        </p>
+        </button>
+        <br>
+        <button type="button" class="btn btn-primary btn-lg cities-button" data-toggle="modal" data-target="#myModal2">
+          Itagüí
+        </button>
+        <br>
+        <button type="button" class="btn btn-primary btn-lg cities-button" data-toggle="modal" data-target="#myModal3">
+          Pereira
+        </button>
+        <br>
+        <button type="button" class="btn btn-primary btn-lg cities-button" data-toggle="modal" data-target="#myModal4">
+          Armenia
+        </button>
+        <br>
+        <br>
+        <a href="" class='contact-sumel' data-toggle="modal" data-target="contacto-sumel-modal">CONTACTO SUMEL</a>
+        <br>
+        <br>
+        <br>
+        <br>
       </div>
-    </div>
-    <div class="col-md-4 color3">
-      <div class="third">
-        <p>
-          PEREIRA
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="saber-mas">
-  <div class="row">
-    <div class="col-md-8 bg-home3"></div>
-    <div class="col-md-4 bluebg-home">
-      <h1>TODO</h1>
-      <h1>DEPENDE</h1>
-      <h1>DE TI</h1>
-      <a href="" class="saber-mas-bg text-center">¿QUIERES SABER MÁS?</a>
-    </div>
-  </div>
-</section>
-<section class="chevere">
-  <div class="row">
-    <div class="col-md-4 col-xs-12">
-      <div class="row">
-        <div class="col-md-11 ">
-          <h1>Servimos con<br> sentido humano</h1> 
-        </div>
-         <div class="col-md-1">
-           <img src="/assets/images/exclamacion.png" class="exclamacion">
-         </div>
-      </div>
-    </div>
-    <div class="col-md-8 col-xs-12">
-      <div class="row content">
-        <div class="col-md-2">
-          <h5>INFORMACIÓN</h5>
-          <a href="">Nosotros</a>
-          <br>
-          <a href="">Términos</a>
-          <br>
-          <a href="">Búsqueda</a>
-          <br>
-          <a href="">Órdenes</a>
-          <br>
-        </div>
-        <div class="col-md-3">
-          <h5 class="text-center">PRODUCTOS</h5>
-          <div class="col-md-6" style="padding: 0;">
-            <a href="">Oxigenoterapia</a>
-            <br>
-            <a href="">Movilidad</a>
-            <br>
-            <a href="">Fisioterapia y rehabilitacion</a>
-            <br>
-            <a href=""> Ayudas para el diario vivir</a>
-            <br>
-            <a href=""> Cuidado Respiratorio</a>
-            <br>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <img src="/assets/images/logo_blue.png" class="logo-login">
+              <h4 class="modal-title" id="myModalLabel">Medellín</h4>
+              <div class="row">
+                <div class="col-md-4 col-md-offset-1 text-right">
+                  <i class="fa fa-mobile" aria-hidden="true" style="font-size: 25px; padding-top: 16px;"></i>
+                </div>
+                <div class="col-md-7 text-left" style="padding-left: 0;">
+                  <h4 id="myModalLabel"> (4) 444 01 88</h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-md-offset-1 text-right">
+                  <i class="fa fa-whatsapp" aria-hidden="true" style="font-size: 25px; padding-top: 16px;"></i>
+                </div>
+                <div class="col-md-7 text-left" style="padding-left: 0;">
+                  <h4 id="myModalLabel"> (+57) 316 523 4269</h4>
+                </div>
+              </div>
+            </div>
+            <div class="modal-body">
+              <div id="map">
+                <iframe width="100%" height="350" frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDlbJ_XRVze2LtvaIBXH8Libsn6c6PWU1Q
+                  &q=Sumel+Medellin" allowfullscreen>
+              </iframe>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
           </div>
+        </div>
+      </div>
+      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <img src="/assets/images/logo_blue.png" class="logo-login">
+              <h4 class="modal-title" id="myModalLabel">Itagüí</h4>
+              <div class="row">
+                <div class="col-md-4 col-md-offset-1 text-right">
+                  <i class="fa fa-mobile" aria-hidden="true" style="font-size: 25px; padding-top: 16px;"></i>
+                </div>
+                <div class="col-md-7 text-left" style="padding-left: 0;">
+                  <h4 id="myModalLabel"> (4) 444 01 88</h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-md-offset-1 text-right">
+                  <i class="fa fa-whatsapp" aria-hidden="true" style="font-size: 25px; padding-top: 16px;"></i>
+                </div>
+                <div class="col-md-7 text-left" style="padding-left: 0;">
+                  <h4 id="myModalLabel"> (+57) 311 635 4073</h4>
+                </div>
+              </div>
+            </div>
+            <div class="modal-body">
+              <div id="map">
+                <iframe width="100%" height="350" frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDlbJ_XRVze2LtvaIBXH8Libsn6c6PWU1Q
+                  &q=Calle 30 N° 41-09, medellin" allowfullscreen>
+              </iframe>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+               <img src="/assets/images/logo_blue.png" class="logo-login">
+              <h4 class="modal-title" id="myModalLabel">Pereira</h4>
+              <div class="row">
+                <div class="col-md-4 col-md-offset-1 text-right">
+                  <i class="fa fa-mobile" aria-hidden="true" style="font-size: 25px; padding-top: 16px;"></i>
+                </div>
+                <div class="col-md-7 text-left" style="padding-left: 0;">
+                  <h4 id="myModalLabel"> (6) 3255690</h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-md-offset-1 text-right">
+                  <i class="fa fa-whatsapp" aria-hidden="true" style="font-size: 25px; padding-top: 16px;"></i>
+                </div>
+                <div class="col-md-7 text-left" style="padding-left: 0;">
+                  <h4 id="myModalLabel"> (+57) 314 888 0021</h4>
+                </div>
+              </div>
+            </div>
+            <div class="modal-body">
+              <div id="map">
+                <iframe width="100%" height="350" frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDlbJ_XRVze2LtvaIBXH8Libsn6c6PWU1Q
+                  &q=Cl.+24+%236-14, Pereira - Risaralda" allowfullscreen>
+              </iframe>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <img src="/assets/images/logo_blue.png" class="logo-login">
+              <h4 class="modal-title" id="myModalLabel">Armenia</h4>
+              <div class="row">
+                <div class="col-md-4 col-md-offset-1 text-right">
+                  <i class="fa fa-mobile" aria-hidden="true" style="font-size: 25px; padding-top: 16px;"></i>
+                </div>
+                <div class="col-md-7 text-left" style="padding-left: 0;">
+                  <h4 id="myModalLabel"> (6) 746 3334 </h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-md-offset-1 text-right">
+                  <i class="fa fa-whatsapp" aria-hidden="true" style="font-size: 25px; padding-top: 16px;"></i>
+                </div>
+                <div class="col-md-7 text-left" style="padding-left: 0;">
+                  <h4 id="myModalLabel"> (+57) 321 701 0685</h4>
+                </div>
+              </div>
+              <h4 class="modal-title" id="myModalLabel" style="padding-top: 0"> 
+                 Barrio el Alcazar, Edificio Centro Medico Empresarial Uninorte Local 105
+              </h4>
+            </div>
+            <div class="modal-body">
+              <div id="map">
+                <iframe width="100%" height="350" frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDlbJ_XRVze2LtvaIBXH8Libsn6c6PWU1Q
+                  &q=4.5431233,-75.6623233" allowfullscreen>
+              </iframe>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="rounded-blue" >
+        <i class="fa fa-users" aria-hidden="true"></i>
+      </div>
+      <h1>CLIENTE ACTIVO</h1>
+      <div id="big-form" class="auth-box">
+        <%= form_for Spree::User.new, as: :spree_user, url: spree.create_new_session_path do |f| %>
+          <fieldset>
+            <h5 class="text-center">Ingrese a continuación su información personal</h5>
+            <br>
+            <br>
+            <!-- Text input-->
+            <div class="form-group">
+              <%= f.email_field :email, class: 'form-control input-md login-input', tabindex: 1, placeholder: 'Usuario' %>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+              <div class="">
+                <%= f.password_field :password, class: 'form-control input-md login-input', tabindex: 2, placeholder: 'Contraseña' %>
+              </div>
+            </div>
+            <br> 
+            <div class="form-group" style="margin-right: 58px;">
+              <%= f.submit 'INGRESAR', class: 'btn btn-lg btn-success btn-block button-fixed', tabindex: 3 %>
+            </div>
+            <div class="form-group forgot-password-div text-right">
+              <%= link_to '¿Olvidó su contraseña?', spree.recover_password_path, class: 'forget-a' %>
+            </div>
+          </fieldset>
+        <% end %>
+        <a href="" class="requerir-btn" data-toggle="modal" data-target="requerir-acceso-modal">REQUERIR ACCESO</a>
+      </div>
+    </div>
+  </div>  
+</div>
+<br>
+<br>
+<br>
+<br>
+<!-- modal -->
+<div class="modal fade" id="contacto-sumel-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-contant" role="document" style="margin-top: 161px;">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <br>
+        <br>
+        <div class="row">
           <div class="col-md-6">
-            <a href=""> Diagnostico</a>
-            <br>
-            <a href=""> Mobiliario medico</a>
-            <br>
-            <a href="">Ozonoterapia</a>
-            <br>
-            <a href="">Colonterapia</a>
-            <br>
-          </div>
-        </div>
-        <div class="col-md-2">
-          <h5>SERVICIOS</h5>
-          <a href="">Alquiler</a>
-          <br>
-          <a href="">Mantenimiento</a>
-        </div>
-        <div class="col-md-5">
-          <h5>EMPRESA DETALLES</h5>
-          <div class="col-md-6" style="padding: 0">
-            <i class="fa fa-suitcase" aria-hidden="true"></i>
-            <a href="">Sede Itagüí: <br> Calle 30 N° 41-09</a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href="">(4) 444 01 88 </a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href=""> 311 635 4073 </a>
+            <img class="modal-logo" src="/assets/images/full_logo_blue.png">
             <br>
             <br>
-            <i class="fa fa-suitcase" aria-hidden="true"></i>
-            <a href="">Sede Medellín: <br> Carrera 48 N°7-380 <br>
-            Mall Comercial Vegas 10</a>
+            <img class="img-contact" src="/assets/images/contact-photo.png">
             <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href="">(4) 444 01 88 </a>
             <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href=""> 316 523 4269</a>
+            <p style="color: #5d5d5d; text-align: center;">Aseguramos la felicidad de nuestros clientes</p>
             <br>
           </div>
-          <div class="col-md-6" style="padding: 0">
-        
-            <i class="fa fa-suitcase" aria-hidden="true"></i>
-            <a href="">Sede Pereira: <br> Calle 24 N° 6-14</a>
+          <div class="col-md-6" style="padding-left: 50px;">  
+            <h1 style="color: #1254A8; text-align: center;">¿Contacto Sumel?</h1>
+            <p class="text-right" style="color: #5d5d5d; font-size: 16px;">Escríbenos</p>
             <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href="">(6) 3255690 </a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href=""> 314 888 0021 </a>
-            <br>
-            <br>
-            <i class="fa fa-suitcase" aria-hidden="true"></i>
-            <a href="">Sede Armenia: <br> Carrera 12 N° 1A Norte 20 Edificio Centro Medico Empresarial Uninorte Local   105
-           </a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href="">(6) 746 3334 </a>
-            <br>
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-            <a href=""> 321 701 0685</a>
-            <br>
+            <div class="form-container">
+              <%= form_tag("/contact-message", method: "post") do %>
+                <%= text_field_tag "message[name]", "", placeholder: 'TU NOMBRE', class: 'input-style form-control', required: true%>
+                <%= text_field_tag "message[email]", "", placeholder: 'EMAIL', class: 'input-style form-control', type: 'email', required: true%>
+                <%= text_area_tag "message[details]", "", placeholder: 'MESSAGE', class: 'input-style form-control', required: true%>
+                <br>
+                <%= submit_tag("Enviar mensaje", class: "modal-submit")%>
+              <% end %>
+            </div>
           </div>
-         <!--  <i class="fa fa-inbox" aria-hidden="true"></i>
-          <a href="">test@test.com</a>
-          <br>
-          <i class="fa fa-skype" aria-hidden="true"></i>
-          <a href="">Shop.test</a> -->
-        </div>
+        </div> 
       </div>
     </div>
   </div>
-</section>
-<nav class="subscription-bar">
-      <div class="row">
-        <div class="col-md-6 text-left">
-          <div class="">
-            <h3 class="nav navbar-nav navbar-left left">Inscríbete</h3>
-            <%= form_tag("/subs", method: "post", class: 'sub-form') do %>
-              <%= text_field_tag "subscription[email]", "", placeholder: 'Email', class: 'input-sub form-control', type: 'email', required: true%>
-              <%= submit_tag("ENVIAR", class: "enviar-sub")%>
-            <% end %>
+</div>
+
+<!-- modal -->
+<div class="modal fade" id="requerir-acceso-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-contant" role="document" style="margin-top: 161px;">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <img class="modal-logo" src="/assets/images/full_logo_blue.png">
+            <br>
+            <br>
+            <img class="img-contact" src="/assets/images/contact-photo.png">
+            <br>
+            <br>
+            <p style="color: #5d5d5d; text-align: center;">Aseguramos la felicidad de nuestros clientes</p>
+            <br>
           </div>
-        </div>
-        <div class="col-md-6 text-right">
-           <div>
-            <!--  <p class="navbar-text navbar-left">Open hours: 8.00-18.00 Mon-Sat</p> -->
-            <div class="nav navbar-nav navbar-right right">
-              <div class="navbar-text navbar-left mr-1">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </div>
-              <div class="navbar-text navbar-left mr-1">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </div>
-              <div class="navbar-text navbar-left">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </div>
-            </div> 
+          <div class="col-md-6" style="padding-left: 50px;">  
+            <h1 style="color: #1254A8; text-align: center;">¿Requerir acceso?</h1>
+            <p class="text-right" style="color: #5d5d5d; font-size: 16px;">Escríbenos</p>
+            <br>
+            <div class="form-container">
+              <%= form_tag("/contact-message", method: "post") do %>
+                <%= text_field_tag "message[name]", "", placeholder: 'TU NOMBRE', class: 'input-style form-control', required: true%>
+                <%= text_field_tag "message[email]", "", placeholder: 'EMAIL', class: 'input-style form-control', type: 'email', required: true%>
+                <%= text_field_tag "message[product]", "", placeholder: 'ASUNTO (Requerir acceso)', class: 'input-style form-control', required: true%>
+                <br>
+                <%= submit_tag("Enviar", class: "modal-submit")%>
+              <% end %>
+            </div>
           </div>
-        </div>
+        </div> 
       </div>
-    </nav>
+    </div>
+  </div>
+</div>
+
 <style>
-  /*end asdasda*/
   .login-bar nav{
     margin-bottom: 0;
-    border-top: 3px solid red;
+    border-top: 3px solid #0038a7;
+  }
+
+  .logo-login{
+    width: 252px;
+    margin-top: 50px;
   }
 
   .forget-a{
@@ -416,6 +424,7 @@
   }
 
   .rounded-blue-arrow{
+    /*background: #0038a7;*/
     background: red;
     width: 100px;
     height: 100px;
@@ -443,7 +452,7 @@
     color: #0038a7;
     font-weight: 700;
     font-size: 22px;
-    padding-top: 70px;
+    padding-top: 5px;
   }
 
   .log-section h4, .log-section h1 {
@@ -452,7 +461,7 @@
   }
 
   .log-section h1 {
-    font-size: 46px;
+    font-size: 42px;
   }
 
   .log-section{
@@ -478,14 +487,15 @@
     margin-right: 0;
     width: 37% !important;
     font-size: 12px;
-    border-radius: 12px;
+    border-radius: 0;
+    border-color: #0038a7;
     padding: 8px;
     padding-left: 42px;
     background: #0038a7 !important;
   }
 
   .forgot-password-div{
-    padding-bottom: 75px;
+    padding-bottom: 40px;
     margin-right: 57px;
   }
 
@@ -497,11 +507,15 @@
     padding: 12px 85px;
     font-size: 12px;
   }
+  .contact-sumel:hover{
+    background: #0760ED;
+    color: white;
+  }
 
   #map{
     height: 350px;
   }
-  
+
   .cities-button{
     background: #d8d8d8;
     border: 1px solid #d8d8d8;
@@ -525,52 +539,268 @@
     font-size: 12px;
   }
 
+  .products-sumel:hover{
+    color: white;
+  }
+
   .cities-button:hover{
     background: #d8d8d8 !important;
     padding: 10px;
     color: #555555;
   }
 
-  /*sub*/
-  .subscription-bar{
-    height: 70px;
-    background: #7f7f7f;
-  }
-
-  .subscription-bar h3{
-    color: white;
-  }
-
-  .left{
-    padding-top: 25px;
-    padding-left: 50px;
-  }
-
-  .right{
-    padding-top: 15px;
-    padding-right: 70px;
-    font-size: 22px;
-  }
-
   .mr-1{
     margin-right: 1px;
   }
+
+  .rounded-blue-arrow:hover{
+    background: #0760ED;
+  }
+
+  .fa-user-plus{
+    margin:0 auto;
+  }
+
+  .numero-uno{
+    position: relative;
+    top: 60px;
+  }
+
+  .numero-dos{
+    position: relative;
+    top: 126px;
+    /*left: 250px;*/
+  }
+
+  .numero-tres{
+    position: relative;
+    top: 25px;
+  }
+
+  .numero-cuatro{
+    position: relative;
+    top: 156px;
+    /*left: 300px;*/
+  }
+
+  .uno-display{
+    display: none;
+  }
+
+
+  .uno{
+    width: 50px;
+    height: 50px;
+    background: #0038a7;
+    border-radius: 30px;
+    margin: 0 auto;
+  }
+
+  .dos, .cuatro{
+    width: 50px;
+    height: 50px;
+    background: #0038a7;
+    border-radius: 30px;
+  }
+
+  .tres{
+    width: 50px;
+    height: 50px;
+    background: #0038a7;
+    border-radius: 30px;
+    margin: 0 auto;
+  }
+
+  .uno p, .dos p, .tres p, .cuatro p{
+    margin-top: 0 !important;
+    font-size: 16px;
+    padding-top: 14px;
+    color: white;
+    text-align: center;
+  }
+
+  .uno-text{
+    margin: 0 auto;
+    text-align: center;
+    background: white;
+    width: 392px;
+    height: 116px;
+    border-radius: 10px;
+    position: relative;
+    bottom: 33px;
+    font-size: 16px;
+    /*left: 315px;*/
+  } 
+
+  .felicidad{
+    height: 35px;
+    width: 54%;
+    background: #e0514b;
+    color: white;
+    font-size: 16px;
+    margin-right: 367px;
+    position: relative;
+    bottom: 42px;
+    /*left: -30px;*/
+    margin-top: 62px;
+  }
+
+  .calidad{
+    height: 35px;
+    width: 15%;
+    background: #e0514b;
+    color: white;
+    font-size: 16px;
+    margin-right: 367px;
+    position: relative;
+    bottom: 42px;
+    left: -30px;
+  }
+
+  /*center-inside*/
   
-  .productSection{
-    color: #1d439c;
+  .uno-text p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); 
+    text-align: left !important;
+    padding-left: 20px !important;
   }
 
-  .productSection h5{
-    margin-top: 5px !important;
-    font-weight: 600;
-    margin-bottom: 0;
+  .dos-text{
+    display: none;
+    position: relative;
+    left: 20px;
+    /* bottom: 44px; */
+    top: 15px;
+    background: white;
+    width: 90%;
+    border-radius: 8px;
+    padding-top: 8px;
+    height: 35px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    background: #e0514b;
   }
 
-  .productSection h1{
-    margin-top: 0;
-    font-weight: 900;
-    font-size: 42px;
-    margin-bottom: 10px;
+  .dos-text-info{
+    height: 146px;
+    width: 261px;
+    top: 40px;
+    padding-top: 35px;
+    background: white;
+    color: #2e497e;
+    font-weight: 400;
+  }
+
+  .dos-text-info p{
+    padding-left: 10px;
+  }
+
+  .cuatro-text{
+    display: none;
+    position: relative;
+    /*left: -140px;*/
+    bottom: 40px;
+    background: white;
+    width: 90%;
+    border-radius: 8px;
+    padding-top: 8px;
+    height: 35px;
+    text-align: center;
+    color: #e0514b;
+    font-weight: 700;
+    top: 15px;
+    left: 20px;
+  }
+
+  .dream-p{
+    position: relative;
+    background: white;
+    width: 291px;
+    border-radius: 8px;
+    padding-top: 25px;
+    height: 100px;
+    text-align: center;
+    color: #2e497e;
+    font-weight: 700;
+    margin: 0 auto;
+    top: 7px;
+    font-weight: 400;
+  }
+
+  .tres-text{
+    display: none;
+    position: relative;
+    left: 156px;
+    bottom: 105px;
+    background: white;
+    width: 40%;
+    border-radius: 8px;
+    padding-top: 8px;
+    height: 35px;
+    text-align: center;
+    color: #e0514b;
+    font-weight: 700;
+    margin: 0 auto;
+  }
+
+  .sonrisas-p{
+    background: #e0514b;
+    color: white;
+  }
+
+
+  .p-especialista{
+    position: relative;
+    background: white;
+    width: 291px;
+    border-radius: 8px;
+    padding-top: 25px;
+    height: 152px;
+    text-align: center;
+    color: #2e497e;
+    font-weight: 700;
+    margin: 0 auto;
+    top: 7px;
+    font-weight: 400;
+  }
+
+  .btn-conocer{
+    background: #0038a7;
+    color: white;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    position: relative;
+    left: 28%;
+  }
+
+  .sonrisas-btn{
+    bottom: 37px;
+    left: 90%;
+  }
+
+  .btn-conocer:hover{
+    color: white;
+  }
+
+  .top-40 p{
+    top: 40%;
+  }
+
+  .requerir-btn{
+    margin-top: 20px;
+    padding: 12px 74px;
+    background: #e0514b;
+    color: white;
+    font-size: 12px;
+  }
+
+  .requerir-btn:hover{
+    background: red;
+    color: white;
   }
 
   @media (min-width: 768px){
@@ -582,9 +812,5 @@
       padding-top: 20px !important;
       padding-bottom: 20px !important;
     }
-  }
-
-  .row{
-    margin: 0;
   }
 </style>
