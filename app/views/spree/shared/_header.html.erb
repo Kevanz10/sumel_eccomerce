@@ -153,7 +153,7 @@
       <div class="search-form-container">
         <a href="#" class="search-form-toggle" title="Toggle Search"><i class="fa fa-search"></i></a>
       
-        <%= form_tag(spree.products_path, method: :get, class: 'fixed-size') do %>
+        <%= form_tag(spree.products_path, method: :get, class: 'fixed-size-total') do %>
           <div class="dropdown search-dropdown">
             <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
               Categorias
@@ -176,73 +176,18 @@
         <% end %>
       </div><!-- End .search-form-container -->
       <ul class="top-links">
-        <li>
+        <!-- <li>
           <a href="/cart" data-hook class="add-car" id="link-to-cart"> Add to cart</a>
             <script>Spree.fetch_cart()</script>
           <a href="#"></a>
-        </li>
+        </li> -->
         <li>
-          <%= link_to Spree.t(:my_account), spree.account_path, {:style=>'padding-top: 5px', class: "navbar-text"} %>
+          <%= link_to 'Ingresar', root_path, {:style=>'padding-top: 5px', class: "navbar-text"} %>
         </li> 
         <li>
-          <%= link_to Spree.t(:logout), spree.logout_path, {:style=>'padding-top: 5px', class: "navbar-text"}%>
+          <%= link_to 'Contactenos', root_path, { class: "navbar-text", :style=>'padding-top: 5px', data: {toggle: 'modal', target: 'busqueda-modal'}} %>
         </li>
         <!-- Dropdown cart -->
-        <li>
-          <div class="dropdown cart-dropdown">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
-                <span class="cart-icon">
-                    <img src="assets/images/bag.png" alt="Cart">
-                    <span class="cart-count"><%= simple_current_order.item_count%></span>
-                </span>
-                <i class="fa fa-caret-down"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right">
-                <p class="dropdown-cart-info">Tienes <%= simple_current_order.item_count%> productos listos para comprar.</p>
-                <div class="dropdown-menu-wrapper">
-                    <div class="product">
-                        <figure class="product-image-container">
-                            <a href="product.html" title="Product Name">
-                                <img src="assets/images/products/small/product2.jpg" alt="Product Image">
-                            </a>
-                        </figure>
-
-                        <div>
-                            <a href="#" class="btn-delete" title="Delete product" role="button"></a>
-                            <h4 class="product-title"><a href="product.html">Sunglasses</a></h4>
-                            <div class="product-price-container">
-                                <span class="product-price">$110.00</span>
-                            </div><!-- End .product-price-container -->
-                            <div class="product-qty">x1</div><!-- End .product-qty -->
-                        </div><!-- End .product-image-container -->
-                    </div><!-- End .product- -->
-
-                    <div class="product">
-                        <figure class="product-image-container">
-                            <a href="product.html" title="Product Name">
-                                <img src="assets/images/products/small/product1.jpg" alt="Product Image">
-                            </a>
-                        </figure>
-
-                        <div>
-                            <a href="#" class="btn-delete" title="Delete product" role="button"></a>
-                            <h4 class="product-title"><a href="product.html">Leather Belt</a></h4>
-                            <div class="product-price-container">
-                                <span class="product-price">$99.00</span>
-                            </div><!-- End .product-price-container -->
-                            <div class="product-qty">x1</div><!-- End .product-qty -->
-                        </div><!-- End .product-image-container -->
-                    </div><!-- End .product- -->
-                </div><!-- End .droopdowm-menu-wrapper -->
-
-                <div class="cart-dropdowm-action">
-                    <div class="dropdowm-cart-total"><span>TOTAL:</span> $209.00</div>
-                    <a href="checkout.html" class="btn btn-primary">Checkout</a>
-                </div><!-- End .cart-dropdown-action -->
-            </div><!-- End .dropdown-menu -->
-          </div><!-- End .cart-dropddown -->
-        </li>
-        <li><a href="/">Ingresar</a></li>
       </ul>
       <a href="#" class="sidemenu-btn" title="Menu Toggle">
         <span></span>
