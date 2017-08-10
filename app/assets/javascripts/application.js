@@ -84,7 +84,7 @@ $(document).on('turbolinks:load', function() {
     $('#busqueda-modal').modal()
   });
 
-  $('.blue').click(function(event) {
+  $('.blue, .contact-m').click(function(event) {
     $('#busqueda-modal').modal()
   });
 

@@ -40,6 +40,43 @@
     </div>
   </nav>
 </div> -->
+<div class="modal fade" id="busqueda-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-contant" role="document" style="margin-top: 161px;">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <img class="modal-logo" src="/assets/images/full_logo_blue.png">
+            <br>
+            <br>
+            <img class="img-contact" src="/assets/images/contact-photo.png">
+            <br>
+            <br>
+            <p style="color: #5d5d5d; text-align: center;">Aseguramos la felicidad de nuestros clientes</p>
+            <br>
+          </div>
+          <div class="col-md-6" style="padding-left: 73px;">  
+            <h1 style="color: #1254A8; text-align: right;">Contactanos!</h1>
+            <p class="text-right" style="color: #5d5d5d; font-size: 16px;">Escríbenos</p>
+            <div class="form-container">
+              <%= form_tag("/contact-message", method: "post") do %>
+                <%= text_field_tag "message[name]", "", placeholder: 'TU NOMBRE', class: 'input-style form-control', required: true%>
+                <%= text_field_tag "message[email]", "", placeholder: 'EMAIL', class: 'input-style form-control', type: 'email', required: true%>
+                <%= text_area_tag "message[details]", "", placeholder: 'MESSAGE', class: 'input-style form-control', required: true%>
+                <%= submit_tag("Enviar Mensaje", class: "modal-submit")%>
+              <% end %>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
 <header class="header sticky-header">
   <% if spree_current_user %>
     <div class="container">
@@ -185,7 +222,7 @@
           <%= link_to 'Ingresar', root_path, {:style=>'padding-top: 5px', class: "navbar-text"} %>
         </li> 
         <li>
-          <%= link_to 'Contactenos', root_path, { class: "navbar-text", :style=>'padding-top: 5px', data: {toggle: 'modal', target: 'busqueda-modal'}} %>
+          <a href="" class="navbar-text contact-m" data-toggle="modal" data-target="busqueda-modal" style="padding-top: 5px">Contactenos</a>
         </li>
         <!-- Dropdown cart -->
       </ul>
@@ -219,42 +256,3 @@
     </ul>
   </div><!-- End .sidemenu-wrapper -->
 </aside><!-- End .sidemenu -->
-
-
-<div class="modal fade" id="busqueda-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-contant" role="document" style="margin-top: 161px;">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <br>
-        <br>
-        <div class="row">
-          <div class="col-md-6">
-            <img class="modal-logo" src="/assets/images/full_logo_blue.png">
-            <br>
-            <br>
-            <img class="img-contact" src="/assets/images/contact-photo.png">
-            <br>
-            <br>
-            <p style="color: #5d5d5d; text-align: center;">Aseguramos la felicidad de nuestros clientes</p>
-            <br>
-          </div>
-          <div class="col-md-6" style="padding-left: 73px;">  
-            <h1 style="color: #1254A8; text-align: right;">Contactanos!</h1>
-            <p class="text-right" style="color: #5d5d5d; font-size: 16px;">Escríbenos</p>
-            <div class="form-container">
-              <%= form_tag("/contact-message", method: "post") do %>
-                <%= text_field_tag "message[name]", "", placeholder: 'TU NOMBRE', class: 'input-style form-control', required: true%>
-                <%= text_field_tag "message[email]", "", placeholder: 'EMAIL', class: 'input-style form-control', type: 'email', required: true%>
-                <%= text_area_tag "message[details]", "", placeholder: 'MESSAGE', class: 'input-style form-control', required: true%>
-                <%= submit_tag("Enviar Mensaje", class: "modal-submit")%>
-              <% end %>
-            </div>
-          </div>
-        </div> 
-      </div>
-    </div>
-  </div>
-</div>
