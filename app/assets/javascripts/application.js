@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require social-share-button
 
 //= require plugins
@@ -31,10 +30,11 @@
 //= require extensions/revolution.extension.slideanims.min
 //= require extensions/revolution.extension.video.min
 
+//= require xzoom.min
+
 //= require_tree.
 
-
-$(document).on('turbolinks:load', function() {
+$(document).ready(function($) {
   $(".photo1").mouseover(function(e){    
     $(".block-text").css("visibility", "visible");
   });
@@ -136,7 +136,7 @@ $(document).on('turbolinks:load', function() {
 });
 
 (function ($) {
-  $(document).on('turbolinks:load', function() {
+  $(document).ready(function($) {
     // $(function () {
     //   $(window).scroll(function () {
     //     if ($(this).scrollTop() > 100) {

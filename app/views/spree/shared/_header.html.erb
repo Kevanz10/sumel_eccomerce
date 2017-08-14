@@ -125,7 +125,7 @@
           <div class="dropdown cart-dropdown">
             <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
                 <span class="cart-icon">
-                    <img src="assets/images/bag.png" alt="Cart">
+                    <img src="/assets/images/bag.png" alt="Cart">
                     <span class="cart-count"><%= simple_current_order.item_count%></span>
                 </span>
                 <i class="fa fa-caret-down"></i>
@@ -219,7 +219,7 @@
           <a href="#"></a>
         </li> -->
         <li>
-          <%= link_to 'Ingresar', root_path, {:style=>'padding-top: 5px', class: "navbar-text"} %>
+          <%= link_to 'Ingresar', spree.root_path, {:style=>'padding-top: 5px', class: "navbar-text"} %>
         </li> 
         <li>
           <a href="" class="navbar-text contact-m" data-toggle="modal" data-target="busqueda-modal" style="padding-top: 5px">Contactenos</a>
