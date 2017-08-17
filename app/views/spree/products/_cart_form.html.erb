@@ -32,13 +32,7 @@
       <% if @product.price_in(current_currency) && !@product.price.nil? %>
         <div data-hook="product_price" class="col-md-12">
           <div id="product-price">
-            <h3 class="product-section-title"><%= Spree.t('Precio') %></h3>
-            <div>
-              <span class="lead price selling" itemprop="price">
-                <%= display_price(@product) %>
-              </span>
-              <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
-            </div>
+            
 
             <% if @product.master.can_supply? %>
               <link itemprop="availability" href="https://schema.org/InStock" />

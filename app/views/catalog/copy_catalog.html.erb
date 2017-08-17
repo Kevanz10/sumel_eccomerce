@@ -1,0 +1,238 @@
+<div class="searcher">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="search-box text-center">
+				<img src="assets/images/logo_blue.png" class="blue-sumel">
+				<p>
+					¿Desea buscar algunos de nuestros productos?
+				</p>
+				<%= form_tag spree.products_path, method: :get, class: "navbar-form nav-search-form" do %>
+				  <div class="form-group">
+				    <%= search_field_tag :keywords, params[:keywords], placeholder: "Escriba acá el nombre del producto", class: "form-control search-tag-input search-input" %>
+				  </div>
+				  <br>
+				  <br>
+				  <br>
+				  <div class="form-group submit-button">
+				    <%= submit_tag 'BUSCAR', name: nil, class: "btn btn-success search-button-style buscar" %>
+				    <br>
+				  </div>
+				<% end %>
+					o
+			    <br>
+			    <br>
+          <a href="" data-toggle="modal" data-target="busqueda-modal" class="btn buscar blue">Contáctenos</a>
+			</div>
+		</div>
+		<div class="col-md-6 text-center">
+			<h1>TODO</h1>
+			<h2>DEPENDE DE TI</h2>
+			<h3>Productos</h3>
+		</div>
+	</div>
+</div>
+<div class="login-bar">
+  <nav class="navbar navbar-default" style="background: #dbd9da">
+    <div class="container">
+      <div id="navbar" class="navbar-collapse collapse informative-bar-login acerca-nav">
+        <ul class="nav navbar-nav acerca-nav">
+          <li><a href="#">Acerca</a></li>
+          <li><a href="">Cotización</a></li>
+          <li><a href="">Órdenes</a></li>
+          <li><a href="">Busqueda</a></li>
+          <li><a href="">Términos y Condiciones</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../navbar/">Mapa del sitio</a></li>
+          <li><a href="../navbar-static-top/">Atención al cliente</a></li>
+        </ul>
+      </div>
+      <div class="rounded-blue-arrow"> 
+      </div>
+      <div class="text-center arrow">
+        <i class="fa fa-arrow-up arrow" aria-hidden="true"></i>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="row">
+  <div class="col-md-12 col-xs-12 products " style="padding: 0">
+    <%= render partial: 'spree/shared/products', locals: { products: @products } %>
+  </div>
+</div>
+
+<div class="modal fade" id="busqueda-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-contant" role="document" style="margin-top: 161px;">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <img class="modal-logo" src="/assets/images/full_logo_blue.png">
+            <br>
+            <br>
+            <img class="img-contact" src="/assets/images/contact-photo.png">
+            <br>
+            <br>
+            <p style="color: #5d5d5d; text-align: center;">Aseguramos la felicidad de nuestros clientes</p>
+            <br>
+          </div>
+          <div class="col-md-6" style="padding-left: 73px;">  
+            <h1 style="color: #1254A8; text-align: right;">¿Quieres conocer alguno de nuestros productos?</h1>
+            <p class="text-right" style="color: #5d5d5d; font-size: 16px;">Escríbenos</p>
+            <div class="form-container">
+              <%= form_tag("/contact-message", method: "post") do %>
+                <%= text_field_tag "message[name]", "", placeholder: 'TU NOMBRE', class: 'input-style form-control', required: true%>
+                <%= text_field_tag "message[email]", "", placeholder: 'EMAIL', class: 'input-style form-control', type: 'email', required: true%>
+                <%= text_field_tag "message[product]", "", placeholder: 'PHONE', class: 'input-style form-control', type: 'number', required: true%>
+                <%= submit_tag("COTIZAR", class: "modal-submit")%>
+              <% end %>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+	.searcher{
+		background: url(/assets/images/loginc-bg.JPG);
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		height: 75vh;
+	}
+	 .login-bar nav{
+    margin-bottom: 0;
+    border-top: 3px solid red;
+  }
+
+  .forget-a{
+    color: #c3736c;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  .login-bar nav ul{
+    position: relative;
+    left: -40px;
+  }
+
+  .rounded-blue{
+     background: #0038a7;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin: 0 auto;
+  }
+
+  .rounded-blue .fa{
+    font-size: 35px;
+    color: white;
+    padding-top: 30px;
+  }
+
+  .rounded-blue-arrow{
+    background: red;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 19%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .arrow{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 68%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+    color: white;
+  }
+
+  .searcher .text-center{
+  	color:white;
+  }
+
+  .searcher .text-center h1{
+  	font-size: 164px;
+    font-weight: 900;
+    margin-bottom: 0;
+    padding-top: 35px;
+  }
+
+  .searcher .text-center h2{
+  	font-size: 62px;
+    font-weight: 900;
+    margin-top: 0;
+  }
+
+   .searcher .text-center h3{
+  	font-size: 32px;
+    font-weight: 300;
+   	text-align: center;
+   	padding-left: 334px;
+   	margin-top: 0;
+  }
+
+  .search-box{
+  	background: #cbccce;
+  	margin-top: 50px !important; 
+  	width: 463px;
+    margin: 0 auto;
+    height: 350px;
+  }
+
+  .search-box p{
+  	color: #57585a;
+  	font-weight: 200;
+  	padding-top: 20px;
+	}
+  .blue-sumel{
+  	width: 200px;
+  	padding-top: 60px;
+  }
+
+/*  .search-input{
+  	text-align: center;
+  	width: 380px !important;
+  	background: #d7d7d7;
+  	border-radius: 0 !important;
+  }
+*/
+  .search-box .buscar{
+  	background: #e0514b;
+  	border-radius: 0 !important;
+  	border: 1px solid  #e0514b;
+  	font-size: 12px;
+  	padding: 5px 121px;
+  }
+
+  .blue{
+  	background: #1252a9 !important;
+  	padding: 5px 109px !important;
+  	color: white;
+  	border: 1px solid #1252a9 !important;
+  }
+
+
+  @media (max-width: 768px){
+     .row-products{
+      margin-left: 45px !important;
+      margin-right: 45px !important;
+    }
+    .bluebg-home{
+      padding-left: 10px !important;
+      text-align: center;
+    }
+  }
+</style>

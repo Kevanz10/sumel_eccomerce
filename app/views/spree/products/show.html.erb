@@ -78,13 +78,13 @@
       <div class="col-md-9 col-md-push-3">
 
         <div class="row">
-          <div class="product-gallery-container">
+          <div class="product-gallery-container" style="margin-top: 90px;">
             <div class="product-zoom-wrapper">
               <div class="product-zoom-container">
                 
               <!-- <img class="xzoom" id="product-zoom" src="/assets/images/photo1.jpg" data-xoriginal="/assets/images/photo1.jpg" alt="Zoom image"/> -->
 
-               <%= large_image(@product, itemprop: "image", class: 'xzoom', id: 'product-zoom',  'data-xoriginal': '/assets/images/photo1.jpg')%>
+               <%= large_image(@product, itemprop: "image", class: 'xzoom', id: 'product-zoom',  'data-xoriginal': '@product')%>
                <br>
               
               </div><!-- End .product-zoom-container -->

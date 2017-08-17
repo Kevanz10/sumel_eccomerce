@@ -32,7 +32,6 @@
 
 //= require xzoom.min
 
-//= require_tree.
 
 $(document).ready(function($) {
   $(".photo1").mouseover(function(e){    
