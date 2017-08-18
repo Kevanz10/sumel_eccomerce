@@ -1,3 +1,247 @@
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-md-push-3">
+        <div class="banner banner-top">
+          <img src="/assets/images/banners/banner-top.jpg" alt="Banner">
+          <div class="banner-content">
+            <h2><%= @taxon.name %></h2>
+            <!-- <a href="#" class="action-link">Shop now</a> -->
+          </div>
+        </div><!-- End .banner -->
+
+        <div class="category-header">
+          <h1>Home Decor</h1>
+          <ol class="breadcrumb">
+            <li><a href="#">Home &amp; Garden</a></li>
+            <li class="active">Home Decor</li>
+          </ol>
+        </div>
+
+        <% if products.any? %>
+          <div class="shop-row">
+            <div class="shop-container max-col-4" data-layout="fitRows">
+              <% products.each do |product| %>
+                <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
+                <div class="product-item">
+                  <div class="product">
+                    <figure class="product-image-container">
+                      <!-- <a href="product.html" title="Product Name" class="product-image-link">
+                        <img src="/assets/images/products/product1.jpg" alt="Product Image">
+                      </a> -->
+                      <%= link_to url, itemprop: "url", class: 'product-image-link' do %>
+                        <%= small_image(product, itemprop: "image") %><br/>
+                      <% end %>
+                      <!-- <span class="product-label">-55%</span> -->
+                      <a href="" class="btn-quick-view">Quick View</a>
+
+                      <%= link_to "Quick view" , url, itemprop: "url", class: 'btn-quick-view' %>
+
+                      <%if spree_current_user%>
+                        <div class="product-action">
+                          <a href="#" class="btn-product btn-wishlist" title="Add to Wishlist">
+                            <i class="icon-product icon-heart"></i>
+                          </a>
+                          <a href="#" class="btn-product btn-add-cart" title="Add to Bag">
+                            <i class="icon-product icon-bag"></i>
+                              <span>Add to Bag</span>
+                          </a>
+                          <a href="#" class="btn-product btn-compare" title="Add to Compare">
+                            <i class="icon-product icon-bar"></i>
+                          </a>
+                        </div><!-- End .product-action -->
+                      <%else%>
+                        <div class="product-action">
+                          <a href="#" class="cotizar-click btn-product btn-add-cart" title="Add to Bag" data-toggle="modal" data-target="busqueda-modal">
+                            <i class="icon-product icon-bag"></i>
+                              <span>Cotizar</span>
+                          </a>
+                        </div><!-- End .product-action -->
+                      <%end%>
+                    
+                    </figure>
+                    <h3 class="product-title">
+                      <a href="product.html">
+                        <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>  
+                      </a>
+                    </h3>
+                    <div class="product-price-container">
+                        <span class="product-price"><%= number_to_currency(product.price.to_f, precision: 1) %></span>
+                    </div><!-- Endd .product-price-container -->
+                  </div><!-- End .product -->
+                </div><!-- End .product-item -->
+              <% end %>
+            </div><!-- End .shop-container -->
+          </div><!-- End .shop-row -->
+          <% reset_cycle("classes") %>
+        <% end %>
+        <div class="paginations text-center">
+          <% if products.respond_to?(:total_pages) %>
+            <%= paginate products, theme: 'twitter-bootstrap-3' %>
+          <% end %>
+        </div>
+      </div><!-- End .col-md-9 -->
+
+      
+      <aside class="col-md-3 col-md-pull-9 sidebar sidebar-shop">
+          <div class="widget widget-box widget-shop-category active">
+            <h3 class="widget-title">Categorias 
+              <!-- <a href="#" class="btn-filter" role="button">Filter<i class="fa fa-caret-down"></i></a> -->
+            </h3>
+
+            <ul class="shop-category-list accordion">
+              <li>
+                <a href="/t/oxigenoterapia/reguladores-de-oxigeno-y-porta-cilindro">Oxigenoterapia</a> 
+              </li>
+              <li>
+                <a href="/t/movilidad">Movilidad </a>
+              </li>
+              <li>
+                <a href=""> Fisioterapia y rehabilitación</a> 
+              </li>
+              <li>
+                <a href="">Ayudas para el diario vivir</a>
+                <!-- <button class="accordion-btn collapsed" type="button" data-toggle="collapse" data-target="#accordion-ul-4" aria-expanded="false" aria-controls="accordion-ul-4"><span class="accordion-icon"></span></button>
+
+                <ul class="collapse" id="accordion-ul-4" aria-expanded="false">
+                  <li><a href="category.html"><i class="fa fa-caret-right"></i>SubCategory</a></li>
+                  <li><a href="category.html"><i class="fa fa-caret-right"></i>SubCategory</a></li>
+                  <li><a href="category.html"><i class="fa fa-caret-right"></i>SubCategory</a></li>
+                  <li><a href="category.html"><i class="fa fa-caret-right"></i>SubCategory</a></li>
+                </ul> -->
+              </li>
+              <li>
+                <a href="">Cuidado Respiratorio</a>
+              </li>
+              <li>
+                <a href="">Diagnostico</a>
+              </li>
+              <li>
+                <a href="">Mobiliario medico</a>
+              </li>
+              <li>
+                <a href="#">Ozonoterapia</a>
+              </li>
+              <li>
+                <a href="">Colonterapia</a>
+              </li>
+            </ul>
+          </div><!-- End .widget -->
+
+          <div class="widget widget-box widget-shop-filter">
+            <!-- <h3 class="widget-title">Filter <a href="#" class="btn-category" role="button">Categories<i class="fa fa-caret-down"></i></a></h3> -->
+              
+              <div class="filter-box">
+                <h5 class="filter-label">Sort By</h5>
+                <ul class="shop-filter-list">
+                  <li><a href="#"><i class="fa fa-caret-right"></i>Default</a></li>
+                  <li><a href="#"><i class="fa fa-caret-right"></i>Popularity</a></li>
+                  <li class="active"><a href="#"><i class="fa fa-caret-right"></i>Average Rating</a></li>
+                  <li><a href="#"><i class="fa fa-caret-right"></i>Newness</a></li>
+                  <li><a href="#"><i class="fa fa-caret-right"></i>Price: Low to high</a></li>
+                  <li><a href="#"><i class="fa fa-caret-right"></i>Price: high to Low</a></li>
+                </ul>
+              </div><!-- End .filter-box -->
+
+              <div class="filter-box">
+                <h5 class="filter-label">Price <span class="filter-price-text"><span class="filter-price-prefix">$</span><span id="filter-price-range"></span></span></h5>
+                <div class="price-slider-wrapper">
+                  <div id="price-slider"></div><!-- End #price-slider -->
+                </div><!-- End .price-slider-wrapper -->
+              </div><!-- End .filter-box -->
+
+              <div class="filter-box">
+                <h5 class="filter-label">Color</h5>
+                <div class="row">
+                  <div class="col-xs-6">
+                    <ul class="filter-color-list">
+                      <li>
+                        <span class="filter-color" style="background-color: #1e73be;"></span>
+                        <span class="filter-color-text">Blue</span>
+                      </li>
+                      <li>
+                        <span class="filter-color" style="background-color: #c0c0c0;"></span>
+                        <span class="filter-color-text">Gray</span>
+                      </li>
+                      <li>
+                        <span class="filter-color" style="background-color: #dc9814;"></span>
+                        <span class="filter-color-text">Orange</span>
+                      </li>
+                    </ul>
+                  </div><!-- End col-xs-6 -->
+
+                  <div class="col-xs-6">
+                    <ul class="filter-color-list">
+                      <li>
+                        <span class="filter-color" style="background-color: #736751;"></span>
+                        <span class="filter-color-text">Brown</span>
+                      </li>
+                      <li>
+                        <span class="filter-color" style="background-color: #05ac92;"></span>
+                        <span class="filter-color-text">Green</span>
+                      </li>
+                      <li>
+                        <span class="filter-color" style="background-color: #fff;"></span>
+                        <span class="filter-color-text">White</span>
+                      </li>
+                    </ul>
+                  </div><!-- End col-xs-6 -->
+                </div><!-- End row -->
+              </div><!-- End .filter-box -->
+
+              <a href="#" class="btn btn-apply btn-block">Apply Filter</a>
+          </div><!-- End .widget -->
+
+          <div class="widget widget-banner">
+            <div class="banner banner-image">
+              <a href="#" title="Brown Woman Shoes">
+                <img src="/assets/images/banners/widget-banner.png" alt="Banner name">
+              </a>
+            </div>
+          </div><!-- End .widget -->
+
+          <div class="widget widget-newsletter">
+            <h3 class="widget-title">Boletín de noticias</h3>
+            <p>Suscríbete para recibir las ultimas noticias, ingresa tu email en el cuadro de abajo.</p>
+            <%= form_tag("/subs", method: "post", class: 'sub-form') do %>
+              
+              <%= text_field_tag "subscription[email]", "", placeholder: 'Email', class: 'form-control', type: 'email', required: true do %>
+                <img src="/assets/images/icon-newsletter-email.png" alt="Email">
+              <% end %>
+              <%= submit_tag("ENVIAR", class: "btn btn-block")%>
+            <% end %>
+          </div><!-- End .widget -->
+
+          <div class="widget widget-testimonial">
+            <div class="owl-data-carousel owl-carousel"
+            data-owl-settings='{ "items":1, "margin": 5, "loop": false, "nav": false, "dots":true }'>
+              <div class="testimonial">
+                <img src="/assets/images/testimonials/user1.png" alt="User image">
+                <h5 class="testimonial-owner">John Smith</h5>
+                <div class="testimonial-owner-position">Ceo &amp; Founder Okler</div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              </div><!-- End .testimonial -->
+
+              <div class="testimonial">
+                <img src="/assets/images/testimonials/user2.png" alt="User image">
+                <h5 class="testimonial-owner">Susan Smith</h5>
+                <div class="testimonial-owner-position">CPO &amp; Co-Founder</div>
+                <p>Distinctio, corrupti nesciunt aperiam, eaque, reiciendis dummy consequunt.</p>
+              </div><!-- End .testimonial -->
+
+              <div class="testimonial">
+                <img src="/assets/images/testimonials/user3.png" alt="User image">
+                <h5 class="testimonial-owner">David Lee</h5>
+                <div class="testimonial-owner-position">Senior Developer</div>
+                <p>Adipisci esse nobis alias magnam dolores debitis non odit porro nost.</p>
+              </div><!-- End .testimonial -->
+            </div><!-- End .owl-data-carousel -->
+          </div><!-- End .widget -->
+        </aside><!-- End .col-md-3 -->
+      </div><!-- End .row -->
+    </div><!-- End .container -->
+  </div>
+</div><!-- End .main -->
 <div class="">
   <div data-hook="products_search_results_heading">
     <% if products.empty? %>
@@ -10,117 +254,5 @@
       </div>
     <% end %>
   </div>
-  
-  <% if products.any? %>
-    <br>
-    <br>
-    <div id="products" class="row" data-hook>
-      <div class="row row-products">
-
-      <% products.each do |product| %>
-        <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
-        <div  data-hook="products_list_item" >
-          <div class="col-md-3 text-center">
-            <div class="box-product">
-              <p class="name-product">
-                <label for="">
-                    <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
-                </label>
-              </p>
-              <%= link_to url, itemprop: "url" do %>
-                <%= small_image(product, itemprop: "image") %><br/>
-              <% end %>
-
-
-              <p class="subtitle">
-                <label for="">
-                  <%= number_to_currency(product.price.to_f, precision: 1) %>
-                </label>
-              <br>
-                <!-- Add little product description -->
-              </p>
-              <%= link_to url, itemprop: "url" do %>
-                <button class="btn contacto-btn">CONTACTO</button>
-              <% end %>
-              <%= link_to url, itemprop: "url" do %>
-                <button class="btn contacto-btn">LEER MAS</button>
-              <% end %>
-              </div>
-          </div>
-        </div>
-      <% end %>
-      <% reset_cycle("classes") %>
-    </div>
-    </div>
-  <% end %>
-  <div class="paginations text-center">
-    <% if products.respond_to?(:total_pages) %>
-      <%= paginate products, theme: 'twitter-bootstrap-3' %>
-    <% end %>
-  </div>
 </section>
 </div>
-
-
-<style >
-
-  .row{
-    margin:0 !important;
-  }
-
-  .c-p{
-    height: 295px;
-  }
-
-  .name-product{
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 18px;
-  }
-
-  .box-product{
-    margin-top: 20px;
-    background: #dbdddc;
-    padding-top: 20px;
-    padding-bottom: 35px;
-    height: 355px;
-  }
-
-  .box-product .subtitle{
-    margin-top: 5px;
-  }
-
-  .row-products{
-    margin-left: 35px !important;
-    margin-right: auto !important;
-    margin-top: 20px !important;
-    margin-bottom: 90px  !important;
-  }
-
-  .row-products img{
-    width: 150px;
-  }
-
-  .contacto-btn{
-    border-radius: 0;
-    background: #d92e27;
-    color: white;
-    padding: 6px 17px;
-    margin-left: 6px;
-    font-size: 12px;
-    font-weight: 700;
-  }
-
-  .saber-mas-bg{
-    color: white;
-    background: #e0514b;
-    padding: 14px 96px;
-    font-size: 12px;
-    font-weight:
-  }
-
-  .saber-mas-bg:hover{
-    color: white;
-    background: rgba(224, 81, 75, 0.7);
-  }
-</style>
