@@ -24,8 +24,9 @@ class Spree::UserSessionsController < Devise::SessionsController
     else
       respond_to do |format|
         format.html {
-          flash.now[:error] = t('devise.failure.invalid')
-          render :new
+          redirect_to spree.root_path
+          flash[:error] = "Credenciales invalidas"
+          # render :new
         }
         format.js {
           render :json => { error: t('devise.failure.invalid') }, status: :unprocessable_entity

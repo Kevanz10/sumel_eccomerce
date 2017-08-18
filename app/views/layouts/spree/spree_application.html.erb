@@ -11,8 +11,21 @@
     <%= render partial: 'spree/shared/head' %>
     <script src="https://use.fontawesome.com/e4b26ed800.js"></script>
   </head>
-  
-
+  <style>
+    
+      .flash-messages-all .alert{
+        border: 1px solid white;
+        color: #3c763d;
+        text-align: center;
+        margin-bottom: 0;
+        width: 50%;
+        margin: 0 auto;
+       
+        background: #1253a7;
+        color: white;
+      
+      }
+  </style>
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
     <%= render partial: 'spree/shared/google_analytics.js' %>
     <%= render partial: 'spree/shared/header' %>
@@ -96,10 +109,9 @@
                   <br>
                 <% end %>
 
-                <div class="social-icons">
-                  <a href="#" class="social-icon" title="Facebook"><i class="fa fa-facebook"></i></a>
-                  <a href="#" class="social-icon" title="Twitter"><i class="fa fa-twitter"></i></a>
-                  <a href="#" class="social-icon" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                <div class="social-icons text-center">
+                  <a href="https://www.facebook.com/Sumel-Biotech-405873106108023/?hc_ref=ARQaFxWOv3Rx6zPzdwEOP1Mcthyqupg7R8s198Ewkt86gLVNEw02c3cnzYB_zbcT2Ck&fref=nf" class="social-icon" title="Facebook"><i class="fa fa-facebook"></i></a>
+                  <a href="https://twitter.com/SumelSAS" class="social-icon" title="Twitter"><i class="fa fa-twitter"></i></a>
                 </div>
               </div><!-- End .widget -->
             </div><!-- End .col-md-3 -->
