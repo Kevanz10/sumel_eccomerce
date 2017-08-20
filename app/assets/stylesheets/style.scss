@@ -450,6 +450,11 @@ fieldset[disabled] .btn.btn-primary.active {
   background-color: #dc9831;
   border-color: #dc9831;
   color: #fff;
+  border-radius: 0;
+}
+
+.bradius-0{
+  border-radius: 0 !important;
 }
 
 .btn.btn-accent:hover, .btn.btn-accent:focus, .btn.btn-accent:active, .btn.btn-accent.active, .btn.btn-accent:active:focus, .btn.btn-accent:active:hover, .btn.btn-accent.active:focus, .btn.btn-accent.active:hover,
@@ -1730,7 +1735,7 @@ fieldset[disabled] .checkbox input[type=checkbox],
 
 .cart-dropdown .dropdown-menu .product > div {
   position: relative;
-  padding-top: 7px;
+  padding-top: 0px;
   margin-left: 110px;
 }
 

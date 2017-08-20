@@ -121,6 +121,7 @@
           <%= link_to Spree.t(:logout), spree.logout_path, {:style=>'padding-top: 5px', class: "navbar-text"}%>
         </li>
         <!-- Dropdown cart -->
+
         <li>
           <div class="dropdown cart-dropdown">
             <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -132,46 +133,35 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <p class="dropdown-cart-info">Tienes <%= simple_current_order.item_count%> productos listos para comprar.</p>
-                <div class="dropdown-menu-wrapper">
-                    <div class="product">
+                <% if simple_current_order.line_items.empty?%>  
+                  <p>No tienes productos dentro del carrito de compras.</p>
+                <%else%>
+                  <%simple_current_order.line_items.each do |object_cart| %>
+                    <div class="dropdown-menu-wrapper">
+                      <div class="product">
                         <figure class="product-image-container">
-                            <a href="product.html" title="Product Name">
-                                <img src="assets/images/products/small/product2.jpg" alt="Product Image">
-                            </a>
+                          <a href="product.html" title="Product Name">
+                            <%= small_image(object_cart.variant)%>
+                          </a>
                         </figure>
-
                         <div>
-                            <a href="#" class="btn-delete" title="Delete product" role="button"></a>
-                            <h4 class="product-title"><a href="product.html">Sillas de ruedas</a></h4>
-                            <div class="product-price-container">
-                                <span class="product-price">$110.00</span>
-                            </div><!-- End .product-price-container -->
-                            <div class="product-qty">x1</div><!-- End .product-qty -->
+                          <a href="#" class="btn-delete" title="Delete product" role="button"></a>
+                          <h4 class="product-title"><%=object_cart.name%></h4>
+                          <div class="product-price-container">
+                              <span class="product-price"><%=object_cart.single_money%></span>
+                          </div><!-- End .product-price-container -->
+                          <div class="product-qty">x<%=object_cart.quantity%></div><!-- End .product-qty -->
                         </div><!-- End .product-image-container -->
-                    </div><!-- End .product- -->
-
-                    <div class="product">
-                        <figure class="product-image-container">
-                            <a href="product.html" title="Product Name">
-                                <img src="assets/images/products/small/product1.jpg" alt="Product Image">
-                            </a>
-                        </figure>
-
-                        <div>
-                            <a href="#" class="btn-delete" title="Delete product" role="button"></a>
-                            <h4 class="product-title"><a href="product.html">Bastón Canadiense</a></h4>
-                            <div class="product-price-container">
-                                <span class="product-price">$99.00</span>
-                            </div><!-- End .product-price-container -->
-                            <div class="product-qty">x1</div><!-- End .product-qty -->
-                        </div><!-- End .product-image-container -->
-                    </div><!-- End .product- -->
-                </div><!-- End .droopdowm-menu-wrapper -->
-
-                <div class="cart-dropdowm-action">
-                    <div class="dropdowm-cart-total"><span>TOTAL:</span> <%= simple_current_order.total%></div>
+                      </div><!-- End .product- -->
+                    </div><!-- End .droopdowm-menu-wrapper -->
+                  <%end%>
+                  <div class="cart-dropdowm-action">
+                    <div class="dropdowm-cart-total">
+                      <span>TOTAL: <%=simple_current_order.display_total%></span>
+                    </div>
                     <a href="/cart" class="btn btn-primary">Checkout</a>
-                </div><!-- End .cart-dropdown-action -->
+                  </div><!-- End .cart-dropdown-action -->
+                <%end%>
             </div><!-- End .dropdown-menu -->
           </div><!-- End .cart-dropddown -->
         </li>
