@@ -34,7 +34,7 @@
 
 
 $(document).ready(function($) {
-
+  
   // toggle menu
 
   $(".photo1").mouseover(function(e){    

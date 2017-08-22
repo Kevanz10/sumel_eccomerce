@@ -247,15 +247,14 @@
 </aside><!-- End .sidemenu -->
 
 <script>
-
   jQuery(document).ready(function($) {
-        setTimeout(function () {
-          $(".flash-messages-all").fadeOut('slow')
-        }, 5000);
-        $('.sidemenu-btn, .sidemenu-overlay').on('click', function (e) {
-          $('body').toggleClass('toggle-sidemenu');
-          $(this).toggleClass('open');
-          e.preventDefault();
-        });
-      }); 
+    setTimeout(function () {
+      $(".flash-messages-all").fadeOut('slow')
+    }, 5000);
+    $('.sidemenu-btn, .sidemenu-overlay').on('click', function (e) {
+      $('body').toggleClass('toggle-sidemenu');
+      $(this).toggleClass('open');
+      e.preventDefault();
+    });
+  }); 
 </script>
