@@ -20,7 +20,6 @@
 			this.fitvids();
 			this.stickyHeader();
 			this.sideMenu();
-			this.sideMenuToggle();
 			this.sidemenuScrollbar();
 			this.productZoom();
 			this.searchFormToggle();
@@ -88,14 +87,6 @@
 			if ($.fn.metisMenu) {
 				$('.metismenu').metisMenu();
 			}
-		},
-		sideMenuToggle: function () {
-			// Toggle Sidemenu (Dashboard pages)
-			$('.sidemenu-btn, .sidemenu-overlay').on('click', function (e) {
-				$('body').toggleClass('toggle-sidemenu');
-				$(this).toggleClass('open');
-				e.preventDefault();
-			});
 		},
 		sidemenuScrollbar: function () {
 			// Custom scrollbar for sidemenu
