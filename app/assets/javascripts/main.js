@@ -1,6 +1,7 @@
 /* ================================================
 ----------------- Shopo Main.js ------------- */
-(function ($) {
+jQuery(document).ready(function($) {
+	(function ($) {
 	"use strict";
 	var Shopo = {
 		initialised: false,
@@ -465,3 +466,4 @@
 	});
 	
 })(jQuery);
+});
