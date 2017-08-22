@@ -34,6 +34,9 @@
 
 
 $(document).ready(function($) {
+
+  // toggle menu
+
   $(".photo1").mouseover(function(e){    
     $(".block-text").css("visibility", "visible");
   });
@@ -173,6 +176,12 @@ $(document).ready(function($) {
 }(jQuery));
 
 jQuery(document).ready(function() {
+
+   $('.sidemenu-btn, .sidemenu-overlay').on('click', function (e) {
+    $('body').toggleClass('toggle-sidemenu');
+    $(this).toggleClass('open');
+    e.preventDefault();
+  });
   "use strict";
   var revapi;
   if ( $("#rev_slider").revolution == undefined ) {
