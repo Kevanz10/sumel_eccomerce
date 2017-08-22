@@ -14,9 +14,6 @@
 //= require jquery_ujs
 //= require social-share-button
 
-//= require plugins
-//= require main
-
 //= require jquery.themepunch.tools.min
 //= require jquery.themepunch.revolution.min
 
@@ -31,6 +28,9 @@
 //= require extensions/revolution.extension.video.min
 
 //= require xzoom.min
+
+//= require plugins
+//= require main
 
 
 $(document).ready(function($) {
