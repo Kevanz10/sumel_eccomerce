@@ -127,11 +127,16 @@
       </div><!-- End .footer-bottom -->
     </footer><!-- End .footer -->
     <script type="text/javascript">
-      $(document).on('turbolinks:load', function() {
+      jQuery(document).ready(function($) {
         setTimeout(function () {
           $(".flash-messages-all").fadeOut('slow')
         }, 5000);
-      });
+         $('.sidemenu-btn, .sidemenu-overlay').on('click', function (e) {
+          $('body').toggleClass('toggle-sidemenu');
+          $(this).toggleClass('open');
+        });
+      }); 
+  
     </script>
   </body>
 </html>
