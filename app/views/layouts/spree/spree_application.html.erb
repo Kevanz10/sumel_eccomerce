@@ -131,9 +131,10 @@
         setTimeout(function () {
           $(".flash-messages-all").fadeOut('slow')
         }, 5000);
-         $('.sidemenu-btn, .sidemenu-overlay').on('click', function (e) {
+        $('.sidemenu-btn, .sidemenu-overlay').on('click', function (e) {
           $('body').toggleClass('toggle-sidemenu');
           $(this).toggleClass('open');
+          e.preventDefault();
         });
       }); 
   
