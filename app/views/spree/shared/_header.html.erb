@@ -89,7 +89,7 @@
         <%= form_tag(spree.products_path, method: :get, class: 'fixed-size-total') do %>
           <div class="dropdown search-dropdown">
             <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
-              Categorias
+              Productos
               <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu">
@@ -145,7 +145,6 @@
                           </a>
                         </figure>
                         <div>
-                          <a href="#" class="btn-delete" title="Delete product" role="button"></a>
                           <h4 class="product-title"><%=object_cart.name%></h4>
                           <div class="product-price-container">
                               <span class="product-price"><%=object_cart.single_money%></span>
@@ -183,7 +182,7 @@
         <%= form_tag(spree.products_path, method: :get, class: 'fixed-size-total') do %>
           <div class="dropdown search-dropdown">
             <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
-              Categorias
+              Productos
               <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu">
@@ -199,7 +198,20 @@
             </ul>
           </div><!-- End .dropddown -->
           <%= search_field_tag :keywords, params[:keywords], placeholder: "Buscar producto", class: "form-control search-tag-input search-input", required: true %>
-          <button type="submit" title="Search" class="btn"><i class="fa fa-search"></i></button>
+         
+          <div class="dropdown search-dropdown">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
+              Servicios
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Uno</a></li>
+              <li><a href="#">Dos</a></li>
+              <li><a href="#">Tres </a></li>
+              <li><a href="#">Cuatro</a></li>
+              <li><a href="#">Cinco </a></li>
+            </ul>
+          </div><!-- End .dropddown -->
         <% end %>
       </div><!-- End .search-form-container -->
       <ul class="top-links">
@@ -258,3 +270,4 @@
     });
   }); 
 </script>
+

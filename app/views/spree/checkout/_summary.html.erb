@@ -1,9 +1,9 @@
-<h3><%= Spree.t(:order_summary) %></h3>
+<h3>Resumen de cuenta</h3>
 
 <table class="table" data-hook="order_summary">
   <tbody>
     <tr data-hook="item_total">
-      <td><strong><%= Spree.t(:item_total) %>:</strong></td>
+      <td><strong><%= Spree.t('Total de items') %>:</strong></td>
       <td><strong><%= order.display_item_total.to_html %></strong></td>
     </tr>
 
@@ -58,7 +58,7 @@
     <% end %>
 
     <tr data-hook="order_total">
-      <td><strong><%= Spree.t(:order_total) %>:</strong></td>
+      <td><strong><%= Spree.t('Total Orden') %>:</strong></td>
       <td><strong><span id='summary-order-total' class="lead text-primary" data-currency=<%= Money::Currency.find(order.currency).symbol %>><%= order.display_total.to_html %></span></strong></td>
     </tr>
 

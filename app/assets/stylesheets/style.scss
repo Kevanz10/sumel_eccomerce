@@ -1475,13 +1475,13 @@ fieldset[disabled] .checkbox input[type=checkbox],
 
 @media (min-width: 1200px) {
   .search-form-container .dropdown {
-    width: 194px;
+    width: 150px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .search-form-container .dropdown {
-    width: 194px;
+    width: 150px;
   }
 }
 
@@ -1491,9 +1491,10 @@ fieldset[disabled] .checkbox input[type=checkbox],
   flex: 1 1 auto;
   border: none;
   border-left: 1px solid #eaeced;
+  border-right: 1px solid #eaeced;
   font-size: 13px;
   color: #717179;
-  padding: 16px 45px 12px 20px;
+  padding: 16px 5px 12px 15px;
   height: 46px;
   letter-spacing: 0.025em;
 }
