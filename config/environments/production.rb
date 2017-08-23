@@ -128,10 +128,10 @@ Rails.application.configure do
   config.force_ssl = true
 
   ActionMailer::Base.smtp_settings = {
-  :user_name => ENV["SENDGRID_USER"],
-  :password =>  ENV["SENDGRID_PASSWORD"],
-  :domain => 'legacysupplements.com',
-  :address => 'smtp.sendgrid.net',
+  :user_name => "emailsender117@gmail.com",
+  :password =>  "emailsender10",
+  :domain => 'marketplace.com',
+  :address => 'smtp.gmail.com',
   :port => 587,
   :authentication => :plain,
   :enable_starttls_auto => true
