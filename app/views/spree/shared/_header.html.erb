@@ -171,9 +171,8 @@
                     <div class="dropdown-menu-wrapper">
                       <div class="product">
                         <figure class="product-image-container">
-                          <a href="product.html" title="Product Name">
-                            <%= small_image(object_cart.variant)%>
-                          </a>
+                          <%= link_to small_image(object_cart.variant), object_cart.variant.product %>
+                          
                         </figure>
                         <div>
                           <h4 class="product-title"><%=object_cart.name%></h4>
