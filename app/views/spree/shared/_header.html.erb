@@ -123,19 +123,20 @@
             </ul>
           </div><!-- End .dropddown -->
           <%= search_field_tag :keywords, params[:keywords], placeholder: "Buscar producto", class: "form-control search-tag-input search-input", required: true %>
-          <div class="dropdown search-dropdown">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
-              Servicios
-              <i class="fa fa-caret-down"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Uno</a></li>
-              <li><a href="#">Dos</a></li>
-              <li><a href="#">Tres </a></li>
-              <li><a href="#">Cuatro</a></li>
-              <li><a href="#">Cinco </a></li>
-            </ul>
-          </div><!-- End .dropddown -->
+          
+            <div class="dropdown search-dropdown">
+              <a class="dropdown-toggle" href="/servicios" >
+                Servicios
+                <i class="fa fa-caret-down"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Alquiler</a></li>
+                <li><a href="#">Mantenimiento</a></li>
+                <li><a href="#">Asesoria </a></li>
+                <li><a href="#">Domicilio</a></li>
+              </ul>
+            </div><!-- End .dropddown -->
+         
         <% end %>
       </div><!-- End .search-form-container -->
 
@@ -171,8 +172,7 @@
                     <div class="dropdown-menu-wrapper">
                       <div class="product">
                         <figure class="product-image-container">
-                          <%= link_to small_image(object_cart.variant), object_cart.variant.product %>
-                          
+                          <%= small_image(object_cart.variant) %>
                         </figure>
                         <div>
                           <h4 class="product-title"><%=object_cart.name%></h4>
@@ -246,20 +246,20 @@
             </ul>
           </div><!-- End .dropddown -->
           <%= search_field_tag :keywords, params[:keywords], placeholder: "Buscar producto", class: "form-control search-tag-input search-input", required: true %>
-         
+          <a href="/servicios">
           <div class="dropdown search-dropdown">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
+            <a class="dropdown-toggle" href="/servicios">
               Servicios
               <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="#">Uno</a></li>
-              <li><a href="#">Dos</a></li>
-              <li><a href="#">Tres </a></li>
-              <li><a href="#">Cuatro</a></li>
-              <li><a href="#">Cinco </a></li>
+              <li><a href="#">Alquiler</a></li>
+              <li><a href="#">Mantenimiento</a></li>
+              <li><a href="#">Asesoria </a></li>
+              <li><a href="#">Domicilio</a></li>
             </ul>
           </div><!-- End .dropddown -->
+          </a>
         <% end %>
       </div><!-- End .search-form-container -->
       <ul class="top-links">

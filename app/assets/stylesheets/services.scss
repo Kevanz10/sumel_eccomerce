@@ -1,52 +1,69 @@
-.services .services-title{
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
+
+.whitepage {
+  width: 100%;
+  height: auto;
+  background: #fff;
 }
 
-.services .services-title h1{
-  color: #1253a7;
-  font-weight: 900;
-}
-.services{
-  background: #d4d4d6;
-  height: 280px;
+.own-cont{
+  padding: 0px!important;
+  margin: 0px!important;
+  top: 0px;
 }
 
-/*What do you need*/
-  .what-need .text-center{
-    color: #494949;
-    margin-top: 120px;
-    font-weight: 300;
+.img-responsive{
+  margin: 0px!important;
+}
+
+/* services */
+
+
+
+
+.serv img {
+  display: block;
+  max-width: 100%;
+  height: 660px !important;
+}
+
+.serv h5 {
+  font-size:12pt;
+  font-weight: 500;
+  margin-bottom: 15px;
+  margin: 0px;
+  color: rgba(128, 128, 128, 0.76);
+}
+
+.serv p{
+  margin: 46px 0 0 0;
+  color: rgba(64, 64, 64, 0.76);
+  font-style: italic;
+}
+
+.serv blockquote {
+  font-size: 15px;
+  font-weight: 400;
+  background: #f8f8f8;
+  padding: 149px 50px 0px 50px;
+  margin-left: 0px;
+  height: 660px;
+  border: 0px;
+  margin-bottom: 0px;
+}
+
+.own-btn{
+  border-radius: 20px!important;
+  text-transform: none;
+  top: 50px;
+}
+
+
+@media (max-width: 991px) {
+  .serv blockquote {
+    height: auto;
   }
-/*end*/
 
-.subscription-bar{
-  height: 70px;
-  background: #7f7f7f;
-}
-
-.service-photo{
-  width: 488px;
-  height: 416px;
-  background: url(/assets/images/mantenimiento_sumel.jpg);
-  background-size: 100% 100%;
-}
-
-.mantenimiento-grey{
-  background: #d4d4d6;
-  color: #0038a7;
-  font-size: 400;
-  text-align: center;
-  padding: 10px 0;
-}
-
-.mantenimiento-blue{
-  background: #0038a7;
-  color: white;
-  font-size: 400;
-  width: 30.333333% !important;
-  padding: 10px 0;
-  text-align: center;
+  .par{
+    top:50px;
+  }
 }
