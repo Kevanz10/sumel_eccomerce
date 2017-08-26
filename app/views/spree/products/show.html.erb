@@ -78,17 +78,12 @@
       <div class="col-md-9 col-md-push-3">
         <div class="row">
           <div class="product-gallery-container" style="margin-top: 90px;">
-            <div class="product-zoom-wrapper">
-              <div class="product-zoom-container">
-                
-              <!-- <img class="xzoom" id="product-zoom" src="/assets/images/photo1.jpg" data-xoriginal="/assets/images/photo1.jpg" alt="Zoom image"/> -->
-
-               <%= large_image(@product, itemprop: "image", class: 'xzoom', id: 'product-zoom',  'data-xoriginal': '@product')%>
-               <br>
-              
-              </div><!-- End .product-zoom-container -->
+            
+             <div class="product-zoom-wrapper">
+                <div class="product-zoom-container">
+                <img class="xzoom" id="product-zoom" src="/assets/images/photo1.jpg" data-xoriginal="/assets/images/photo1.jpg"  alt="Zoom image"/>
+                </div><!-- End .product-zoom-container -->
             </div><!-- End .product-zoom-wrapper -->
-
             <div class="product-gallery-wrapper">
               <!-- <div class="owl-data-carousel owl-carousel product-gallery"
                 data-owl-settings='{ "items":4, "margin":14, "nav": true, "dots":false }'
@@ -119,35 +114,55 @@
               <h2 class="product-title"><%= @product.name.capitalize %></h2>
           
               <div class="product-meta-row">
-                <div id="product-price">
-                  <h3 class="product-section-title"><%= Spree.t('Precio') %></h3>
-                  <div>
-                    <span class="lead price selling" itemprop="price">
-                      <%= display_price(@product) %>
-                    </span>
-                    <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
-                  </div>
+                <% if spree_current_user%>
+                  <div id="product-price">
+                    <h3 class="product-section-title"><%= Spree.t('Precio') %></h3>
+                    <div>
+                      <span class="lead price selling" itemprop="price">
+                        <%= display_price(@product) %>
+                      </span>
+                      <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
+                    </div>
 
-                  <% if @product.master.can_supply? %>
-                    <link itemprop="availability" href="https://schema.org/InStock" />
-                  <% elsif @product.variants.empty? %>
-                    <br />
-                    <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
-                  <% end %>
-                </div>
+                    <% if @product.master.can_supply? %>
+                      <link itemprop="availability" href="https://schema.org/InStock" />
+                    <% elsif @product.variants.empty? %>
+                      <br />
+                      <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
+                    <% end %>
+                  </div>
+                <%else%>
+                  <div id="product-price">
+                    <h3 class="product-section-title"><%= Spree.t('Precio') %></h3>
+                    <div>
+                      <span class="lead price selling" itemprop="price"  style="font-style: italic;">
+                        Para ver los precios de nuestros productos necesitas una cuenta activa.
+                      </span>
+                      <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
+                    </div>
+
+                    <% if @product.master.can_supply? %>
+                      <link itemprop="availability" href="https://schema.org/InStock" />
+                    <% elsif @product.variants.empty? %>
+                      <br />
+                      <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
+                    <% end %>
+                  </div>
+                <%end%>
+                
                 <!-- <div class="product-price-container">
                   <span class="product-price">$250.00</span>
                 </div> -->
                 <!-- Endd .product-price-container -->
 
-                <div class="product-ratings-wrapper">
+                <!-- <div class="product-ratings-wrapper">
                   <div class="ratings-container">
                     <div class="product-ratings">
-                      <span class="ratings" style="width:80%"></span><!-- End .ratings -->
-                    </div><!-- End .product-ratings -->
-                  </div><!-- End .ratings-container -->
+                      <span class="ratings" style="width:80%"></span>
+                    </div>
+                  </div>
                   <a class="ratings-link" href="#reviews" title="Reviews">30 Reviews</a>
-                </div><!-- End .product-ratings-wrapper -->
+                </div> -->
               </div><!-- End .product-meta-row -->
               <div class="product-content">
                 <p>Comfort Couch Classic sigle Seater Soft is Relax in supreme comfort and add style to your living room with this fabulously designed single.
