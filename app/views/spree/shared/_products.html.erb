@@ -64,9 +64,11 @@
                         <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>  
                       </a>
                     </h3>
-                    <div class="product-price-container">
-                        <span class="product-price"><%= number_to_currency(product.price.to_f, precision: 1) %></span>
-                    </div><!-- Endd .product-price-container -->
+                    <%if spree_current_user%>
+                      <div class="product-price-container">
+                          <span class="product-price"><%= number_to_currency(product.price.to_f, precision: 1) %></span>
+                      </div><!-- Endd .product-price-container -->
+                    <%end%>
                   </div><!-- End .product -->
                 </div><!-- End .product-item -->
               <% end %>
