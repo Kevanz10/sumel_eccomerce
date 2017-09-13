@@ -1,0 +1,66 @@
+
+.whitepage {
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+.own-cont{
+  padding: 0px!important;
+  margin: 0px!important;
+  top: 0px;
+}
+
+.img-responsive{
+  margin: 0px!important;
+}
+
+/* services */
+
+
+
+.serv img {
+  width: 100%;
+}
+
+.serv h5 {
+  font-size:12pt;
+  font-weight: 500;
+  margin-bottom: 15px;
+  margin: 0px;
+  color: rgba(128, 128, 128, 0.76);
+}
+
+.serv p{
+  margin: 46px 0 0 0;
+  color: rgba(64, 64, 64, 0.76);
+  font-style: italic;
+}
+
+.serv blockquote {
+  font-size: 15px;
+  font-weight: 400;
+  background: #f8f8f8;
+  padding: 149px 50px 0px 50px;
+  margin-left: 0px;
+  height: 660px;
+  border: 0px;
+  margin-bottom: 0px;
+}
+
+.own-btn{
+  border-radius: 20px!important;
+  text-transform: none;
+  top: 50px;
+}
+
+
+@media (max-width: 991px) {
+  .serv blockquote {
+    height: auto;
+  }
+
+  .par{
+    top:50px;
+  }
+}
