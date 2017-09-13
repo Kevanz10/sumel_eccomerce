@@ -3,9 +3,11 @@ class StaticController < Spree::StoreController
   layout :compute_layout
 
   def about
+    
   end
 
   def services
+   
   end
 
   def terms
