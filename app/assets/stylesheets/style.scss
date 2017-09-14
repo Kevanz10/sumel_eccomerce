@@ -1,6 +1,6 @@
 @charset "UTF-8";
-/* 
-Shopo SCSS File 
+/*
+Shopo SCSS File
 -------- # Table Of Contents # -------- //
 -------- 1-  General
 -------- 2-  Typography
@@ -1184,7 +1184,7 @@ fieldset[disabled] .checkbox input[type=checkbox],
   padding-bottom: 30px;
 }
 
-/* 
+/*
 *  Bootstrap TouchSpin - v3.1.2
 *  A mobile and touch friendly input spinner component for Bootstrap 3.
 *  http://www.virtuosoft.eu/code/bootstrap-touchspin/
@@ -5257,43 +5257,43 @@ website:   	http://www.themepunch.com
   color: #262634;
 }
 
-.carousel-control {
-  top: 50%;
-  bottom: auto;
-  width: 36px;
-  height: 36px;
-  margin-top: -18px;
-  font-size: 22px;
-  line-height: 37px;
-  opacity: 1;
-  text-shadow: none;
-  color: #262634;
-  background-color: #fff;
-  transition: all 0.4s;
-  box-shadow: none;
-}
+// .carousel-control {
+//   top: 50%;
+//   bottom: auto;
+//   width: 36px;
+//   height: 36px;
+//   margin-top: -18px;
+//   font-size: 22px;
+//   line-height: 37px;
+//   opacity: 1;
+//   text-shadow: none;
+//   color: #262634;
+//   background-color: #fff;
+//   transition: all 0.4s;
+//   box-shadow: none;
+// }
 
-.carousel-control i {
-  line-height: inherit;
-}
+// .carousel-control i {
+//   line-height: inherit;
+// }
 
-.carousel-control:hover, .carousel-control:focus {
-  opacity: 1;
-  color: #fff;
-  background-color: #262634;
-}
+// .carousel-control:hover, .carousel-control:focus {
+//   opacity: 1;
+//   color: #fff;
+//   background-color: #262634;
+// }
 
-.carousel-control.left {
-  left: 10px;
-  border-radius: 50%;
-  background-image: none;
-}
+// .carousel-control.left {
+//   left: 10px;
+//   border-radius: 50%;
+//   background-image: none;
+// }
 
-.carousel-control.right {
-  right: 10px;
-  border-radius: 50%;
-  background-image: none;
-}
+// .carousel-control.right {
+//   right: 10px;
+//   border-radius: 50%;
+//   background-image: none;
+// }
 
 /* Single Post */
 .page-header.entry-header {
@@ -6170,14 +6170,14 @@ website:   	http://www.themepunch.com
   }
 }
 
-/* 
+/*
  * 	Owl Carousel - Auto Height Plugin
  */
 .owl-height {
   transition: height 500ms ease-in-out;
 }
 
-/* 
+/*
  *  Core Owl Carousel CSS File
  */
 .owl-carousel {
@@ -6291,7 +6291,7 @@ website:   	http://www.themepunch.com
   display: block;
 }
 
-/* 
+/*
  * 	Owl Carousel - Lazy Load Plugin
  */
 .owl-carousel .owl-item .owl-lazy {
@@ -6396,4 +6396,32 @@ website:   	http://www.themepunch.com
 
 .owl-next:before {
   content: "\f105";
+}
+
+.own-div{
+  width: 100%;
+  height: 600px;
+}
+
+.texto{
+  position: absolute;
+  top: 220px;
+  left: 442px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.50);
+  width: 32%;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  text-align: center;
+}
+
+.texto2{
+  position: absolute;
+  top: 134px;
+  color: #fff;
+  left: 219px;
+  border-radius: 20px;
+  background: rgba(93, 93, 93, 0.5);
+  width: 47%;
+  border: 1px solid rgba(93, 93, 93, 0.5);
+  text-align: center;
 }
