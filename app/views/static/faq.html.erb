@@ -1,0 +1,109 @@
+<style>
+
+
+.faq-header{
+  font-size: 2em;
+  border-bottom: 1px dotted #ccc;
+  padding: 1em 0;
+}
+
+.faq-c {
+  border-bottom: 1px dotted #ccc;
+  padding: 1em 0;
+}
+
+.faq-t {
+  line-height: 1em;
+  color: #aaa; 
+  font-family: sans-serif; 
+  float:left; 
+  font-weight: 700; 
+  padding-right: 0.3em; 
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.faq-o {
+  transform: rotate(-45deg);
+  transform-origin: 50% 50%;
+  -ms-transform: rotate(-45deg);
+  -ms-transform-origin: 50% 50%;
+  -webkit-transform: rotate(-45deg);
+  -webkit-transform-origin: 50% 50%;
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.faq-q {
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+.faq-a {
+  clear: both;
+  color: #666;
+  display: none;
+  padding-left: 1.5em;
+}
+
+    
+
+</style>
+
+<div class="container">
+
+    <div class="faq-header">Preguntas frecuentes</div>
+
+    <div class="faq-c">
+    <div class="faq-q"><span class="faq-t">+</span>¿Donde me puedo comunicar telefónicamente?</div>
+    <div class="faq-a">
+        <p>Si estas en Medellín te puedes comunicar al <br>
+        (4) 444-01-88 Opción 1 celular: 316-523-42-69 <br>
+        (4)444-01-88 Opción 2 Sede Administrativa. <br>
+        Si estas en Pereira te puedes comunicar al (6) 325-56-90 celulares: 314-888-00-21 <br>
+        Si estas en Armenia te puedes comunicar al (6) 746-33-34 celular: 321-701-06-85<br>
+</p>
+    </div>
+    </div>
+
+    <div class="faq-c">
+    <div class="faq-q"><span class="faq-t">+</span>¿Dónde están ubicados?</div>
+    <div class="faq-a">
+        <p>Sede Principal: Calle 30 N° 41-09 Itagüí, Antioquia. Colombia <br>
+            Medellín: Carrera 48 N° 7- 380 Mall comercial Vegas 10 <br>
+            Pereira: Calle 24 N° 6-14<br>
+            Armenia: Carrera 12 N° 1ª Norte 20 Centro Medico Empresarial Uninorte.<br> 
+        </p>
+    </div>
+    </div>
+
+    <div class="faq-c">
+    <div class="faq-q"><span class="faq-t">+</span>¿Dónde me puedo contactar por correo electrónico? </div>
+    <div class="faq-a">
+        <p>servicioalcliente@sumel.net</p>
+    </div>
+    </div>
+
+</div>
+
+<script>
+
+    $(".faq-q").click( function () {
+  var container = $(this).parents(".faq-c");
+  var answer = container.find(".faq-a");
+  var trigger = container.find(".faq-t");
+  
+  answer.slideToggle(200);
+  
+  if (trigger.hasClass("faq-o")) {
+    trigger.removeClass("faq-o");
+  }
+  else {
+    trigger.addClass("faq-o");
+  }
+    });
+
+</script>

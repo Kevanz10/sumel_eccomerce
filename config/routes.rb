@@ -34,6 +34,10 @@ Rails.application.routes.draw do
     resources :subscriptions
   end
 
+
+  get '/faq', to: 'static#faq', as: 'faq'
+
+  get '/privacy_policy', to: 'static#privacy_policy', as: 'privacy_policy'
   #get '/contact', to: 'static#security', as: 'security'
 
   # You can have the root of your site routed with "root"
