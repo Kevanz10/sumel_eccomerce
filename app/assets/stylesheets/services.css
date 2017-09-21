@@ -17,8 +17,24 @@
 
 /* services */
 
+.contact-sumel{
+  background: #0038a7;
+  width: 70%;
+  margin: 0 auto;
+  color: white;
+  padding: 12px 85px;
+  font-size: 20px;
+}
+.contact-sumel:hover{
+  background: #0760ED;
+  color: white;
+}
 
-
+.center-div{
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%); 
+}
 
 .serv img {
   display: block;
@@ -57,6 +73,44 @@
   top: 50px;
 }
 
+.logistica-img{
+  background: url('/PAGINA HOME/Foto Logistica.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 60vh;
+}
+
+.alquiler-img{
+  background: url('/assets/images/showroom.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 60vh;
+}
+
+.mantenimiento-img{
+  background: url('/DEPARTAMENTO TECNICO SUMEL.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 60vh;
+}
+
+.asesoria-img{
+  background: url('/EVALUACION FISIOTERAPIA 2.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 60vh;
+}
+
+/*Alquier*/
+
+.alquiler h4, .alquiler ol{
+  font-weight: 200;
+}
+
+.alquiler ol{
+  font-size: 18px;
+  list-style: disc !important;
+}
 
 @media (max-width: 991px) {
   .serv blockquote {

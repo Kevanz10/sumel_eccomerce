@@ -21,7 +21,18 @@ class StaticController < Spree::StoreController
   end
 
   def privacy_policy
+  end
 
+  def logistica
+  end
+
+  def alquiler
+  end
+
+  def mantenimiento
+  end
+
+  def asesoria
   end
 
   def compute_layout

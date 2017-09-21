@@ -20,6 +20,11 @@ Rails.application.routes.draw do
   get '/servicios', to: 'static#services', as: 'services'
   get '/contact', to: 'messages#new', as: 'contact'
   get '/test', to: 'static#test', as: 'test'
+  get '/logistica', to: 'static#logistica', as: 'logistica'
+  get '/alquiler', to: 'static#alquiler', as: 'alquiler'
+  get '/mantenimiento', to: 'static#mantenimiento', as: 'mantenimiento'
+  get '/asesoria', to: 'static#asesoria', as: 'asesoria'
+
   post '/subs', to: 'subscriptions#create', as: 'newsubscription'
 
   resources :subscriptions

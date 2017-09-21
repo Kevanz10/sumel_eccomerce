@@ -297,7 +297,12 @@
     }else if (window.location.pathname == "/t/movilidad") {
       $('#banner-tax').attr('src','/assets/images/mov1.jpg').css("height", "420");
     }else if (window.location.pathname == "/t/fisioterapia") {
-      $('#banner-tax').attr('src','/assets/images/fis1.jpg').css("height", "450");
+      $('#banner-tax').attr('src','/assets/images/fis1.jpg').
+      css({
+        'height': '450',
+        'width' : 'auto',
+        'margin' : '0 auto'
+      });
     }else if (window.location.pathname == "/t/ayuda") {
       $('#banner-tax').attr('src','/assets/images/ayu1.jpg').css("height", "450");
     }else if (window.location.pathname == "/t/ayudavivir") {
