@@ -4,13 +4,7 @@
   <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
 </div>
 
-<% unless params[:keywords].present? %>
-  <div data-hook="taxon_children">
-    <% cache [I18n.locale, @taxon] do %>
-      <%= render partial: 'taxon', collection: @taxon.children %>
-    <% end %>
-  </div>
-<% end %>
+
 
 <style >
   .taxon-title{
