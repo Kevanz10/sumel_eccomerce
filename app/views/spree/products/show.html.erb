@@ -168,10 +168,14 @@
                 </div> -->
               </div><!-- End .product-meta-row -->
               <div class="product-content">
-                <p>Comfort Couch Classic sigle Seater Soft is Relax in supreme comfort and add style to your living room with this fabulously designed single.
-                </p>
+                <%if @product.description.present?%>
+                  <h4>
+                    <%=@product.description%>
+                  </h4>
+                <%else%>
+                  <h4>El producto no tiene descripción</h4>
+                <%end%>    
               </div><!-- End .product-content -->
-
               <ul class="product-meta-list">
                 <li><label>Availability:</label> <span class="product-stock">In Stock</span></li>
               </ul>
