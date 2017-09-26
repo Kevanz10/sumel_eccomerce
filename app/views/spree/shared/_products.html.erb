@@ -22,7 +22,7 @@
             <div class="shop-container max-col-4" data-layout="fitRows">
               <% products.each do |product| %>
                 <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
-                <div class="product-item">
+                <div class="product-item right">
                   <div class="product">
                     <figure class="product-image-container">
                       <!-- <a href="product.html" title="Product Name" class="product-image-link">
@@ -289,6 +289,12 @@
 </section>
 </div>
 
+<style>
+  .right{
+    float: right !important;
+  }
+</style>
+
 <script>
   jQuery(document).ready(function($) {
     if (window.location.pathname == "/t/oxigenoterapia") {
@@ -334,9 +340,10 @@
     }else if (window.location.pathname == "/t/ayudavivir/camas") {
       $('#banner-tax').attr('src','/assets/images/ayudamarcha1.jpg').css("height", "450");
       $('.category-name').text('Ayuda para vivir / Camas');;
+       $('.product-image-link img').css('height', '150px');
     }else if (window.location.pathname == "/t/ayudavivir/otras") {
       $('#banner-tax').attr('src','/assets/images/ayudamarcha1.jpg').css("height", "450");
-      $('.category-name').text('Ayuda para vivir / Otras');;
+      $('.category-name').text('Ayuda para vivir / Otras');
     }         
   });
 </script>

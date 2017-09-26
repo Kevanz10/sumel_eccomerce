@@ -86,28 +86,15 @@
                 </div><!-- End .product-zoom-container -->
             </div><!-- End .product-zoom-wrapper -->
             <div class="product-gallery-wrapper">
-              <!-- <div class="owl-data-carousel owl-carousel product-gallery"
-                data-owl-settings='{ "items":4, "margin":14, "nav": true, "dots":false }'
-                data-owl-responsive='{"240": {"items": 2}, "360": {"items": 3}, "768": {"items": 4}, "992": {"items": 3}, "1200": {"items": 4} }'>
-                <a href="#" data-image="assets/images/products/single/product1.jpg" data-zoom-image="assets/images/products/single/big/product1.jpg" class="product-gallery-item">
-                    <img src="assets/images/products/single/thumbs/product1.jpg" alt="product-small-1">
-                </a>
-                <a href="#" data-image="assets/images/products/single/product2.jpg" data-zoom-image="assets/images/products/single/big/product2.jpg" class="product-gallery-item">
-                    <img src="assets/images/products/single/thumbs/product2.jpg" alt="product-small-2">
-                </a>
-                <a href="#" data-image="assets/images/products/single/product3.jpg" data-zoom-image="assets/images/products/single/big/product3.jpg" class="product-gallery-item">
-                    <img src="assets/images/products/single/thumbs/product3.jpg" alt="product-small-3">
-                </a>
-                <a href="#" data-image="assets/images/products/single/product4.jpg" data-zoom-image="assets/images/products/single/big/product4.jpg" class="product-gallery-item">
-                    <img src="assets/images/products/single/thumbs/product4.jpg" alt="product-small-4">
-                </a>
-                <a href="#" data-image="assets/images/products/single/product5.jpg" data-zoom-image="assets/images/products/single/big/product5.jpg" class="product-gallery-item">
-                    <img src="assets/images/products/single/thumbs/product5.jpg" alt="product-small-5">
-                </a>
-                <a href="#" data-image="assets/images/products/single/product6.jpg" data-zoom-image="assets/images/products/single/big/product6.jpg" class="product-gallery-item">
-                    <img src="assets/images/products/single/thumbs/product6.jpg" alt="product-small-6">
-                </a>
-              </div>  -->
+              <div class="owl-data-carousel owl-carousel product-gallery more-products-img"
+                  data-owl-settings='{ "items":4, "margin":14, "nav": true, "dots":false }'
+                  data-owl-responsive='{"240": {"items": 2}, "360": {"items": 3}, "768": {"items": 4}, "992": {"items": 3}, "1200": {"items": 4} }'>
+                  <%@product.images.each do |image|%>
+                    <a data-image="assets/images/products/single/product1.jpg" data-zoom-image="assets/images/products/single/big/product1.jpg" class="product-gallery-item">
+                      <%= image_tag(image.attachment.url) %>
+                    </a>
+                  <%end%>
+              </div><!-- End .product-gallery -->
             </div><!-- End .product-gallery-wrapper -->
           </div><!-- End .product-gallery-container -->
 
@@ -532,3 +519,9 @@
   </div><!-- End .container -->
 </div><!-- End .main -->
 <% end %>
+
+<style>
+  .more-products-img img{
+    height: 100px !important;
+  }
+</style>

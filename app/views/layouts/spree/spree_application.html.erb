@@ -9,6 +9,19 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
   <head data-hook="inside_head">
     <%= render partial: 'spree/shared/head' %>
+    <%= javascript_include_tag 'revolution.extension.carousel.min' %>
+    <%= javascript_include_tag 'revolution.extension.actions.min' %>
+    <%= javascript_include_tag 'revolution.extension.kenburn.min' %>
+    <%= javascript_include_tag 'revolution.extension.layeranimation.min' %>
+    <%= javascript_include_tag 'revolution.extension.migration.min' %>
+    <%= javascript_include_tag 'revolution.extension.navigation.min' %>
+    <%= javascript_include_tag 'revolution.extension.parallax.min' %>
+    <%= javascript_include_tag 'revolution.extension.slideanims.min' %>
+    <%= javascript_include_tag 'revolution.extension.video.min' %>
+    <%= javascript_include_tag 'xzoom.min' %>
+    <%= javascript_include_tag 'plugins' %>
+    <%= javascript_include_tag 'main' %>
+
     <script src="https://use.fontawesome.com/e4b26ed800.js"></script>
   </head>
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
