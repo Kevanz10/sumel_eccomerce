@@ -80,7 +80,7 @@
           <div class="product-gallery-container" style="margin-top: 90px;">
             
              <div class="product-zoom-wrapper">
-                <div class="product-zoom-container">
+                <div class="product-zoom-container product-img-paper">
                 <!-- <img class="xzoom" id="product-zoom" src="/assets/images/photo1.jpg" data-xoriginal="/assets/images/photo1.jpg"  alt="Zoom image"/> -->
                 <%= large_image(@product, itemprop: "image") %>
                 </div><!-- End .product-zoom-container -->
@@ -523,5 +523,9 @@
 <style>
   .more-products-img img{
     height: 100px !important;
+  }
+
+  .product-img-paper img{
+    width: 100%;
   }
 </style>
