@@ -77,28 +77,28 @@
   background: url('/pdf/logistica-01.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 60vh;
+  height: 300px;
 }
 
 .alquiler-img{
   background: url('/PAGINA INTRODUCTORIA/alquiler-01.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 60vh;
+  height: 300px;
 }
 
 .mantenimiento-img{
   background: url('/PAGINA INTRODUCTORIA/alquiler_002-01.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 60vh;
+  height: 300px;
 }
 
 .asesoria-img{
   background: url('/PAGINA INTRODUCTORIA/asesoria-01.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 60vh;
+  height: 300px;
 }
 
 /*Alquier*/
