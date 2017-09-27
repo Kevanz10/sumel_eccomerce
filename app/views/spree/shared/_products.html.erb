@@ -291,7 +291,7 @@
 
 <style>
   .right{
-    float: right !important;
+    float: left !important;
   }
 </style>
 
@@ -345,6 +345,8 @@
     }else if (window.location.pathname == "/t/ayudavivir/otras") {
       $('#banner-tax').attr('src','/assets/images/ayudamarcha1.jpg').css("height", "450");
       $('.category-name').text('Ayuda para vivir / Otras');
+      $('.product-image-link img').css('height', '200px');
+      $('div.product-item').removeClass('right');
     }         
   });
 </script>
