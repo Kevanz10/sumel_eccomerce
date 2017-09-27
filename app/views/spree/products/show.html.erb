@@ -225,34 +225,9 @@
             </div><!-- End .tab-pane -->
             <div role="tabpanel" class="tab-pane" id="information">
               <div class="table-responsive">
-                <table class="table product-info-table">
-                  <tbody>
-                    <tr>
-                      <td>Weight:</td>
-                      <td>50 KG</td>
-                    </tr>
-                    <tr>
-                      <td>Dimensions:</td>
-                      <td>120 x 120 x 120 cm</td>
-                    </tr>
-                    <tr>
-                      <td>Material:</td>
-                      <td>Wood, Leather</td>
-                    </tr>
-                    <tr>
-                      <td>Colors:</td>
-                      <td>Beige, Black</td>
-                    </tr>
-                    <tr>
-                      <td>Size:</td>
-                      <td>SM, MD, LG</td>
-                    </tr>
-                    <tr>
-                      <td>Other Info:</td>
-                      <td>Comfort Couch Classic sigle Seater Soft is Relax in supreme comfort.</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <h2 class="text-center">Ficha Tecnica</h2>
+
+                <iframe src="" class="ficha-tecnica" width="800px" height="210px"></iframe>
               </div><!-- End .table-responsive -->
               </div><!-- End .tab-pane -->
               <div role="tabpanel" class="tab-pane" id="reviews">
@@ -351,7 +326,7 @@
                   <li><a href=""><i class="fa fa-caret-right"></i>Sillas de ruedas activas</a></li>
                   <li><a href=""><i class="fa fa-caret-right"></i>Sillas de ruedas Neurológica</a></li>
                   <li><a href=""><i class="fa fa-caret-right"></i>Scooter</a></li>
-                  <li><a href=""><i class="fa fa-caret-right"></i>Cojines y accesorios-pendiente</a></li>
+                  <li><a href=""><i class="fa fa-caret-right"></i>Cojines y accesorios</a></li>
                 </ul>
               </li>
               <li>
@@ -529,3 +504,9 @@
     width: 100%;
   }
 </style>
+
+<script>
+  if ($('.product-title').text() == "Java cushion- ride-cojin antiescaras") {
+    $('.ficha-tecnica').attr('src','/pdf/ANTIESCARAS.pdf');
+  }
+</script>
