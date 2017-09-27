@@ -61,7 +61,7 @@
                     </figure>
                     <h3 class="product-title">
                       <a href="product.html">
-                        <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>  
+                        <%= content_tag(:span, truncate(product.name, length: 20), class: 'info', itemprop: "name", title: product.name) %>  
                       </a>
                     </h3>
                     <%if spree_current_user%>
@@ -323,6 +323,7 @@
     }else if (window.location.pathname == "/t/ayudavivir") {
       $('#banner-tax').attr('src','/assets/images/ayudamarcha1.jpg').css("height", "450");
       $('.category-name').text('Ayudas para el diario vivir');
+      $('.product-image-link img').css('height', '150px');
     }else if (window.location.pathname == "/t/diagnostico") {
       // $('#banner-tax').attr('src','/assets/images/ayudamarcha1.jpg').css("height", "450");
       $('.category-name').text('Diagnostico');
