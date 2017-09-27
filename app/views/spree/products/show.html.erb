@@ -90,7 +90,7 @@
                   data-owl-settings='{ "items":4, "margin":14, "nav": true, "dots":false }'
                   data-owl-responsive='{"240": {"items": 2}, "360": {"items": 3}, "768": {"items": 4}, "992": {"items": 3}, "1200": {"items": 4} }'>
                   <%@product.images.each do |image|%>
-                    <a data-image="assets/images/products/single/product1.jpg" data-zoom-image="assets/images/products/single/big/product1.jpg" class="product-gallery-item">
+                    <a class="product-gallery-item">
                       <%= image_tag(image.attachment.url) %>
                     </a>
                   <%end%>
