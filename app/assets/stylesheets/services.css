@@ -81,21 +81,21 @@
 }
 
 .alquiler-img{
-  background: url('/assets/images/showroom.jpg');
+  background: url('/PAGINA INTRODUCTORIA/alquiler-01.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 60vh;
 }
 
 .mantenimiento-img{
-  background: url('/DEPARTAMENTO TECNICO SUMEL.jpg');
+  background: url('/PAGINA INTRODUCTORIA/alquiler_002-01.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 60vh;
 }
 
 .asesoria-img{
-  background: url('/EVALUACION FISIOTERAPIA 2.jpg');
+  background: url('/PAGINA INTRODUCTORIA/asesoria-01.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 60vh;
