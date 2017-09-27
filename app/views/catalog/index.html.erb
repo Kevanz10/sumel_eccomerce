@@ -1,11 +1,3 @@
-<div id="empty-cart" data-hook>
-              <%= form_tag empty_cart_path, method: :put do %>
-                <p id="clear_cart_link" data-hook>
-                  <a href="/catalog" class="btn btn-accent bradius-0 continue">Seguir comprando</a>
-                  <%= submit_tag 'vaciar carrito ', class: 'btn btn-danger bradius-0' %>
-                </p>
-              <% end %>
-            </div>
 <div id="wrapper">
   <div class="main">
     <%= render 'shared/flash_messages' %>
