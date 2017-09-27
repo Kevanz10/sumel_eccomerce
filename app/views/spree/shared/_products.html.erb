@@ -118,8 +118,8 @@
                 <button class="accordion-btn collapsed" type="button" data-toggle="collapse" data-target="#accordion-ul-3" aria-expanded="false" aria-controls="accordion-ul-3"><span class="accordion-icon"></span></button>
 
                 <ul class="collapse" id="accordion-ul-3" aria-expanded="false">
-                  <li><a href=""><i class="fa fa-caret-right"></i>Linea Blanda</a></li>
-                  <li><a href=""><i class="fa fa-caret-right"></i>Equipos para Rehabilitacion</a></li>
+                  <li><a href="/t/blanda"><i class="fa fa-caret-right"></i>Linea Blanda</a></li>
+                  <li><a href="/t/rehabilitacion"><i class="fa fa-caret-right"></i>Equipos para Rehabilitacion</a></li>
                 </ul>
               </li>
               <li>
@@ -316,6 +316,25 @@
         'margin' : '0 auto'
       });
       $('.category-name').text('Fisioterapia y Rehabilitación');
+      $('.product-image-link img').css('height', '170px');
+    }else if (window.location.pathname == "/t/rehabilitacion") {
+      $('#banner-tax').attr('src','/assets/images/fis1.jpg').
+      css({
+        'height': '450',
+        'width' : 'auto',
+        'margin' : '0 auto'
+      });
+      $('.category-name').text('Fisioterapia y Rehabilitación');
+      $('.product-image-link img').css('height', '170px');
+    }else if (window.location.pathname == "/t/blanda") {
+      $('#banner-tax').attr('src','/assets/images/fis1.jpg').
+      css({
+        'height': '450',
+        'width' : 'auto',
+        'margin' : '0 auto'
+      });
+      $('.category-name').text('Fisioterapia y Rehabilitación / Linea Blanda');
+      $('.product-image-link img').css('height', '200px');
     }else if (window.location.pathname == "/t/ayuda") {
       $('#banner-tax').attr('src','/assets/images/ayu1.jpg').css("height", "450");
       $('.category-name').text('Ayudas para la marcha');
