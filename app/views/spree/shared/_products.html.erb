@@ -61,7 +61,7 @@
                     </figure>
                     <h3 class="product-title">
                       <a href="product.html">
-                        <%= content_tag(:span, truncate(product.name, length: 20), class: 'info', itemprop: "name", title: product.name) %>  
+                        <%= content_tag(:span, truncate(product.name, length: 30), class: 'info', itemprop: "name", title: product.name) %>  
                       </a>
                     </h3>
                     <%if spree_current_user%>
@@ -123,11 +123,11 @@
                 </ul>
               </li>
               <li>
-                <a href="/t/ayudavivir">Ayudas para el diario vivir</a>
+                <a href="/t/vivir">Ayudas para el diario vivir</a>
                 <button class="accordion-btn collapsed" type="button" data-toggle="collapse" data-target="#accordion-ul-4" aria-expanded="false" aria-controls="accordion-ul-4"><span class="accordion-icon"></span></button>
 
                 <ul class="collapse" id="accordion-ul-4" aria-expanded="false">
-                  <li><a href="/t/ayudavivir/camas"><i class="fa fa-caret-right"></i>Camas</a></li>
+                  <li><a href="/t/vivircamas"><i class="fa fa-caret-right"></i>Camas</a></li>
                   <li><a href="/t/ayudavivir/baño"><i class="fa fa-caret-right"></i>Ayudas para el baño</a></li>
                   <li><a href="/t/ayudavivir/otras"><i class="fa fa-caret-right"></i>Otras ayudas</a></li>
                 </ul>
@@ -320,7 +320,7 @@
       $('#banner-tax').attr('src','/assets/images/ayu1.jpg').css("height", "450");
       $('.category-name').text('Ayudas para la marcha');
       $('.product-image-link img').css('height', '200px');
-    }else if (window.location.pathname == "/t/ayudavivir") {
+    }else if (window.location.pathname == "/t/vivir") {
       $('#banner-tax').attr('src','/assets/images/ayudamarcha1.jpg').css("height", "450");
       $('.category-name').text('Ayudas para el diario vivir');
       $('.product-image-link img').css('height', '150px');
@@ -340,7 +340,7 @@
       $('#banner-tax').attr('src','/assets/images/ayudamarcha1.jpg').css("height", "450");
       $('.category-name').text('Ayuda para vivir / Baño');
       $('.product-image-link img').css('height', '150px');
-    }else if (window.location.pathname == "/t/ayudavivir/camas") {
+    }else if (window.location.pathname == "/t/vivircamas") {
       $('#banner-tax').attr('src','/assets/images/ayudamarcha1.jpg').css("height", "450");
       $('.category-name').text('Ayuda para vivir / Camas');;
       $('.product-image-link img').css('height', '150px');
