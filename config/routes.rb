@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get '/alquiler', to: 'static#alquiler', as: 'alquiler'
   get '/mantenimiento', to: 'static#mantenimiento', as: 'mantenimiento'
   get '/asesoria', to: 'static#asesoria', as: 'asesoria'
+  get '/contactenos', to: 'static#contactenos', as: 'contactenos'
 
   post '/subs', to: 'subscriptions#create', as: 'newsubscription'
 

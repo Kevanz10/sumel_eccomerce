@@ -35,6 +35,9 @@ class StaticController < Spree::StoreController
   def asesoria
   end
 
+  def contactenos
+  end
+  
   def compute_layout
     if action_name === "empresa"
       "spree/test"
