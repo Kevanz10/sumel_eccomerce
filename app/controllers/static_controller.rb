@@ -1,6 +1,6 @@
 class StaticController < Spree::StoreController
   
-  layout :compute_layout
+  # layout :compute_layout
 
   def about
   end
@@ -38,13 +38,13 @@ class StaticController < Spree::StoreController
   def contactenos
   end
   
-  def compute_layout
-    if action_name === "empresa"
-      "spree/test"
-    elsif action_name === "test"
-      "spree/test"
-    else
-      "spree/spree_application" 
-    end
-  end
+  # def compute_layout
+  #   if action_name === "empresa"
+  #     "spree/test"
+  #   elsif action_name === "test"
+  #     "spree/test"
+  #   else
+  #     "spree/spree_application" 
+  #   end
+  # end
 end
