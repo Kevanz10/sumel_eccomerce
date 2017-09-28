@@ -56,7 +56,7 @@
           <div class="owl-data-carousel owl-carousel"
           data-owl-settings='{ "items":4, "nav": true, "dots":false }'
           data-owl-responsive='{ "480": {"items": 2}, "768": {"items": 3}, "992": {"items": 3}, "1200": {"items": 4} }'>
-            <%@jabon = Spree::Product.last%>
+            <%@jabon = Spree::Product.find_by_name('Jabon De Ozono En Barra')%>
             <%@silla = Spree::Product.find_by_name('Silla De Ruedas Estandar')%>
             <div class="product">
               <figure class="product-image-container">
