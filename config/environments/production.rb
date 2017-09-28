@@ -78,7 +78,7 @@ Rails.application.configure do
   end
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.action_controller.asset_host = config.action_mailer.asset_host = 'https://sumelcommerce.herokuapp.com/'
+  #config.action_controller.asset_host = config.action_mailer.asset_host = 'https://sumelcommerce.herokuapp.com/'
   routes.default_url_options[:host] = config.action_controller.asset_host
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
