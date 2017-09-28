@@ -58,8 +58,9 @@
           data-owl-responsive='{ "480": {"items": 2}, "768": {"items": 3}, "992": {"items": 3}, "1200": {"items": 4} }'>
             <div class="product">
               <figure class="product-image-container">
-                <a href="product.html" title="Product Name" class="product-image-link">
-                  <img class="owl-lazy" src="/assets/images/blank.png" data-src="/assets/images/products/product5.jpg" width="195" height="255" alt="Product Image">
+                <%@jabon =  Spree::Product.where(name: 'Jabon De Ozono En Barra')%>
+                <a title="Product Name" class="product-image-link">
+                  <%= small_image(jabon) %>
                 </a>
                 <span class="product-label">-55%</span>
                 <a href="#" class="btn-quick-view">Quick View</a>
