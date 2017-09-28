@@ -70,7 +70,7 @@
             
             <div class="product">
               <figure class="product-image-container">
-                <a title="Product Name" class="product-image-link">
+                <a title="Product Name" class="product-image-link image-carrousel-product">
                   <%= product_image(@jabon) %>
                 </a>
                 
@@ -97,7 +97,7 @@
 
             <div class="product">
               <figure class="product-image-container">
-                <a title="Product Name" class="product-image-link">
+                <a title="Product Name" class="product-image-link image-carrousel-product">
                   <%= product_image(@silla) %>
                 </a>
                 <%= link_to 'Ver', silla_url, class: 'btn-quick-view'%>
@@ -123,7 +123,7 @@
             </div><!-- End .product -->
 
             <div class="product">
-              <figure class="product-image-container">
+              <figure class="product-image-container image-carrousel-product">
                 <a title="Product Name" class="product-image-link">
                   <%= product_image(@scooter) %>
                 </a>
@@ -149,7 +149,7 @@
             </div><!-- End .product -->
 
             <div class="product">
-              <figure class="product-image-container">
+              <figure class="product-image-container image-carrousel-product">
                 <a title="Product Name" class="product-image-link">
                   <%= product_image(@cilindros) %>
                 </a>
@@ -509,6 +509,10 @@
   .custom-logo{
     width: 50%;
     margin: 0 auto;
+  }
+
+  .image-carrousel-product img{
+    height: 200px;
   }
 </style>
 
