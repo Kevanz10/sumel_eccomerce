@@ -19,6 +19,10 @@ Rails.application.config.assets.precompile += %w( revolution.extension.navigatio
 Rails.application.config.assets.precompile += %w( revolution.extension.parallax.min)
 Rails.application.config.assets.precompile += %w( revolution.extension.slideanims.min)
 Rails.application.config.assets.precompile += %w( revolution.extension.video.min)
-Rails.application.config.assets.precompile += %w( xzoom.min)
+Rails.application.config.assets.precompile += %w( xzoom.min.js)
 Rails.application.config.assets.precompile += %w( plugins)
-Rails.application.config.assets.precompile += %w( main)
+Rails.application.config.assets.precompile += %w( main.js)
+
+
+Rails.application.config.assets.precompile += 
+  %w(*.png *.jpg *.jpeg *.gif revolution.extension.carousel.min.js)
